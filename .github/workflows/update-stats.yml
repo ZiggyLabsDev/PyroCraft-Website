@@ -7,10 +7,13 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   update-stats:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out website
         uses: actions/checkout@v4
@@ -27,3 +30,15 @@ jobs:
           git add data/stats.json
           git diff --cached --quiet || git commit -m "Update server stats"
           git push
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
