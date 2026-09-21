@@ -2,6 +2,8 @@ const copyAddressButton = document.querySelector("#copy-address");
 const openInfoButton = document.querySelector("#open-info");
 const closeInfoButton = document.querySelector("#close-info");
 const infoModal = document.querySelector("#info-modal");
+const brandLogo = document.querySelector("#brand-logo");
+const easterEgg = document.querySelector("#easter-egg");
 const statsUrl = "data/stats.json";
 
 function renderRestartTime() {
@@ -200,4 +202,25 @@ infoModal?.addEventListener("click", (event) => {
 });
 document.addEventListener("keydown", (event) => {
 	if (event.key === "Escape" && infoModal && !infoModal.hidden) setInfoModal(false);
+});
+
+let logoClickCount = 0;
+let logoClickTimer;
+let easterEggTimer;
+
+brandLogo?.addEventListener("click", (event) => {
+	logoClickCount += 1;
+	window.clearTimeout(logoClickTimer);
+	logoClickTimer = window.setTimeout(() => { logoClickCount = 0; }, 1200);
+	if (logoClickCount !== 5 || !easterEgg) return;
+	event.preventDefault();
+	logoClickCount = 0;
+	easterEgg.textContent = "Yo were calculating the route....we think its 1.0326794E15, but were not sure thats what Yap told us";
+	easterEgg.hidden = false;
+	easterEgg.classList.add("is-visible");
+	window.clearTimeout(easterEggTimer);
+	easterEggTimer = window.setTimeout(() => {
+		easterEgg.classList.remove("is-visible");
+		easterEggTimer = window.setTimeout(() => { easterEgg.hidden = true; }, 220);
+	}, 10000);
 });

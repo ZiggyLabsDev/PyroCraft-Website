@@ -15,7 +15,7 @@
 		<div class="app-shell">
 			<main class="main-content" id="top">
 				<header class="topbar">
-					<a class="brand" href="#top" aria-label="Pyrocraft home"><img class="brand-mark" src="assets/logo.png" alt="" /><span>PyroCraft</span></a>
+					<a class="brand" id="brand-logo" href="#top" aria-label="Pyrocraft home"><img class="brand-mark" src="assets/logo.png" alt="" /><span>PyroCraft</span></a>
 					<div class="topbar-actions">
 						<span class="server-pill"><i id="server-status-dot"></i> <span id="server-status">Checking status</span></span>
 						<button class="info-button" id="open-info" type="button" aria-haspopup="dialog" aria-controls="info-modal"><span aria-hidden="true">?</span> Server info</button>
@@ -72,6 +72,7 @@
 				</div>
 			</main>
 		</div>
+		<div class="easter-egg" id="easter-egg" role="status" aria-live="polite" hidden></div>
 
 		<section class="info-modal" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title" hidden>
 			<div class="info-modal-backdrop" data-close-info></div>

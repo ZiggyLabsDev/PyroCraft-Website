@@ -354,6 +354,10 @@ h1 {
 
 body.modal-open { overflow: hidden; }
 
+.easter-egg[hidden] { display: none; }
+.easter-egg { position: fixed; top: 94px; left: 24px; z-index: 40; padding: 12px 16px; border: 1px solid rgba(243, 111, 69, .7); border-radius: 8px; background: #171f27; color: #ffad8f; box-shadow: 0 14px 36px rgba(0, 0, 0, .35); font: 600 13px "Space Grotesk", monospace; opacity: 0; transform: translateY(-10px); transition: opacity 220ms ease, transform 220ms ease; }
+.easter-egg.is-visible { opacity: 1; transform: translateY(0); }
+
 .info-modal[hidden] { display: none; }
 .info-modal {
 	position: fixed;
@@ -425,4 +429,5 @@ body.modal-open { overflow: hidden; }
 	.info-button span { font-size: 12px; }
 	.info-modal-header h2 { font-size: 28px; }
 	.info-modal-footer { align-items: flex-start; flex-direction: column; gap: 7px; }
+	.easter-egg { top: 78px; left: 16px; }
 }
