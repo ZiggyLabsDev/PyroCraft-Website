@@ -22,12 +22,24 @@ async function fetchServerStatus() {
 	return response.json();
 }
 
-function addHistoryPoint(history, online) {
+function addHistoryPoint(history, players, online) {
 	const next = [...(history || []), {
 		time: new Date().toISOString(),
-		players: online,
+		players,
+		online,
 	}];
 	return next.slice(-24);
+}
+
+function calculateUptime(history) {
+	const checks = history || [];
+	if (!checks.length) return null;
+	const percent = (checks.filter((point) => point.online !== false).length / checks.length) * 100;
+	return {
+		percent: Number(percent.toFixed(1)),
+		detail: `Based on ${checks.length} check${checks.length === 1 ? "" : "s"}`,
+		period: "Last 24 checks",
+	};
 }
 
 async function main() {
@@ -40,6 +52,7 @@ async function main() {
 		color: "orange",
 		location: "Online now",
 	}));
+	const history = addHistoryPoint(existing.history, online, status.online !== false);
 	const nextStats = {
 		...existing,
 		dataState: "live",
@@ -48,7 +61,8 @@ async function main() {
 		version: status.version?.name_clean || status.version?.name || null,
 		online: status.online !== false,
 		players: { online, max: status.players?.max ?? null, list: playerList },
-		history: addHistoryPoint(existing.history, online),
+		uptime: calculateUptime(history),
+		history,
 	};
 	await fs.writeFile(statsPath, `${JSON.stringify(nextStats, null, 2)}\n`);
 }
