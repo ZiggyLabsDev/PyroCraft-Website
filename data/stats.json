@@ -1,0 +1,14 @@
+{
+  "dataState": "awaiting-live-data",
+  "updatedAt": null,
+  "serverAddress": "pyrocraft.kinetichosting.gg",
+  "version": null,
+  "online": null,
+  "players": {
+    "online": null,
+    "max": null,
+    "list": []
+  },
+  "uptime": null,
+  "history": []
+}

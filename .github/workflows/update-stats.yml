@@ -1,0 +1,29 @@
+name: Update Minecraft server stats
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/10 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Update server stats
+        env:
+          SERVER_ADDRESS: ${{ vars.SERVER_ADDRESS }}
+        run: node scripts/fetch-stats.js
+
+      - name: Commit updated stats
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/stats.json
+          git diff --cached --quiet || git commit -m "Update server stats"
+          git push
