@@ -1,14 +1,19 @@
 {
-  "dataState": "awaiting-live-data",
-  "updatedAt": null,
-  "serverAddress": "pyrocraft.kinetichosting.gg",
-  "version": null,
-  "online": null,
+  "dataState": "live",
+  "updatedAt": "2026-09-21T02:50:28.515Z",
+  "serverAddress": "172.241.3.141:25573",
+  "version": "Paper 26.2",
+  "online": true,
   "players": {
-    "online": null,
-    "max": null,
+    "online": 0,
+    "max": 20,
     "list": []
   },
   "uptime": null,
-  "history": []
+  "history": [
+    {
+      "time": "2026-09-21T02:50:28.575Z",
+      "players": 0
+    }
+  ]
 }
