@@ -41,8 +41,15 @@ const elements = {
 	chartPoints: document.querySelector("#chart-points"),
 	chartYLabels: document.querySelector("#chart-y-labels"),
 	chartLatest: document.querySelector("#chart-latest"),
+	chartStartLabel: document.querySelector("#chart-start-label"),
+	chartMidLabel: document.querySelector("#chart-mid-label"),
+	chartEndLabel: document.querySelector("#chart-end-label"),
 	chartEmpty: document.querySelector("#chart-empty"),
 };
+
+function formatChartTime(timestamp) {
+	return new Date(timestamp).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+}
 
 function renderChart(history) {
 	const pointsData = Array.isArray(history)
@@ -56,12 +63,17 @@ function renderChart(history) {
 		if (elements.chartPoints) elements.chartPoints.replaceChildren();
 		if (elements.chartYLabels) elements.chartYLabels.replaceChildren();
 		if (elements.chartLatest) elements.chartLatest.textContent = "-- online";
+		if (elements.chartStartLabel) elements.chartStartLabel.textContent = "--";
+		if (elements.chartMidLabel) elements.chartMidLabel.textContent = "--";
 		if (elements.chartEmpty) elements.chartEmpty.hidden = false;
 		return;
 	}
 	elements.chartEmpty.hidden = true;
 	const width = 720;
 	const baseline = 200;
+	const firstTimestamp = Date.parse(pointsData[0].time);
+	const lastTimestamp = Date.parse(pointsData.at(-1).time);
+	const timeRange = Math.max(lastTimestamp - firstTimestamp, 1);
 	const maxPlayers = Math.max(...pointsData.map((point) => Number(point.players)), 1);
 	if (elements.chartYLabels) {
 		elements.chartYLabels.replaceChildren(...[maxPlayers, maxPlayers / 2, 0].map((value, index) => {
@@ -73,7 +85,7 @@ function renderChart(history) {
 		}));
 	}
 	const points = pointsData.map((point, index) => {
-		const x = pointsData.length === 1 ? width / 2 : (index / (pointsData.length - 1)) * width;
+		const x = pointsData.length === 1 ? width / 2 : ((Date.parse(point.time) - firstTimestamp) / timeRange) * width;
 		const y = baseline - (Number(point.players) / maxPlayers) * 170;
 		return `${x.toFixed(1)} ${y.toFixed(1)}`;
 	});
@@ -88,7 +100,7 @@ function renderChart(history) {
 			circle.setAttribute("cy", cy);
 			circle.setAttribute("r", index === points.length - 1 ? "5" : "3");
 			circle.setAttribute("class", "chart-point");
-			const timestamp = new Date(pointsData[index].time).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+			const timestamp = formatChartTime(pointsData[index].time);
 			const tooltip = document.createElementNS("http://www.w3.org/2000/svg", "title");
 			tooltip.textContent = `${timestamp} · ${pointsData[index].players} player${Number(pointsData[index].players) === 1 ? "" : "s"}`;
 			circle.appendChild(tooltip);
@@ -99,6 +111,9 @@ function renderChart(history) {
 		const latestPlayers = Number(pointsData.at(-1).players);
 		elements.chartLatest.textContent = `${latestPlayers} online now`;
 	}
+	if (elements.chartStartLabel) elements.chartStartLabel.textContent = formatChartTime(firstTimestamp);
+	if (elements.chartMidLabel) elements.chartMidLabel.textContent = formatChartTime(firstTimestamp + timeRange / 2);
+	if (elements.chartEndLabel) elements.chartEndLabel.textContent = formatChartTime(lastTimestamp);
 }
 
 function renderPlayers(players = []) {
