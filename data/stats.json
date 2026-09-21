@@ -1,11 +1,11 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-21T19:59:55.824Z",
+  "updatedAt": "2026-09-21T21:07:49.717Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 2,
+    "online": 4,
     "max": 20,
     "list": [
       {
@@ -19,12 +19,24 @@
         "initial": "Y",
         "color": "orange",
         "location": "Online now"
+      },
+      {
+        "name": "TheGreatZiggy11",
+        "initial": "T",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "kawaiiagu",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
       }
     ]
   },
   "uptime": {
     "percent": 100,
-    "detail": "Based on 14 checks",
+    "detail": "Based on 15 checks",
     "period": "Last 24 checks"
   },
   "history": [
@@ -90,6 +102,11 @@
     {
       "time": "2026-09-21T19:59:55.768Z",
       "players": 2,
+      "online": true
+    },
+    {
+      "time": "2026-09-21T21:07:49.672Z",
+      "players": 4,
       "online": true
     }
   ]
