@@ -1,16 +1,22 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-23T12:06:41.283Z",
+  "updatedAt": "2026-09-23T12:08:22.398Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 1,
+    "online": 2,
     "max": 20,
     "list": [
       {
         "name": "Yappolina",
         "initial": "Y",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "TheGreatZiggy11",
+        "initial": "T",
         "color": "orange",
         "location": "Online now"
       }
@@ -22,11 +28,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-21T12:09:13.238Z",
-      "players": 0,
-      "online": true
-    },
     {
       "time": "2026-09-21T15:10:09.368Z",
       "players": 0,
@@ -140,6 +141,11 @@
     {
       "time": "2026-09-23T12:06:41.277Z",
       "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-09-23T12:08:22.391Z",
+      "players": 2,
       "online": true
     }
   ]
