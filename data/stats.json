@@ -1,13 +1,25 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-23T20:12:40.106Z",
+  "updatedAt": "2026-09-23T21:15:51.468Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 2,
+    "online": 6,
     "max": 20,
     "list": [
+      {
+        "name": "TheGreatZiggy11",
+        "initial": "T",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "Aurora_Pie_YT",
+        "initial": "A",
+        "color": "orange",
+        "location": "Online now"
+      },
       {
         "name": "KevoPyro",
         "initial": "K",
@@ -15,8 +27,20 @@
         "location": "Online now"
       },
       {
+        "name": "kawaiiagu",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
         "name": "Yappolina",
         "initial": "Y",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "chika99",
+        "initial": "C",
         "color": "orange",
         "location": "Online now"
       }
@@ -28,11 +52,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-21T18:51:56.311Z",
-      "players": 2,
-      "online": true
-    },
     {
       "time": "2026-09-21T19:45:13.504Z",
       "players": 2,
@@ -146,6 +165,11 @@
     {
       "time": "2026-09-23T20:12:40.100Z",
       "players": 2,
+      "online": true
+    },
+    {
+      "time": "2026-09-23T21:15:51.406Z",
+      "players": 6,
       "online": true
     }
   ]
