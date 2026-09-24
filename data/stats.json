@@ -1,13 +1,20 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-24T06:18:59.475Z",
+  "updatedAt": "2026-09-24T11:59:52.318Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 0,
+    "online": 1,
     "max": 20,
-    "list": []
+    "list": [
+      {
+        "name": "Yappolina",
+        "initial": "Y",
+        "color": "orange",
+        "location": "Online now"
+      }
+    ]
   },
   "uptime": {
     "percent": 100,
@@ -15,11 +22,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-21T21:29:07.618Z",
-      "players": 5,
-      "online": true
-    },
     {
       "time": "2026-09-21T21:34:38.218Z",
       "players": 3,
@@ -133,6 +135,11 @@
     {
       "time": "2026-09-24T06:18:59.470Z",
       "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-09-24T11:59:52.249Z",
+      "players": 1,
       "online": true
     }
   ]
