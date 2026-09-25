@@ -1,6 +1,6 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-25T23:32:06.974Z",
+  "updatedAt": "2026-09-25T23:38:11.068Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
@@ -9,14 +9,14 @@
     "max": 20,
     "list": [
       {
-        "name": "chika99",
-        "initial": "C",
+        "name": "TheGreatZiggy11",
+        "initial": "T",
         "color": "orange",
         "location": "Online now"
       },
       {
-        "name": "TheGreatZiggy11",
-        "initial": "T",
+        "name": "chika99",
+        "initial": "C",
         "color": "orange",
         "location": "Online now"
       }
@@ -28,11 +28,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-22T16:56:50.008Z",
-      "players": 1,
-      "online": true
-    },
     {
       "time": "2026-09-22T20:06:06.318Z",
       "players": 2,
@@ -145,6 +140,11 @@
     },
     {
       "time": "2026-09-25T23:32:06.893Z",
+      "players": 2,
+      "online": true
+    },
+    {
+      "time": "2026-09-25T23:38:11.062Z",
       "players": 2,
       "online": true
     }
