@@ -1,26 +1,13 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-25T23:38:11.068Z",
+  "updatedAt": "2026-09-26T02:00:04.168Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 2,
+    "online": 0,
     "max": 20,
-    "list": [
-      {
-        "name": "TheGreatZiggy11",
-        "initial": "T",
-        "color": "orange",
-        "location": "Online now"
-      },
-      {
-        "name": "chika99",
-        "initial": "C",
-        "color": "orange",
-        "location": "Online now"
-      }
-    ]
+    "list": []
   },
   "uptime": {
     "percent": 100,
@@ -28,11 +15,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-22T20:06:06.318Z",
-      "players": 2,
-      "online": true
-    },
     {
       "time": "2026-09-22T20:39:04.116Z",
       "players": 6,
@@ -146,6 +128,11 @@
     {
       "time": "2026-09-25T23:38:11.062Z",
       "players": 2,
+      "online": true
+    },
+    {
+      "time": "2026-09-26T02:00:04.165Z",
+      "players": 0,
       "online": true
     }
   ]
