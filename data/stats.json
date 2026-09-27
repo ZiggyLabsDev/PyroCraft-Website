@@ -1,19 +1,13 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-27T18:01:34.695Z",
+  "updatedAt": "2026-09-27T19:16:27.111Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 10,
+    "online": 6,
     "max": 20,
     "list": [
-      {
-        "name": "KevoPyro",
-        "initial": "K",
-        "color": "orange",
-        "location": "Online now"
-      },
       {
         "name": "Yappolina",
         "initial": "Y",
@@ -21,8 +15,8 @@
         "location": "Online now"
       },
       {
-        "name": "JustErikNL",
-        "initial": "J",
+        "name": "Posidon22",
+        "initial": "P",
         "color": "orange",
         "location": "Online now"
       },
@@ -33,38 +27,20 @@
         "location": "Online now"
       },
       {
-        "name": "LaPingas",
-        "initial": "L",
-        "color": "orange",
-        "location": "Online now"
-      },
-      {
         "name": "Br00djeK1pc0rn",
         "initial": "B",
         "color": "orange",
         "location": "Online now"
       },
       {
-        "name": "TheGreatZiggy11",
-        "initial": "T",
-        "color": "orange",
-        "location": "Online now"
-      },
-      {
-        "name": "FroggyFieldz",
-        "initial": "F",
+        "name": "KevoPyro",
+        "initial": "K",
         "color": "orange",
         "location": "Online now"
       },
       {
         "name": "chika99",
         "initial": "C",
-        "color": "orange",
-        "location": "Online now"
-      },
-      {
-        "name": "Posidon22",
-        "initial": "P",
         "color": "orange",
         "location": "Online now"
       }
@@ -76,11 +52,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-24T06:18:59.470Z",
-      "players": 0,
-      "online": true
-    },
     {
       "time": "2026-09-24T11:59:52.249Z",
       "players": 1,
@@ -194,6 +165,11 @@
     {
       "time": "2026-09-27T18:01:34.688Z",
       "players": 10,
+      "online": true
+    },
+    {
+      "time": "2026-09-27T19:16:27.104Z",
+      "players": 6,
       "online": true
     }
   ]
