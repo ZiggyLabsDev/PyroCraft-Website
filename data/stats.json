@@ -1,22 +1,22 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-27T17:54:59.416Z",
+  "updatedAt": "2026-09-27T18:01:34.695Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 9,
+    "online": 10,
     "max": 20,
     "list": [
       {
-        "name": "chika99",
-        "initial": "C",
+        "name": "KevoPyro",
+        "initial": "K",
         "color": "orange",
         "location": "Online now"
       },
       {
-        "name": "TheGreatZiggy11",
-        "initial": "T",
+        "name": "Yappolina",
+        "initial": "Y",
         "color": "orange",
         "location": "Online now"
       },
@@ -28,12 +28,6 @@
       },
       {
         "name": "kawaiiagu",
-        "initial": "K",
-        "color": "orange",
-        "location": "Online now"
-      },
-      {
-        "name": "KevoPyro",
         "initial": "K",
         "color": "orange",
         "location": "Online now"
@@ -51,8 +45,20 @@
         "location": "Online now"
       },
       {
-        "name": "Yappolina",
-        "initial": "Y",
+        "name": "TheGreatZiggy11",
+        "initial": "T",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "FroggyFieldz",
+        "initial": "F",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "chika99",
+        "initial": "C",
         "color": "orange",
         "location": "Online now"
       },
@@ -70,11 +76,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-24T01:18:52.395Z",
-      "players": 0,
-      "online": true
-    },
     {
       "time": "2026-09-24T06:18:59.470Z",
       "players": 0,
@@ -188,6 +189,11 @@
     {
       "time": "2026-09-27T17:54:59.411Z",
       "players": 9,
+      "online": true
+    },
+    {
+      "time": "2026-09-27T18:01:34.688Z",
+      "players": 10,
       "online": true
     }
   ]
