@@ -1,13 +1,37 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-27T15:36:29.917Z",
+  "updatedAt": "2026-09-27T17:54:59.416Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 2,
+    "online": 9,
     "max": 20,
     "list": [
+      {
+        "name": "chika99",
+        "initial": "C",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "TheGreatZiggy11",
+        "initial": "T",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "JustErikNL",
+        "initial": "J",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "kawaiiagu",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
+      },
       {
         "name": "KevoPyro",
         "initial": "K",
@@ -15,8 +39,26 @@
         "location": "Online now"
       },
       {
-        "name": "kawaiiagu",
-        "initial": "K",
+        "name": "LaPingas",
+        "initial": "L",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "Br00djeK1pc0rn",
+        "initial": "B",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "Yappolina",
+        "initial": "Y",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "Posidon22",
+        "initial": "P",
         "color": "orange",
         "location": "Online now"
       }
@@ -28,11 +70,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-23T22:59:43.543Z",
-      "players": 5,
-      "online": true
-    },
     {
       "time": "2026-09-24T01:18:52.395Z",
       "players": 0,
@@ -146,6 +183,11 @@
     {
       "time": "2026-09-27T15:36:29.828Z",
       "players": 2,
+      "online": true
+    },
+    {
+      "time": "2026-09-27T17:54:59.411Z",
+      "players": 9,
       "online": true
     }
   ]
