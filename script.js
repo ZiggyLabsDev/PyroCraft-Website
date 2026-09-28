@@ -17,14 +17,14 @@ function renderRestartTime() {
 			day: "2-digit",
 		});
 		const dateParts = Object.fromEntries(mountainFormatter.formatToParts(new Date()).map((part) => [part.type, part.value]));
-		const candidate = Date.UTC(Number(dateParts.year), Number(dateParts.month) - 1, Number(dateParts.day), 16);
+		const candidate = Date.UTC(Number(dateParts.year), Number(dateParts.month) - 1, Number(dateParts.day), 21);
 		const offsetParts = new Intl.DateTimeFormat("en-US", { timeZone: "America/Denver", timeZoneName: "shortOffset" }).formatToParts(new Date(candidate));
 		const offset = offsetParts.find((part) => part.type === "timeZoneName")?.value.match(/GMT([+-]\d+(?::\d+)?)?/i)?.[1] || "-7";
 		const [hours, minutes = "0"] = offset.split(":");
 		const offsetMinutes = Number(hours) * 60 + Number(minutes) * Math.sign(Number(hours));
 		const restartInstant = new Date(candidate - offsetMinutes * 60 * 1000);
 		const localTime = new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(restartInstant);
-		restartTime.textContent = `${localTime} local (4:00 PM MT)`;
+		restartTime.textContent = `${localTime} local (9:00 PM MT)`;
 }
 
 const elements = {
