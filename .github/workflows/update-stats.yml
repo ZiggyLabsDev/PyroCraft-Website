@@ -3,7 +3,7 @@ name: Update Minecraft server stats
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/17 * * * *"
 
 permissions:
   contents: write
