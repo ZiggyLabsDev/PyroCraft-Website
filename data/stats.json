@@ -1,46 +1,16 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-28T20:51:26.344Z",
+  "updatedAt": "2026-09-29T00:51:48.472Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 6,
+    "online": 1,
     "max": 20,
     "list": [
       {
-        "name": "LaPingas",
-        "initial": "L",
-        "color": "orange",
-        "location": "Online now"
-      },
-      {
         "name": "TheGreatZiggy11",
         "initial": "T",
-        "color": "orange",
-        "location": "Online now"
-      },
-      {
-        "name": "kawaiiagu",
-        "initial": "K",
-        "color": "orange",
-        "location": "Online now"
-      },
-      {
-        "name": "chika99",
-        "initial": "C",
-        "color": "orange",
-        "location": "Online now"
-      },
-      {
-        "name": "ElegantElevator",
-        "initial": "E",
-        "color": "orange",
-        "location": "Online now"
-      },
-      {
-        "name": "Posidon22",
-        "initial": "P",
         "color": "orange",
         "location": "Online now"
       }
@@ -52,11 +22,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-25T17:28:20.212Z",
-      "players": 3,
-      "online": true
-    },
     {
       "time": "2026-09-25T20:42:36.240Z",
       "players": 5,
@@ -170,6 +135,11 @@
     {
       "time": "2026-09-28T20:51:26.340Z",
       "players": 6,
+      "online": true
+    },
+    {
+      "time": "2026-09-29T00:51:48.466Z",
+      "players": 1,
       "online": true
     }
   ]
