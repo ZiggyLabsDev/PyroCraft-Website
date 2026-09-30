@@ -42,7 +42,7 @@ button { border: 0; cursor: pointer; }
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 78px;
+	height: 50px;
 	padding: 0 5.2%;
 	border-bottom: 1px solid rgba(125, 151, 159, .16);
 	background: rgba(11, 17, 24, .75);
@@ -334,7 +334,7 @@ h1 em { color: var(--orange); font-style: normal; }
 .youtube-icon { background: #4a2829; color: #ff8e86; }
 
 /* Statistical Matrices Metrics */
-.stats-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 0; }
+.stats-grid { display: grid; grid-template-columns: 1fr; gap: 35px; margin: 0; }
 
 .stat-card {
 	position: relative;
@@ -396,6 +396,7 @@ transform: translateY(-1px);
 #view-updates span { margin-left: 5px; font-size: 15px; }
 #view-updates:hover, #view-updates:focus-visible { color: #fff; outline: none; }
 #view-updates:focus-visible { box-shadow: 0 0 0 3px rgba(156, 145, 209, .22); border-radius: 4px; }
+#join-discord-updates {padding: 0; border: 0; background: none; color: var(--orange); font-size: 11px; font-weight: 700; cursor: pointer;}
 /* Global Update Articles */
 .updates-list { display: grid; gap: 0; padding: 24px 36px 30px; }
 .update-item {
