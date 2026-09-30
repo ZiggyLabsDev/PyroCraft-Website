@@ -18,7 +18,6 @@
 					<a class="brand" id="brand-logo" href="#top" aria-label="Pyrocraft home"><img class="brand-mark" src="assets/logo.png" alt="" /><span>PyroCraft</span></a>
 					<div class="topbar-actions">
 						<span class="server-pill"><i id="server-status-dot"></i> <span id="server-status">Checking status</span></span>
-						<button class="info-button" id="open-info" type="button" aria-haspopup="dialog" aria-controls="info-modal"><span aria-hidden="true">?</span> Server info</button>
 					</div>
 				</header>
 
@@ -52,6 +51,9 @@
 									Copy link
 								</button>
 							</div>
+							<button class="useful-commands" id="open-info" type="button" aria-haspopup="dialog" aria-controls="info-modal">
+								<strong>New to the server? Take a look at our quick-start commands guide here!</strong>
+							</button>
 						</section>
 
 						<article class="panel chart-panel" id="activity">
@@ -282,7 +284,7 @@
 				</header>
 				<div class="command-layout">
 					<section class="command-group"><div class="command-group-heading"><span class="command-index">01</span><div><h3>Getting around</h3><p>Move quickly and find your way home.</p></div></div><div class="command-list"><div><code>/spawn</code><span>Return to spawn.</span></div><div><code>/home &lt;name&gt;</code><span>Teleport to your home.</span></div><div><code>/sethome &lt;name&gt;</code><span>Set your home at your current location.</span></div><div><code>/back</code><span>Return to your previous location.</span></div><div><code>/rtp</code><span>Teleport to a random location.</span></div></div></section>
-					<section class="command-group"><div class="command-group-heading"><span class="command-index">02</span><div><h3>Players</h3><p>Connect and communicate with the community.</p></div></div><div class="command-list"><div><code>/tpa &lt;player&gt;</code><span>Request to teleport to a player.</span></div><div><code>/tpahere &lt;player&gt;</code><span>Request a player to teleport to your location</span></div><div><code>/tpaccept</code><span>Accept an incoming teleport request.</span></div><div><code>/msg &lt;player&gt; &lt;message&gt;</code><span>Send a private message.</span></div><div><code>/rules</code><span>Read the server rules.</span></div></div></section>
+					<section class="command-group"><div class="command-group-heading"><span class="command-index">02</span><div><h3>Players</h3><p>Connect and communicate with the community.</p></div></div><div class="command-list"><div><code>/tpa &lt;player&gt;</code><span>Request to teleport to a player.</span></div><div><code>/tpahere &lt;player&gt;</code><span>Request a player to teleport to your location</span></div><div><code>/tpaccept</code><span>Accept an incoming teleport request.</span></div><div><code>/msg &lt;player&gt; &lt;message&gt;</code><span>Send a private message.</span></div></div></section>
 					<section class="command-group"><div class="command-group-heading"><span class="command-index">03</span><div><h3>World &amp; claims</h3><p>Protect builds and manage your space.</p></div></div><div class="command-list"><div><code>/lands create &lt;name&gt;</code><span>Start or manage a land claim.</span></div><div><code>/lands trust &lt;player&gt;</code><span>Give a player access to your claim.</span></div><div><code>/lands untrust &lt;player&gt;</code><span>Remove a player's access to your land claims.</span></div><div><code>/lands map</code><span>Opens a menu to veiw and buy your land claims</span></div><div><code>/lands spawn &lt;name&gt;</code><span>Teleport to your land.</span></div></div></section>
 				</div>
 				<footer class="info-modal-footer"><a href="https://dc.gg/pyrocraft" target="_blank" rel="noreferrer">Don't see a command? Ask us in our Discord! <span aria-hidden="true">↗</span></a></footer>
