@@ -6,6 +6,17 @@ const brandLogo = document.querySelector("#brand-logo");
 const easterEgg = document.querySelector("#easter-egg");
 const statsUrl = "data/stats.json";
 
+const updatesUrl = "data/updates.json";
+
+const updatesElements = {
+	card: document.querySelector("#latest-updates"),
+	list: document.querySelector("#updates-list"),
+	openButton: document.querySelector("#view-updates"),
+	closeButton: document.querySelector("#close-updates"),
+	modal: document.querySelector("#updates-modal"),
+};
+
+
 function renderRestartTime() {
 		const restartTime = document.querySelector("#restart-time");
 		if (!restartTime) return;
@@ -120,16 +131,190 @@ function renderChart(history) {
 
 function renderPlayers(players = []) {
 	if (!elements.playerList || !Array.isArray(players) || !players.length) {
-		if (elements.playerList) elements.playerList.innerHTML = '<div class="empty-state">Player data unavailable</div>';
+		if (elements.playerList) {
+			elements.playerList.innerHTML = '<div class="empty-state">Player data unavailable</div>';
+		}
 		return;
 	}
-	elements.playerList.innerHTML = players.slice(0, 5).map((player) => `
-		<div class="activity-item player-row">
-			<p><strong>${player.name}</strong><span>${player.location || "Exploring the world"}</span></p>
-			<i class="online-dot"></i>
-		</div>
-	`).join("");
+
+	const visiblePlayers = players.slice(0, 5);
+	const remainingPlayers = Math.max(players.length - 5, 0);
+
+	elements.playerList.innerHTML = `
+		${visiblePlayers.map((player) => `
+			<div class="activity-item player-row">
+				<p>
+					<strong>${player.name}</strong>
+					<span>${player.location || "Exploring the world"}</span>
+				</p>
+				<i class="online-dot"></i>
+			</div>
+		`).join("")}
+
+		${remainingPlayers > 0 ? `
+			<div class="plus-more" id="plus-more">
+				+${remainingPlayers} more
+			</div>
+		` : ""}
+	`;
 }
+
+function parseMarkdown(markdown) {
+	return markdown
+		.replace(/^### (.*)$/gm, "<h4>$1</h4>")
+		.replace(/^## (.*)$/gm, "<h3>$1</h3>")
+		.replace(/^# (.*)$/gm, "<h2>$1</h2>")
+		.replace(/^\- (.*)$/gm, "<li>$1</li>")
+		.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+		.replace(/\*(.*?)\*/g, "<em>$1</em>")
+		.replace(/\n\n/g, "</p><p>");
+}
+
+async function loadUpdates() {
+	try {
+		const response = await fetch(updatesUrl, { cache: "no-store" });
+
+		if (!response.ok) {
+			throw new Error("Updates index unavailable");
+		}
+
+		const updates = await response.json();
+
+		if (!Array.isArray(updates) || !updates.length) {
+			showNoUpdates();
+			return;
+		}
+
+		const latest = updates.slice(0, 3);
+
+		if (updatesElements.card) {
+			updatesElements.card.innerHTML = latest.map((update) => `
+				<button
+					class="update-preview"
+					type="button"
+					data-update-file="${escapeHtml(update.file)}"
+				>
+					<div>
+						<strong>${escapeHtml(update.title)}</strong>
+						<span>${escapeHtml(update.date)}</span>
+					</div>
+					<span class="update-arrow">→</span>
+				</button>
+			`).join("");
+		}
+
+		if (updatesElements.list) {
+			updatesElements.list.innerHTML = updates.map((update) => `
+				<button
+					class="update-preview"
+					type="button"
+					data-update-file="${escapeHtml(update.file)}"
+				>
+					<div>
+						<strong>${escapeHtml(update.title)}</strong>
+						<span>${escapeHtml(update.date)}</span>
+					</div>
+					<span class="update-arrow">→</span>
+				</button>
+			`).join("");
+		}
+
+		document.querySelectorAll("[data-update-file]").forEach((button) => {
+			button.addEventListener("click", () => {
+				openUpdate(button.dataset.updateFile);
+			});
+		});
+
+	} catch (error) {
+		console.warn("Could not load updates.", error);
+		showNoUpdates();
+	}
+}
+
+function showNoUpdates() {
+	const html = '<div class="empty-state">No updates yet.</div>';
+
+	if (updatesElements.card) {
+		updatesElements.card.innerHTML = html;
+	}
+
+	if (updatesElements.list) {
+		updatesElements.list.innerHTML = html;
+	}
+}
+
+function escapeHtml(value) {
+	return String(value)
+		.replaceAll("&", "&amp;")
+		.replaceAll("<", "&lt;")
+		.replaceAll(">", "&gt;")
+		.replaceAll('"', "&quot;")
+		.replaceAll("'", "&#039;");
+}
+
+async function openUpdate(filename) {
+	try {
+		const response = await fetch(`data/updates/${encodeURIComponent(filename)}`, {
+			cache: "no-store"
+		});
+
+		if (!response.ok) {
+			throw new Error("Update unavailable");
+		}
+
+		const markdown = await response.text();
+
+		const content = markdown.replace(/^---[\s\S]*?---/, "").trim();
+
+		const updateContent = document.querySelector("#updates-list");
+
+		updateContent.innerHTML = `
+			<article class="update-article">
+				${parseMarkdown(content)}
+			</article>
+		`;
+
+		setUpdatesModal(true);
+
+	} catch (error) {
+		console.warn("Could not open update.", error);
+	}
+}
+
+function setUpdatesModal(open) {
+	if (!updatesElements.modal) return;
+
+	updatesElements.modal.hidden = !open;
+	document.body.classList.toggle("modal-open", open);
+
+	if (open) {
+		updatesElements.closeButton?.focus();
+	} else {
+		updatesElements.openButton?.focus();
+	}
+}
+
+updatesElements.openButton?.addEventListener("click", () => {
+	loadUpdates();
+	setUpdatesModal(true);
+});
+
+updatesElements.closeButton?.addEventListener("click", () => {
+	setUpdatesModal(false);
+});
+
+updatesElements.modal?.addEventListener("click", (event) => {
+	if (
+		event.target instanceof HTMLElement &&
+		event.target.hasAttribute("data-close-updates")
+	) {
+		setUpdatesModal(false);
+	}
+});
+
+loadUpdates();
+
+
 
 function calculateUptime(history) {
 	const checks = history || [];

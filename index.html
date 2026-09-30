@@ -23,53 +23,252 @@
 				</header>
 
 				<div class="page-content" id="overview">
-					<section class="welcome-row" id="about">
-						<div>
-							<p class="eyebrow">PYROCRAFT<span>•</span> <span id="server-version">JAVA EDITION 26.2</span></p>
-							<h1>A world worth <em>coming back to.</em></h1>
-							<p class="welcome-copy">A friendly Vanilla+ server for Minecraft players of all kinds. PyroCraft offers a welcoming community, classic survival gameplay, and a few carefully chosen features that add to the experience without taking away from the vanilla feel. Whether you're here to build, explore, create, or simply hang out with friends, there's a place for you in PyroCraft.</p>
-						</div>
-						<div class="server-address" id="connect"><span>Server address</span><strong id="server-address">pyrocraft.kinetichosting.gg</strong><button id="copy-address" aria-label="Copy server address">Copy link</button></div>
-					</section>
 
-					<section class="stats-grid" aria-label="Server summary">
-						<article class="community-card">
-							<p>Stay in the loop</p>
-							<div><a href="https://dc.gg/pyrocraft" target="_blank" rel="noreferrer"><span class="community-icon discord-icon">◌</span>Discord</a><a href="https://youtube.com/@kevopyro" target="_blank" rel="noreferrer"><span class="community-icon youtube-icon">▶</span>YouTube</a></div>
-						</article>
-						<article class="stat-card">
-							<div class="stat-header"><span>Server uptime</span><span class="stat-icon green">◷</span></div>
-							<strong class="stat-value"><span id="uptime-value">Collecting data</span></strong>
-							<p class="stat-change"><span id="uptime-detail">Waiting for history</span></p>
-							<div class="progress-track"><span id="uptime-progress" style="width: 0%"></span></div>
-							<p class="progress-label"><span>Uptime history</span><b id="uptime-period">--</b></p>
-						</article>
-						<article class="stat-card location-card">
-							<div class="stat-header"><span>Server location</span><span class="stat-icon blue">⌖</span></div>
-							<strong class="location-name">Amsterdam</strong>
-							<p class="location-detail">Netherlands</p>
-							<p class="restart-detail"><span>Daily restart</span><strong id="restart-time">9:00 PM MT</strong></p>
-						</article>
-					</section>
+					<div class="main-column">
 
-					<section class="content-grid">
+						<section class="welcome-row" id="about">
+							<div>
+								<p class="eyebrow">
+									PYROCRAFT<span>•</span>
+									<span id="server-version">JAVA EDITION 26.2</span>
+								</p>
+
+								<h1>A world worth <em>coming back to.</em></h1>
+
+								<p class="welcome-copy">
+									A friendly Vanilla+ server for Minecraft players of all kinds.
+									PyroCraft offers a welcoming community, classic survival gameplay,
+									and a few carefully chosen features that add to the experience
+									without taking away from the vanilla feel. Whether you're here
+									to build, explore, create, or simply hang out with friends,
+									there's a place for you in PyroCraft.
+								</p>
+							</div>
+
+							<div class="server-address" id="connect">
+								<span>Server address</span>
+								<strong id="server-address">pyrocraft.kinetichosting.gg</strong>
+								<button id="copy-address" aria-label="Copy server address">
+									Copy link
+								</button>
+							</div>
+						</section>
+
 						<article class="panel chart-panel" id="activity">
 							<div class="panel-heading">
-								<div><h2>Server activity</h2><p>Players online over the last 24 hours.</p></div>
-								<div class="chart-heading-meta"><span class="chart-legend"><i></i> Players</span><strong id="chart-latest">-- online</strong></div>
+								<div>
+									<h2>Server activity</h2>
+									<p>Players online over the last 24 hours.</p>
+								</div>
+
+								<div class="chart-heading-meta">
+									<span class="chart-legend">
+										<i></i> Players
+									</span>
+
+									<strong id="chart-latest">-- online</strong>
+								</div>
 							</div>
-							<div class="chart-wrap"><svg viewBox="0 0 720 220" role="img" aria-label="A line graph showing server activity over the last 24 hours"><defs><linearGradient id="chart-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#9C91D1" stop-opacity=".34"/><stop offset="1" stop-color="#9C91D1" stop-opacity="0"/></linearGradient></defs><g class="chart-grid"><line x1="0" y1="20" x2="720" y2="20"/><line x1="0" y1="74" x2="720" y2="74"/><line x1="0" y1="128" x2="720" y2="128"/><line x1="0" y1="182" x2="720" y2="182"/></g><g id="chart-y-labels" class="chart-y-labels" aria-hidden="true"/><path id="chart-area" class="chart-area"/><path id="chart-line" class="chart-line"/><g id="chart-points" class="chart-points"/></svg><div id="chart-empty" class="chart-empty">Collecting activity data</div><div class="chart-labels"><span id="chart-start-label">--</span><span id="chart-mid-label">--</span><span id="chart-end-label">Now</span></div></div>
+
+							<div class="chart-wrap">
+								<svg
+									viewBox="0 0 720 220"
+									role="img"
+									aria-label="A line graph showing server activity over the last 24 hours"
+								>
+									<defs>
+										<linearGradient
+											id="chart-fill"
+											x1="0"
+											x2="0"
+											y1="0"
+											y2="1"
+										>
+											<stop
+												offset="0"
+												stop-color="#9C91D1"
+												stop-opacity=".34"
+											/>
+											<stop
+												offset="1"
+												stop-color="#9C91D1"
+												stop-opacity="0"
+											/>
+										</linearGradient>
+									</defs>
+
+									<g class="chart-grid">
+										<line x1="0" y1="20" x2="720" y2="20"/>
+										<line x1="0" y1="74" x2="720" y2="74"/>
+										<line x1="0" y1="128" x2="720" y2="128"/>
+										<line x1="0" y1="182" x2="720" y2="182"/>
+									</g>
+
+									<g id="chart-y-labels" class="chart-y-labels" aria-hidden="true"/>
+									<path id="chart-area" class="chart-area"/>
+									<path id="chart-line" class="chart-line"/>
+									<g id="chart-points" class="chart-points"/>
+								</svg>
+
+								<div id="chart-empty" class="chart-empty">
+									Collecting activity data
+								</div>
+
+								<div class="chart-labels">
+									<span id="chart-start-label">--</span>
+									<span id="chart-mid-label">--</span>
+									<span id="chart-end-label">Now</span>
+								</div>
+							</div>
 						</article>
+
+						<article class="panel updates-panel" id="updates">
+							<div class="panel-heading">
+								<div>
+									<h2>Latest updates</h2>
+									<p>News, changes, and announcements from PyroCraft.</p>
+								</div>
+
+								<a
+									class="text-link"
+									href="https://dc.gg/pyrocraft"
+									target="_blank"
+									rel="noreferrer"
+								>
+									See more updates on our discord <span>↗</span>
+								</a>
+							</div>
+
+							<section class="updates-card panel" id="updates">
+								<div class="panel-heading">
+									<div>
+										<h2>Latest updates</h2>
+										<p>What's happening on PyroCraft.</p>
+									</div>
+									<button class="text-link" id="view-updates" type="button">
+										View all <span>→</span>
+									</button>
+								</div>
+
+								<div id="latest-updates" class="latest-updates">
+									<div class="empty-state">Loading updates...</div>
+								</div>
+							</section>
+
+
+
+						</article>
+
+					</div>
+
+
+					<aside class="side-column">
 
 						<article class="panel activity-panel" id="players">
-							<div class="panel-heading"><div><h2>Online now <span id="online-count" class="count-badge">Unavailable</span></h2><p>Players currently exploring.</p><p class="stats-note">Online user stats may not be 100% up to date.</p></div><a class="text-link" href="#players">View all <span>→</span></a></div>
+							<div class="panel-heading">
+								<div>
+									<h2>
+										Online now
+										<span id="online-count" class="count-badge">
+											Unavailable
+										</span>
+									</h2>
+
+									<p>Players currently exploring.</p>
+
+									<p class="stats-note">
+										Online user stats may not be 100% up to date.
+									</p>
+								</div>
+
+							</div>
+
 							<div class="activity-list" id="player-list">
-								<div class="empty-state">Player data unavailable</div>
+								<div class="empty-state">
+									Player data unavailable
+								</div>
+							</div>
+							<div class="plus-more" id="plus-more"></div>
+
+						</article>
+
+
+						<article class="community-card">
+							<p>Stay in the loop</p>
+
+							<div>
+								<a
+									href="https://dc.gg/pyrocraft"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<span class="community-icon discord-icon">◌</span>
+									Discord
+								</a>
+
+								<a
+									href="https://youtube.com/@kevopyro"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<span class="community-icon youtube-icon">▶</span>
+									YouTube
+								</a>
 							</div>
 						</article>
-					</section>
+
+
+						<section class="stats-grid" aria-label="Server summary">
+
+							<article class="stat-card">
+								<div class="stat-header">
+									<span>Server uptime</span>
+									<span class="stat-icon green">◷</span>
+								</div>
+
+								<strong class="stat-value">
+									<span id="uptime-value">Collecting data</span>
+								</strong>
+
+								<p class="stat-change">
+									<span id="uptime-detail">Waiting for history</span>
+								</p>
+
+								<div class="progress-track">
+									<span id="uptime-progress" style="width: 0%"></span>
+								</div>
+
+								<p class="progress-label">
+									<span>Uptime history</span>
+									<b id="uptime-period">--</b>
+								</p>
+							</article>
+
+
+							<article class="stat-card location-card">
+								<div class="stat-header">
+									<span>Server location</span>
+									<span class="stat-icon blue">⌖</span>
+								</div>
+
+								<strong class="location-name">Amsterdam</strong>
+
+								<p class="location-detail">
+									Netherlands
+								</p>
+
+								<p class="restart-detail">
+									<span>Daily restart</span>
+									<strong id="restart-time">9:00 PM MT</strong>
+								</p>
+							</article>
+
+						</section>
+
+					</aside>
 
 				</div>
+
 			</main>
 		</div>
 		<div class="easter-egg" id="easter-egg" role="status" aria-live="polite" hidden></div>
@@ -89,6 +288,28 @@
 				<footer class="info-modal-footer"><a href="https://dc.gg/pyrocraft" target="_blank" rel="noreferrer">Don't see a command? Ask us in our Discord! <span aria-hidden="true">↗</span></a></footer>
 			</div>
 		</section>
+		<section class="updates-modal" id="updates-modal" role="dialog" aria-modal="true" aria-labelledby="updates-title" hidden>
+			<div class="updates-modal-backdrop" data-close-updates></div>
+
+			<div class="updates-modal-panel">
+				<header class="updates-modal-header">
+					<div>
+						<p class="eyebrow">PYROCRAFT <span>•</span> UPDATES</p>
+						<h2 id="updates-title">Server updates</h2>
+						<p>News, changes, and announcements from PyroCraft.</p>
+					</div>
+
+					<button class="modal-close" id="close-updates" type="button" aria-label="Close updates">
+						×
+					</button>
+				</header>
+
+				<div id="updates-list" class="updates-list">
+					<div class="empty-state">Loading updates...</div>
+				</div>
+			</div>
+		</section>
+
 		<script src="script.js"></script>
 	</body>
 </html>

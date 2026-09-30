@@ -3,7 +3,12 @@ name: Update Minecraft server stats
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/17 * * * *"
+    - cron: "7,22,37,52 * * * *"
+
+concurrency:
+  group: update-server-stats
+  cancel-in-progress: true
+
 
 permissions:
   contents: write

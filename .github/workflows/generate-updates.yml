@@ -1,0 +1,71 @@
+name: Generate Updates Index
+
+on:
+  push:
+    paths:
+      - "data/updates/**"
+      - ".github/workflows/generate-updates.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate updates.json
+        run: |
+          python3 <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          updates_dir = Path("data/updates")
+          output_file = Path("data/updates.json")
+
+          updates = []
+
+          for file in sorted(updates_dir.glob("*.md"), reverse=True):
+              text = file.read_text(encoding="utf-8")
+
+              metadata = {}
+              body = text
+
+              if text.startswith("---"):
+                  parts = text.split("---", 2)
+
+                  if len(parts) == 3:
+                      frontmatter = parts[1].strip()
+                      body = parts[2].strip()
+
+                      for line in frontmatter.splitlines():
+                          if ":" in line:
+                              key, value = line.split(":", 1)
+                              metadata[key.strip()] = value.strip()
+
+              updates.append({
+                  "file": file.name,
+                  "title": metadata.get("title", file.stem),
+                  "date": metadata.get("date", ""),
+                  "featured": metadata.get("featured", "false").lower() == "true"
+              })
+
+          output_file.write_text(
+              json.dumps(updates, indent=2),
+              encoding="utf-8"
+          )
+          PY
+
+      - name: Commit updates.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/updates.json
+
+          git diff --cached --quiet || git commit -m "Update generated updates index"
+          git push
