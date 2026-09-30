@@ -1,13 +1,26 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-30T07:31:42.892Z",
+  "updatedAt": "2026-09-30T14:12:22.726Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 0,
+    "online": 2,
     "max": 20,
-    "list": []
+    "list": [
+      {
+        "name": "TheGreatZiggy11",
+        "initial": "T",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "LaPingas",
+        "initial": "L",
+        "color": "orange",
+        "location": "Online now"
+      }
+    ]
   },
   "uptime": {
     "percent": 100,
@@ -15,11 +28,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-26T19:28:26.794Z",
-      "players": 4,
-      "online": true
-    },
     {
       "time": "2026-09-26T22:09:41.485Z",
       "players": 4,
@@ -133,6 +141,11 @@
     {
       "time": "2026-09-30T07:31:42.887Z",
       "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-09-30T14:12:22.721Z",
+      "players": 2,
       "online": true
     }
   ]
