@@ -1,15 +1,27 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-30T17:15:56.610Z",
+  "updatedAt": "2026-09-30T20:11:13.773Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 1,
+    "online": 3,
     "max": 20,
     "list": [
       {
+        "name": "chika99",
+        "initial": "C",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
         "name": "kawaiiagu",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "KilianRodin",
         "initial": "K",
         "color": "orange",
         "location": "Online now"
@@ -22,11 +34,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-27T10:56:10.030Z",
-      "players": 0,
-      "online": true
-    },
     {
       "time": "2026-09-27T15:36:29.828Z",
       "players": 2,
@@ -140,6 +147,11 @@
     {
       "time": "2026-09-30T17:15:56.605Z",
       "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-09-30T20:11:13.767Z",
+      "players": 3,
       "online": true
     }
   ]
