@@ -1,6 +1,6 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-30T16:39:17.735Z",
+  "updatedAt": "2026-09-30T17:15:56.610Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
@@ -9,8 +9,8 @@
     "max": 20,
     "list": [
       {
-        "name": "LaPingas",
-        "initial": "L",
+        "name": "kawaiiagu",
+        "initial": "K",
         "color": "orange",
         "location": "Online now"
       }
@@ -22,11 +22,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-27T05:48:45.937Z",
-      "players": 0,
-      "online": true
-    },
     {
       "time": "2026-09-27T10:56:10.030Z",
       "players": 0,
@@ -139,6 +134,11 @@
     },
     {
       "time": "2026-09-30T16:39:17.728Z",
+      "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-09-30T17:15:56.605Z",
       "players": 1,
       "online": true
     }
