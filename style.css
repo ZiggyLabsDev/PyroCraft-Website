@@ -34,8 +34,7 @@ button { border: 0; cursor: pointer; }
 
 /* Base App Shell & Layout Structure */
 .app-shell { min-height: 100vh; }
-.main-content { width: 100%; min-width: 0; }
-
+.main-content { width: 100%; min-width: 0; display: flex; flex-direction: column;}
 .topbar {
 	position: sticky;
 	top: 0;
@@ -91,6 +90,7 @@ button { border: 0; cursor: pointer; }
 	grid-template-columns: minmax(0, 1.55fr) minmax(290px, .85fr);
 	gap: 20px;
 	align-items: start;
+	flex: 1;
 }
 
 .main-column,
@@ -522,4 +522,118 @@ box-shadow: 0 30px 90px rgba(0, 0, 0, .5);
 .player-row strong { 
 	color: #d9e4e1; 
 	font-weight: 700; 
+}
+
+.main-footer {
+	width: 100%;
+	height: 15rem;
+	background-color: var(--panel);
+	border-top: 4px solid var(--line);
+	padding: 0.8rem 5.2%;
+	display: flex;
+	flex-direction: row;
+}
+
+.footer-brand {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.footer-name {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.footer-logo {
+	display: block;
+	width: 60;
+	height: 60px;
+	border-radius: 8px;
+	object-fit: cover;
+	background: var(--orange);
+	border: 1px solid rgba(255, 255, 255, .2);
+	box-shadow: 0 0 0 4px rgba(156, 145, 209, .08);
+}
+
+.footer-brand h1 {
+	font-size: x-large;
+	margin: 0rem 1rem
+}
+
+.footer-brand small {
+	margin: 0rem 1rem;
+}
+
+.spacer {
+	flex: 1;
+}
+
+.footer-links {
+    min-width: 180px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.footer-links h2 {
+    margin: 0 0 15px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+.footer-links a {
+    color: #a9a9b3;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #ff6b35;
+    transform: translateX(4px);
+}
+
+.footer-links li:first-child a {
+    color: #ff6b35;
+    font-weight: 600;
+}
+
+.footer-links li:first-child a:hover {
+    color: #ff8a5c;
+}
+
+@media (max-width: 1100px) {
+	.main-footer {
+		flex-direction: column;
+		align-items: left;
+		gap: 1rem;
+		padding: 1rem 5rem;
+		height: 20rem;
+	}
+	.footer-brand {
+	display: flex;
+	justify-content: left;
+	flex-direction: column;
+	max-width: 336px;
+	}
+	.spacer {
+		flex: 0;
+	}
 }
