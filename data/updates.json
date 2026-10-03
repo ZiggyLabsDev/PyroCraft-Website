@@ -1,14 +1,14 @@
 [
   {
+    "file": "2026-10-3-olympics.md",
+    "title": "THE PYROCRAFT OLYMPICS ARE COMING!",
+    "date": "October 2, 2026",
+    "featured": false
+  },
+  {
     "file": "2026-09-30-welcome.md",
     "title": "The new PyroCraft website is live!",
     "date": "September 30, 2026",
     "featured": false
-  },
-  {
-    "file": "2026-10-3-olympics.md",
-    "title": "THE PYROCRAFT OLYMPICS ARE COMING! ",
-    "date": "October 2, 2026",
-    "featured": true
   }
 ]
