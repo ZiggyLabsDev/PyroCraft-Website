@@ -1,22 +1,28 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-09-30T22:27:08.057Z",
+  "updatedAt": "2026-10-03T13:39:02.463Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 2,
+    "online": 3,
     "max": 20,
     "list": [
       {
-        "name": "FroggyFieldz",
-        "initial": "F",
+        "name": "KevoPyro",
+        "initial": "K",
         "color": "orange",
         "location": "Online now"
       },
       {
-        "name": "kawaiiagu",
-        "initial": "K",
+        "name": "Br00djeK1pc0rn",
+        "initial": "B",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "Yappolina",
+        "initial": "Y",
         "color": "orange",
         "location": "Online now"
       }
@@ -28,86 +34,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-27T18:01:34.688Z",
-      "players": 10,
-      "online": true
-    },
-    {
-      "time": "2026-09-27T19:16:27.104Z",
-      "players": 6,
-      "online": true
-    },
-    {
-      "time": "2026-09-27T22:22:12.854Z",
-      "players": 2,
-      "online": true
-    },
-    {
-      "time": "2026-09-28T01:04:13.856Z",
-      "players": 1,
-      "online": true
-    },
-    {
-      "time": "2026-09-28T06:49:06.866Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-09-28T14:14:51.496Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-09-28T14:40:47.123Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-09-28T14:45:19.661Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-09-28T20:51:26.340Z",
-      "players": 6,
-      "online": true
-    },
-    {
-      "time": "2026-09-29T00:51:48.466Z",
-      "players": 1,
-      "online": true
-    },
-    {
-      "time": "2026-09-29T06:39:45.017Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-09-29T13:24:32.954Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-09-29T18:50:29.239Z",
-      "players": 1,
-      "online": true
-    },
-    {
-      "time": "2026-09-29T19:26:51.241Z",
-      "players": 1,
-      "online": true
-    },
-    {
-      "time": "2026-09-29T22:45:21.513Z",
-      "players": 1,
-      "online": true
-    },
-    {
-      "time": "2026-09-30T01:39:23.751Z",
-      "players": 0,
-      "online": true
-    },
     {
       "time": "2026-09-30T07:31:42.887Z",
       "players": 0,
@@ -146,6 +72,86 @@
     {
       "time": "2026-09-30T22:27:08.052Z",
       "players": 2,
+      "online": true
+    },
+    {
+      "time": "2026-10-01T00:29:09.339Z",
+      "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-01T06:27:24.306Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-01T13:49:21.544Z",
+      "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-01T19:04:47.987Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-01T23:07:04.643Z",
+      "players": 2,
+      "online": true
+    },
+    {
+      "time": "2026-10-02T02:10:23.246Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-02T08:37:57.569Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-02T15:04:06.972Z",
+      "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-02T15:33:03.020Z",
+      "players": 3,
+      "online": true
+    },
+    {
+      "time": "2026-10-02T16:36:34.108Z",
+      "players": 2,
+      "online": true
+    },
+    {
+      "time": "2026-10-02T19:34:03.761Z",
+      "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-02T19:53:24.213Z",
+      "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-02T23:42:21.862Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-03T02:22:22.487Z",
+      "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-03T08:31:08.763Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-03T13:39:02.458Z",
+      "players": 3,
       "online": true
     }
   ]

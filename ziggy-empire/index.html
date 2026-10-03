@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="The Official Constitution of the Ziggy Empire — The Supreme Law and Founding Charter of the Realm."
+    >
+
+    <title>Constitution of the Ziggy Empire</title>
+
+    <style>
+        /* =========================================================
+           ZIGGY EMPIRE
+           BLACK / GOLD / CRIMSON IMPERIAL THEME
+           ========================================================= */
+
+        :root {
+            --black: #050505;
+            --black-2: #080808;
+            --black-3: #0d0d0d;
+
+            --panel: #111111;
+            --panel-2: #151515;
+            --panel-light: #1b1b1b;
+
+            --gold: #d4af37;
+            --gold-light: #f1d675;
+            --gold-bright: #ffe8a0;
+            --gold-dark: #806515;
+
+            --red: #9e2929;
+            --red-light: #d94a4a;
+            --red-dark: #421313;
+
+            --white: #f2f0e9;
+            --text: #d7d4cb;
+            --muted: #96938b;
+
+            --border: rgba(212, 175, 55, 0.20);
+            --border-strong: rgba(212, 175, 55, 0.45);
+
+            --shadow:
+                0 20px 50px rgba(0, 0, 0, 0.65),
+                0 4px 12px rgba(0, 0, 0, 0.45);
+
+            --radius: 10px;
+        }
+
+        /* =========================================================
+           RESET
+           ========================================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 30px;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    rgba(212, 175, 55, 0.055),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    135deg,
+                    #030303 0%,
+                    #0a0a0a 50%,
+                    #050505 100%
+                );
+
+            color: var(--text);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            line-height: 1.75;
+
+            overflow-x: hidden;
+        }
+
+        /* Very subtle background texture */
+        body::before {
+            content: "";
+
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+            z-index: 999;
+
+            opacity: 0.025;
+
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    #fff 0,
+                    #fff 1px,
+                    transparent 1px,
+                    transparent 4px
+                );
+
+            mix-blend-mode: overlay;
+        }
+
+        ::selection {
+            background: rgba(212, 175, 55, 0.25);
+            color: #fff;
+        }
+
+        /* =========================================================
+           TOP GOLD LINE
+           ========================================================= */
+
+        .imperial-line {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            height: 3px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent 0%,
+                    var(--gold-dark) 15%,
+                    var(--gold-light) 50%,
+                    var(--gold-dark) 85%,
+                    transparent 100%
+                );
+
+            box-shadow:
+                0 0 12px rgba(212, 175, 55, 0.35);
+        }
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+
+        header {
+            position: relative;
+
+            padding: 85px 20px 65px;
+
+            text-align: center;
+
+            border-bottom: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    rgba(15, 15, 15, 0.97),
+                    rgba(5, 5, 5, 0.99)
+                );
+
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+            top: -300px;
+
+            width: 700px;
+            height: 500px;
+
+            transform: translateX(-50%);
+
+            background:
+                radial-gradient(
+                    ellipse,
+                    rgba(212, 175, 55, 0.10),
+                    transparent 65%
+                );
+
+            pointer-events: none;
+        }
+
+        /* =========================================================
+           CROWN
+           ========================================================= */
+
+        .crown {
+            position: relative;
+
+            font-size: 4.4rem;
+            line-height: 1;
+
+            margin-bottom: 24px;
+
+            filter:
+                grayscale(0.15)
+                drop-shadow(
+                    0 0 10px rgba(212, 175, 55, 0.35)
+                );
+
+            animation: crownFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes crownFloat {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        /* =========================================================
+           EYEBROW
+           ========================================================= */
+
+        .eyebrow {
+            position: relative;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+
+            margin-bottom: 15px;
+
+            color: var(--gold);
+
+            font-family:
+                "Trebuchet MS",
+                Arial,
+                sans-serif;
+
+            font-size: 0.7rem;
+            font-weight: bold;
+
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before,
+        .eyebrow::after {
+            content: "";
+
+            width: 38px;
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--gold)
+                );
+        }
+
+        .eyebrow::after {
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--gold),
+                    transparent
+                );
+        }
+
+        /* =========================================================
+           MAIN TITLE
+           ========================================================= */
+
+        h1 {
+            position: relative;
+
+            max-width: 1050px;
+            margin: auto;
+
+            color: var(--gold-light);
+
+            font-size:
+                clamp(2.9rem, 3.5vw, 5.3rem);
+
+            line-height: 1.05;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                0 2px 0 #4a3a0e,
+                0 0 25px rgba(212, 175, 55, 0.12);
+        }
+
+        h1 span {
+            display: block;
+            color: var(--white);
+        }
+
+        /* =========================================================
+           SUBTITLE
+           ========================================================= */
+
+        .subtitle {
+            position: relative;
+
+            max-width: 680px;
+
+            margin: 22px auto 0;
+
+            color: var(--muted);
+
+            font-size: 1.08rem;
+
+            font-style: italic;
+        }
+
+        /* =========================================================
+           ROYAL DECREE BADGE
+           ========================================================= */
+
+        .decree {
+            position: relative;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-top: 28px;
+            padding: 9px 20px;
+
+            color: var(--gold-light);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(212, 175, 55, 0.08),
+                    rgba(212, 175, 55, 0.025)
+                );
+
+            border: 1px solid var(--border-strong);
+
+            border-radius: 4px;
+
+            font-family:
+                "Trebuchet MS",
+                Arial,
+                sans-serif;
+
+            font-size: 0.78rem;
+
+            letter-spacing: 0.5px;
+
+            box-shadow:
+                inset 0 0 15px rgba(212, 175, 55, 0.025);
+        }
+
+        .decree::before {
+            content: "✦";
+
+            color: var(--gold);
+        }
+
+        /* =========================================================
+           MAIN
+           ========================================================= */
+
+        main {
+            width: min(1050px, 92%);
+
+            margin:
+                70px auto
+                100px;
+        }
+
+        /* =========================================================
+           PREAMBLE
+           ========================================================= */
+
+        .preamble-box {
+            position: relative;
+
+            max-width: 850px;
+
+            margin:
+                0 auto
+                60px;
+
+            padding:
+                32px 38px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #151515,
+                    #0b0b0b
+                );
+
+            border:
+                1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+        }
+
+        .preamble-box::before {
+            content: "PREAMBLE";
+
+            position: absolute;
+
+            top: -12px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            padding: 3px 15px;
+
+            color: var(--gold);
+
+            background: var(--black);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 3px;
+
+            font-family:
+                "Trebuchet MS",
+                Arial,
+                sans-serif;
+
+            font-size: 0.65rem;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+        }
+
+        .preamble {
+            color: var(--text);
+            font-size: 1.04rem;
+        }
+
+        /* =========================================================
+           ARTICLE CARDS
+           ========================================================= */
+
+        .article {
+            position: relative;
+
+            margin-bottom: 30px;
+
+            padding:
+                34px 38px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #171717 0%,
+                    #101010 55%,
+                    #0c0c0c 100%
+                );
+
+            border:
+                1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        /* Gold stripe */
+        .article::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+            left: 0;
+
+            width: 3px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    var(--gold-light),
+                    var(--gold-dark)
+                );
+        }
+
+        .article:hover {
+            transform: translateY(-3px);
+
+            border-color: var(--border-strong);
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.72),
+                0 0 25px rgba(212, 175, 55, 0.035);
+        }
+
+        /* =========================================================
+           ARTICLE HEADER
+           ========================================================= */
+
+        .article-header {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+
+            margin-bottom: 25px;
+            padding-bottom: 17px;
+
+            border-bottom:
+                1px solid rgba(212, 175, 55, 0.13);
+        }
+
+        .article-number {
+            flex-shrink: 0;
+
+            display: grid;
+            place-items: center;
+
+            width: 47px;
+            height: 47px;
+
+            color: var(--gold);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(212, 175, 55, 0.13),
+                    rgba(212, 175, 55, 0.025)
+                );
+
+            border:
+                1px solid rgba(212, 175, 55, 0.3);
+
+            border-radius: 5px;
+
+            font-family:
+                "Trebuchet MS",
+                Arial,
+                sans-serif;
+
+            font-size: 0.8rem;
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            box-shadow:
+                inset 0 0 12px rgba(212, 175, 55, 0.025);
+        }
+
+        .article h2 {
+            color: var(--gold-light);
+
+            font-size:
+                clamp(1.35rem, 3vw, 1.75rem);
+
+            line-height: 1.25;
+        }
+
+        .article h2 span {
+            color: var(--white);
+        }
+
+        /* =========================================================
+           SECTIONS
+           ========================================================= */
+
+        .section {
+            margin: 24px 0;
+
+            color: var(--text);
+        }
+
+        .section:first-of-type {
+            margin-top: 0;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-bottom: 7px;
+
+            color: var(--white);
+
+            font-family:
+                "Trebuchet MS",
+                Arial,
+                sans-serif;
+
+            font-size: 0.87rem;
+
+            font-weight: bold;
+
+            letter-spacing: 0.3px;
+        }
+
+        .section-title::before {
+            content: "◆";
+
+            color: var(--gold);
+
+            font-size: 0.4rem;
+        }
+
+        /* =========================================================
+           LISTS
+           ========================================================= */
+
+        ul {
+            list-style: none;
+
+            padding-left: 20px;
+
+            margin-top: 10px;
+        }
+
+        li {
+            position: relative;
+
+            margin: 8px 0;
+
+            padding-left: 18px;
+
+            color: var(--text);
+        }
+
+        li::before {
+            content: "›";
+
+            position: absolute;
+
+            left: 0;
+
+            color: var(--gold);
+
+            font-weight: bold;
+        }
+
+        /* =========================================================
+           STRONG / FINES
+           ========================================================= */
+
+        strong {
+            color: var(--gold-light);
+        }
+
+        .fine {
+            color: #e7bf50;
+
+            font-weight: bold;
+
+            text-shadow:
+                0 0 8px rgba(212, 175, 55, 0.12);
+        }
+
+        /* =========================================================
+           ROYAL ARTICLE
+           ========================================================= */
+
+        .royal {
+            background:
+                linear-gradient(
+                    145deg,
+                    #1a1812 0%,
+                    #12110d 48%,
+                    #0c0c0b 100%
+                );
+
+            border-color:
+                rgba(212, 175, 55, 0.3);
+        }
+
+        .royal::before {
+            background:
+                linear-gradient(
+                    to bottom,
+                    var(--gold-bright),
+                    var(--gold-dark)
+                );
+        }
+
+        /* =========================================================
+           WARNING ARTICLE
+           ========================================================= */
+
+        .warning {
+            background:
+                linear-gradient(
+                    145deg,
+                    #1b1111 0%,
+                    #120d0d 50%,
+                    #0c0a0a 100%
+                );
+
+            border-color:
+                rgba(158, 41, 41, 0.4);
+        }
+
+        .warning::before {
+            background:
+                linear-gradient(
+                    to bottom,
+                    var(--red-light),
+                    var(--red-dark)
+                );
+        }
+
+        .warning .article-number {
+            color: var(--red-light);
+
+            background:
+                rgba(158, 41, 41, 0.08);
+
+            border-color:
+                rgba(158, 41, 41, 0.4);
+        }
+
+        .warning .fine {
+            color: #ff7777;
+
+            text-shadow:
+                0 0 10px rgba(158, 41, 41, 0.25);
+        }
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        footer {
+            position: relative;
+
+            padding: 55px 20px;
+
+            text-align: center;
+
+            border-top:
+                1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #090909,
+                    #030303
+                );
+        }
+
+        footer::before {
+            content: "";
+
+            position: absolute;
+
+            top: -1px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 170px;
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--gold),
+                    transparent
+                );
+        }
+
+        .crown-small {
+            font-size: 1.7rem;
+
+            margin-bottom: 10px;
+
+            filter:
+                drop-shadow(
+                    0 0 7px rgba(212, 175, 55, 0.3)
+                );
+        }
+
+        footer strong {
+            display: block;
+
+            color: var(--gold);
+
+            font-family:
+                "Trebuchet MS",
+                Arial,
+                sans-serif;
+
+            font-size: 0.88rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        footer p:last-of-type {
+            margin-top: 5px;
+
+            color: var(--muted);
+
+            font-size: 0.84rem;
+        }
+
+        .seal {
+            margin-top: 20px;
+
+            color: #55534e;
+
+            font-family:
+                "Trebuchet MS",
+                Arial,
+                sans-serif;
+
+            font-size: 0.62rem;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding:
+                    70px 18px
+                    55px;
+            }
+
+            .crown {
+                font-size: 3.6rem;
+            }
+
+            h1 {
+                letter-spacing: 1.5px;
+            }
+
+            .subtitle {
+                font-size: 0.97rem;
+            }
+
+            .decree {
+                max-width: 100%;
+
+                font-size: 0.73rem;
+
+                padding:
+                    9px 14px;
+            }
+
+            main {
+                width: 94%;
+
+                margin-top: 55px;
+            }
+
+            .preamble-box {
+                padding:
+                    28px 22px;
+
+                margin-bottom: 45px;
+            }
+
+            .article {
+                padding:
+                    27px 22px;
+
+                margin-bottom: 23px;
+            }
+
+            .article-header {
+                align-items: flex-start;
+
+                gap: 13px;
+            }
+
+            .article-number {
+                width: 42px;
+                height: 42px;
+
+                font-size: 0.7rem;
+            }
+
+            .article h2 {
+                font-size: 1.3rem;
+            }
+
+            .section {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            .eyebrow {
+                letter-spacing: 2px;
+            }
+
+            .eyebrow::before,
+            .eyebrow::after {
+                width: 20px;
+            }
+
+            .article {
+                padding:
+                    23px 18px;
+            }
+
+            ul {
+                padding-left: 12px;
+            }
+        }
+
+        /* =========================================================
+           REDUCED MOTION
+           ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="imperial-line"></div>
+
+
+<!-- =============================================================
+     HEADER
+     ============================================================= -->
+
+<header>
+
+    <div class="crown">👑</div>
+
+    <div class="eyebrow">
+        Imperial Charter
+    </div>
+
+    <h1>
+        The Official Constitution
+        <span>of the Ziggy Empire</span>
+    </h1>
+
+    <p class="subtitle">
+        The Supreme Law and Founding Charter of the Realm
+    </p>
+
+    <div class="decree">
+        Decreed by His Majesty, King TheGreatZiggy
+    </div>
+
+</header>
+
+
+<!-- =============================================================
+     MAIN CONTENT
+     ============================================================= -->
+
+<main>
+
+
+    <!-- PREAMBLE -->
+
+    <div class="preamble-box">
+
+        <p class="preamble">
+            By royal decree, the following articles establish the laws,
+            rights, duties, and regulations governing all citizens and
+            visitors of the glorious Ziggy Empire.
+        </p>
+
+    </div>
+
+
+    <!-- =========================================================
+         ARTICLE 1
+         ========================================================= -->
+
+    <section class="article">
+
+        <div class="article-header">
+
+            <div class="article-number">
+                I
+            </div>
+
+            <h2>
+                Article 1 —
+                <span>Citizenship</span>
+            </h2>
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                The Process
+            </span>
+
+            Citizenship is gained through a simple two-step process:
+
+            <ul>
+
+                <li>
+                    Sign the physical book included in your free starter
+                    kit shulker.
+                </li>
+
+                <li>
+                    Personally hand the signed book to the great, fair,
+                    and hard-working King, TheGreatZiggy.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ARTICLE 2
+         ========================================================= -->
+
+    <section class="article royal">
+
+        <div class="article-header">
+
+            <div class="article-number">
+                II
+            </div>
+
+            <h2>
+                Article 2 —
+                <span>Housing &amp; Property Rights</span>
+            </h2>
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Imperial Housing
+            </span>
+
+            Citizens have the right to occupy houses built within the
+            Ziggy Empire, provided they keep up with their monthly payment.
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Construction Restriction
+            </span>
+
+            All housing and districts are constructed exclusively by the King.
+            No citizen may build or structurally modify any house or building
+            without direct Royal Approval.
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                External Property
+            </span>
+
+            Citizens may own private land outside the Empire, provided it is
+            under 30 chunks in size.
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Land Registration
+            </span>
+
+            Any land purchased outside the empire must be registered in the
+            official database. If the Empire discovers unregistered land owned
+            by a member, that member will be kicked from the Empire permanently.
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Royal Exemption
+            </span>
+
+            King TheGreatZiggy is entirely exempt from all Article 2 restrictions.
+            The King holds sovereign rights to own infinite land, build anywhere
+            at will, and is completely immune to database registration requirements.
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ARTICLE 3
+         ========================================================= -->
+
+    <section class="article">
+
+        <div class="article-header">
+
+            <div class="article-number">
+                III
+            </div>
+
+            <h2>
+                Article 3 —
+                <span>Law &amp; Order</span>
+            </h2>
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Prohibited Actions
+            </span>
+
+            Griefing, stealing, logout traps, and general trapping are
+            strictly forbidden inside the Ziggy Empire.
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Criminal Fines
+            </span>
+
+            Any member caught violating these rules must pay a
+            <span class="fine">$5,000 fee to the victim</span>
+            and a
+            <span class="fine">$1,000 fee to the Empire.</span>
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                The Royal Multiplier
+            </span>
+
+            If any illegal act has been committed against the King or any
+            member of royal status, the fine increases by 5 times:
+
+            <ul>
+
+                <li>
+                    $25,000 to the King
+                </li>
+
+                <li>
+                    $5,000 to the Empire
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Refusal to Pay
+            </span>
+
+            If a citizen refuses or is unable to pay a fine within 48 hours,
+            their property inside the Empire might be seized by the crown.
+
+            Additionally, they must forfeit an Ender Pearl to the Empire
+            (to be provided by the Empire if the citizen does not own one).
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ARTICLE 4
+         ========================================================= -->
+
+    <section class="article">
+
+        <div class="article-header">
+
+            <div class="article-number">
+                IV
+            </div>
+
+            <h2>
+                Article 4 —
+                <span>Zoning &amp; Infrastructure</span>
+            </h2>
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Vertical Limits
+            </span>
+
+            No building or modification inside the Empire may exceed a height
+            of <strong>Y-level 120</strong> or dig deeper than
+            <strong>Y-level 50</strong> without a Royal Permit.
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Basements &amp; Tunneling
+            </span>
+
+            Citizens may dig basements directly beneath their designated plots.
+            However, tunneling into a neighbor's plot or beneath public roads
+            is classified as trespassing.
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ARTICLE 5
+         ========================================================= -->
+
+    <section class="article">
+
+        <div class="article-header">
+
+            <div class="article-number">
+                V
+            </div>
+
+            <h2>
+                Article 5 —
+                <span>Foreign Policy &amp; National Security</span>
+            </h2>
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Border Control
+            </span>
+
+            Non-citizens are welcome to visit the Capital but must deposit all
+            weapons in a designated Ender Chest at the border gate.
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                State of War
+            </span>
+
+            Upon a formal declaration of war by the King, all able-bodied citizens
+            must defend the Empire or supply vital resources (food, armor, potions)
+            to the Royal Military.
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Foreign Alliances
+            </span>
+
+            No citizen may form an independent alliance or treaty with outside
+            factions without the express written permission of King TheGreatZiggy.
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ARTICLE 6
+         ========================================================= -->
+
+    <section class="article royal">
+
+        <div class="article-header">
+
+            <div class="article-number">
+                VI
+            </div>
+
+            <h2>
+                Article 6 —
+                <span>Lèse-Majesté (Disrespect of the King)</span>
+            </h2>
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                The Law
+            </span>
+
+            Any act of disrespect, treason, insolence, or impersonation directed
+            toward the one true ruler, King TheGreatZiggy, is strictly forbidden
+            within the borders of the Empire and its official communication channels.
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                First Offense
+            </span>
+
+            The offender must immediately hand over one Ender Pearl to the Royal
+            Treasury as a token of submission and pay a massive
+            <span class="fine">$10,000 imperial fine.</span>
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Repeat Offenses
+            </span>
+
+            If a citizen continues to show disrespect, they will face permanent
+            banishment from the Empire.
+
+            All their property up to Y-level 120 will be permanently seized by the crown.
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ARTICLE 7
+         ========================================================= -->
+
+    <section class="article">
+
+        <div class="article-header">
+
+            <div class="article-number">
+                VII
+            </div>
+
+            <h2>
+                Article 7 —
+                <span>District Zoning Laws</span>
+            </h2>
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Magic Town Amethyst Rights
+            </span>
+
+            Amethyst blocks, budding amethyst, and sculk materials are strictly
+            reserved for the paths and aesthetics of Magic Town.
+
+            No citizen may use these blocks for personal housing construction
+            without a Royal Permit.
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                Beach City Customs
+            </span>
+
+            To maintain the weapon-free zone in the Capital under Article 5,
+            Beach City docks will serve as the primary trade port.
+
+            All external merchants must unload cargo there under the supervision
+            of a Royal Guard.
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ARTICLE 8
+         ========================================================= -->
+
+    <section class="article warning">
+
+        <div class="article-header">
+
+            <div class="article-number">
+                VIII
+            </div>
+
+            <h2>
+                Article 8 —
+                <span>The Deep Dark Classification Act</span>
+            </h2>
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                The Forbidden Zone
+            </span>
+
+            The deep dark biome discovered under the city is classified as a
+            Royal Sanctuary.
+
+            Citizens are strictly forbidden from entering, exploring, or mining
+            within <strong>500 blocks</strong> of the Capital’s underground coordinates.
+
+        </div>
+
+
+        <div class="section">
+
+            <span class="section-title">
+                The Warden Protocol
+            </span>
+
+            If a citizen accidentally breaches the Y-50 ceiling and activates
+            a Sculk Shrieker, they are legally liable for any server panic caused.
+
+            They must pay a
+            <span class="fine">$10,000 fine</span>
+            for endangering the crown.
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =============================================================
+     FOOTER
+     ============================================================= -->
+
+<footer>
+
+    <div class="crown-small">
+        👑
+    </div>
+
+    <p>
+        <strong>
+            The Ziggy Empire
+        </strong>
+    </p>
+
+    <p>
+        By Order of His Majesty, King TheGreatZiggy
+    </p>
+
+    <div class="seal">
+        ✦ Sealed Under Imperial Authority ✦
+    </div>
+
+</footer>
+
+
+</body>
+</html>
