@@ -1,13 +1,26 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-04T08:51:01.325Z",
+  "updatedAt": "2026-10-04T14:27:43.522Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 0,
+    "online": 2,
     "max": 20,
-    "list": []
+    "list": [
+      {
+        "name": "Yappolina",
+        "initial": "Y",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "KevoPyro",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
+      }
+    ]
   },
   "uptime": {
     "percent": 100,
@@ -15,11 +28,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-30T20:11:13.767Z",
-      "players": 3,
-      "online": true
-    },
     {
       "time": "2026-09-30T20:57:35.376Z",
       "players": 2,
@@ -133,6 +141,11 @@
     {
       "time": "2026-10-04T08:51:01.320Z",
       "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-04T14:27:43.517Z",
+      "players": 2,
       "online": true
     }
   ]
