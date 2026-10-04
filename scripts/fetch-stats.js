@@ -28,7 +28,7 @@ function addHistoryPoint(history, players, online) {
 		players,
 		online,
 	}];
-	return next.slice(-24);
+	return next.slice(-96);
 }
 
 function calculateUptime(history) {
@@ -38,7 +38,7 @@ function calculateUptime(history) {
 	return {
 		percent: Number(percent.toFixed(1)),
 		detail: `Based on ${checks.length} check${checks.length === 1 ? "" : "s"}`,
-		period: "Last 24 checks",
+		period: `Last ${checks.length} checks`,
 	};
 }
 
