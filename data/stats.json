@@ -1,6 +1,6 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-04T14:27:43.522Z",
+  "updatedAt": "2026-10-04T18:19:53.093Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
@@ -9,8 +9,8 @@
     "max": 20,
     "list": [
       {
-        "name": "Yappolina",
-        "initial": "Y",
+        "name": "chika99",
+        "initial": "C",
         "color": "orange",
         "location": "Online now"
       },
@@ -28,11 +28,6 @@
     "period": "Last 24 checks"
   },
   "history": [
-    {
-      "time": "2026-09-30T20:57:35.376Z",
-      "players": 2,
-      "online": true
-    },
     {
       "time": "2026-09-30T22:27:08.052Z",
       "players": 2,
@@ -145,6 +140,11 @@
     },
     {
       "time": "2026-10-04T14:27:43.517Z",
+      "players": 2,
+      "online": true
+    },
+    {
+      "time": "2026-10-04T18:19:53.024Z",
       "players": 2,
       "online": true
     }
