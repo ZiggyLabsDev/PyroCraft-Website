@@ -1,16 +1,22 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-07T18:51:04.840Z",
+  "updatedAt": "2026-10-07T23:20:58.082Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 1,
+    "online": 2,
     "max": 20,
     "list": [
       {
-        "name": "kawaiiagu",
-        "initial": "K",
+        "name": "FroggyFieldz",
+        "initial": "F",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "TheGreatZiggy11",
+        "initial": "T",
         "color": "orange",
         "location": "Online now"
       }
@@ -18,8 +24,8 @@
   },
   "uptime": {
     "percent": 100,
-    "detail": "Based on 38 checks",
-    "period": "Last 38 checks"
+    "detail": "Based on 39 checks",
+    "period": "Last 39 checks"
   },
   "history": [
     {
@@ -210,6 +216,11 @@
     {
       "time": "2026-10-07T18:51:04.835Z",
       "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-07T23:20:58.077Z",
+      "players": 2,
       "online": true
     }
   ]
