@@ -1,18 +1,25 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-11T02:14:31.196Z",
+  "updatedAt": "2026-10-11T09:00:39.848Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 0,
+    "online": 1,
     "max": 20,
-    "list": []
+    "list": [
+      {
+        "name": "Br00djeK1pc0rn",
+        "initial": "B",
+        "color": "orange",
+        "location": "Online now"
+      }
+    ]
   },
   "uptime": {
     "percent": 100,
-    "detail": "Based on 54 checks",
-    "period": "Last 54 checks"
+    "detail": "Based on 55 checks",
+    "period": "Last 55 checks"
   },
   "history": [
     {
@@ -283,6 +290,11 @@
     {
       "time": "2026-10-11T02:14:31.191Z",
       "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-11T09:00:39.842Z",
+      "players": 1,
       "online": true
     }
   ]
