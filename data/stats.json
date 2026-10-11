@@ -1,16 +1,22 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-11T09:00:39.848Z",
+  "updatedAt": "2026-10-11T15:33:46.091Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 1,
+    "online": 2,
     "max": 20,
     "list": [
       {
-        "name": "Br00djeK1pc0rn",
-        "initial": "B",
+        "name": "Yappolina",
+        "initial": "Y",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "JeBroSnad",
+        "initial": "J",
         "color": "orange",
         "location": "Online now"
       }
@@ -18,8 +24,8 @@
   },
   "uptime": {
     "percent": 100,
-    "detail": "Based on 55 checks",
-    "period": "Last 55 checks"
+    "detail": "Based on 56 checks",
+    "period": "Last 56 checks"
   },
   "history": [
     {
@@ -295,6 +301,11 @@
     {
       "time": "2026-10-11T09:00:39.842Z",
       "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-11T15:33:46.084Z",
+      "players": 2,
       "online": true
     }
   ]
