@@ -1,18 +1,31 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-13T16:21:15.185Z",
+  "updatedAt": "2026-10-13T21:21:27.747Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 0,
+    "online": 2,
     "max": 20,
-    "list": []
+    "list": [
+      {
+        "name": "TheGreatZiggy11",
+        "initial": "T",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "FroggyFieldz",
+        "initial": "F",
+        "color": "orange",
+        "location": "Online now"
+      }
+    ]
   },
   "uptime": {
     "percent": 100,
-    "detail": "Based on 64 checks",
-    "period": "Last 64 checks"
+    "detail": "Based on 65 checks",
+    "period": "Last 65 checks"
   },
   "history": [
     {
@@ -333,6 +346,11 @@
     {
       "time": "2026-10-13T16:21:15.112Z",
       "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-13T21:21:27.744Z",
+      "players": 2,
       "online": true
     }
   ]
