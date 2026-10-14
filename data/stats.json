@@ -1,6 +1,6 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-14T00:23:11.290Z",
+  "updatedAt": "2026-10-14T05:17:39.767Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
@@ -11,8 +11,8 @@
   },
   "uptime": {
     "percent": 100,
-    "detail": "Based on 66 checks",
-    "period": "Last 66 checks"
+    "detail": "Based on 67 checks",
+    "period": "Last 67 checks"
   },
   "history": [
     {
@@ -342,6 +342,11 @@
     },
     {
       "time": "2026-10-14T00:23:11.242Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-14T05:17:39.689Z",
       "players": 0,
       "online": true
     }
