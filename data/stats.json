@@ -1,18 +1,25 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-14T15:13:09.918Z",
+  "updatedAt": "2026-10-14T19:27:51.847Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 0,
+    "online": 1,
     "max": 20,
-    "list": []
+    "list": [
+      {
+        "name": "kawaiiagu",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
+      }
+    ]
   },
   "uptime": {
     "percent": 100,
-    "detail": "Based on 69 checks",
-    "period": "Last 69 checks"
+    "detail": "Based on 70 checks",
+    "period": "Last 70 checks"
   },
   "history": [
     {
@@ -358,6 +365,11 @@
     {
       "time": "2026-10-14T15:13:09.914Z",
       "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-14T19:27:51.843Z",
+      "players": 1,
       "online": true
     }
   ]
