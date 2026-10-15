@@ -1,18 +1,31 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-15T14:53:18.274Z",
+  "updatedAt": "2026-10-15T19:02:23.244Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 0,
+    "online": 2,
     "max": 20,
-    "list": []
+    "list": [
+      {
+        "name": "kawaiiagu",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "chika99",
+        "initial": "C",
+        "color": "orange",
+        "location": "Online now"
+      }
+    ]
   },
   "uptime": {
     "percent": 100,
-    "detail": "Based on 75 checks",
-    "period": "Last 75 checks"
+    "detail": "Based on 76 checks",
+    "period": "Last 76 checks"
   },
   "history": [
     {
@@ -388,6 +401,11 @@
     {
       "time": "2026-10-15T14:53:18.269Z",
       "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-15T19:02:23.238Z",
+      "players": 2,
       "online": true
     }
   ]
