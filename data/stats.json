@@ -1,11 +1,11 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-17T10:54:08.924Z",
+  "updatedAt": "2026-10-17T14:09:46.227Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 1,
+    "online": 4,
     "max": 20,
     "list": [
       {
@@ -13,13 +13,31 @@
         "initial": "B",
         "color": "orange",
         "location": "Online now"
+      },
+      {
+        "name": "KilianRodin",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "LaPingas",
+        "initial": "L",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "FroggyFieldz",
+        "initial": "F",
+        "color": "orange",
+        "location": "Online now"
       }
     ]
   },
   "uptime": {
     "percent": 100,
-    "detail": "Based on 87 checks",
-    "period": "Last 87 checks"
+    "detail": "Based on 88 checks",
+    "period": "Last 88 checks"
   },
   "history": [
     {
@@ -455,6 +473,11 @@
     {
       "time": "2026-10-17T10:54:08.918Z",
       "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-17T14:09:46.024Z",
+      "players": 4,
       "online": true
     }
   ]
