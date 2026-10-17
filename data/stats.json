@@ -1,16 +1,28 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-17T17:16:44.189Z",
+  "updatedAt": "2026-10-17T19:27:47.577Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 4,
+    "online": 9,
     "max": 20,
     "list": [
       {
+        "name": "kawaiiagu",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
         "name": "JeBroSnad",
         "initial": "J",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "KevoPyro",
+        "initial": "K",
         "color": "orange",
         "location": "Online now"
       },
@@ -21,14 +33,32 @@
         "location": "Online now"
       },
       {
-        "name": "FroggyFieldz",
-        "initial": "F",
+        "name": "TheGreatZiggy11",
+        "initial": "T",
         "color": "orange",
         "location": "Online now"
       },
       {
-        "name": "TheGreatZiggy11",
-        "initial": "T",
+        "name": "chika99",
+        "initial": "C",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "KilianRodin",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "Yappolina",
+        "initial": "Y",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "JustErikNL",
+        "initial": "J",
         "color": "orange",
         "location": "Online now"
       }
@@ -36,8 +66,8 @@
   },
   "uptime": {
     "percent": 100,
-    "detail": "Based on 89 checks",
-    "period": "Last 89 checks"
+    "detail": "Based on 90 checks",
+    "period": "Last 90 checks"
   },
   "history": [
     {
@@ -483,6 +513,11 @@
     {
       "time": "2026-10-17T17:16:44.185Z",
       "players": 4,
+      "online": true
+    },
+    {
+      "time": "2026-10-17T19:27:47.573Z",
+      "players": 9,
       "online": true
     }
   ]
