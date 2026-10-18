@@ -1,25 +1,18 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-17T23:29:57.528Z",
+  "updatedAt": "2026-10-18T01:27:54.545Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 1,
+    "online": 0,
     "max": 20,
-    "list": [
-      {
-        "name": "TheGreatZiggy11",
-        "initial": "T",
-        "color": "orange",
-        "location": "Online now"
-      }
-    ]
+    "list": []
   },
   "uptime": {
     "percent": 100,
-    "detail": "Based on 92 checks",
-    "period": "Last 92 checks"
+    "detail": "Based on 93 checks",
+    "period": "Last 93 checks"
   },
   "history": [
     {
@@ -480,6 +473,11 @@
     {
       "time": "2026-10-17T23:29:57.523Z",
       "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-18T01:27:54.539Z",
+      "players": 0,
       "online": true
     }
   ]
