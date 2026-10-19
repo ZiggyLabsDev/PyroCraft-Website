@@ -1,20 +1,13 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-19T00:26:17.776Z",
+  "updatedAt": "2026-10-19T05:11:54.861Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 1,
+    "online": 0,
     "max": 20,
-    "list": [
-      {
-        "name": "FroggyFieldz",
-        "initial": "F",
-        "color": "orange",
-        "location": "Online now"
-      }
-    ]
+    "list": []
   },
   "uptime": {
     "percent": 100,
@@ -22,11 +15,6 @@
     "period": "Last 96 checks"
   },
   "history": [
-    {
-      "time": "2026-10-01T23:07:04.643Z",
-      "players": 2,
-      "online": true
-    },
     {
       "time": "2026-10-02T02:10:23.246Z",
       "players": 0,
@@ -500,6 +488,11 @@
     {
       "time": "2026-10-19T00:26:17.770Z",
       "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-19T05:11:54.857Z",
+      "players": 0,
       "online": true
     }
   ]
