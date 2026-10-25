@@ -1,13 +1,32 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-25T09:43:45.448Z",
+  "updatedAt": "2026-10-25T13:57:13.801Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.2",
   "online": true,
   "players": {
-    "online": 0,
+    "online": 3,
     "max": 20,
-    "list": []
+    "list": [
+      {
+        "name": "chika99",
+        "initial": "C",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "Br00djeK1pc0rn",
+        "initial": "B",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "kawaiiagu",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
+      }
+    ]
   },
   "uptime": {
     "percent": 100,
@@ -15,11 +34,6 @@
     "period": "Last 96 checks"
   },
   "history": [
-    {
-      "time": "2026-10-08T21:34:41.382Z",
-      "players": 3,
-      "online": true
-    },
     {
       "time": "2026-10-09T01:23:27.245Z",
       "players": 0,
@@ -493,6 +507,11 @@
     {
       "time": "2026-10-25T09:43:45.386Z",
       "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-25T13:57:13.796Z",
+      "players": 3,
       "online": true
     }
   ]
