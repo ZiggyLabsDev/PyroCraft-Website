@@ -714,3 +714,8 @@ box-shadow: 0 30px 90px rgba(0, 0, 0, .5);
 		flex: 0;
 	}
 }
+.site-nav { display: flex; align-items: center; gap: 6px; margin-right: auto; margin-left: 28px; }
+.site-nav a { padding: 6px 12px; border-radius: 8px; color: #adbdc1; font-size: 13px; font-weight: 600; transition: color .15s, background .15s; }
+.site-nav a:hover { color: #f4f7f4; background: rgba(125, 151, 159, .12); }
+.site-nav a[aria-current="page"] { color: #f4f7f4; background: rgba(125, 151, 159, .2); }
+@media (max-width: 520px) { .site-nav { margin-left: 10px; gap: 2px; } .site-nav a { padding: 6px 8px; } .brand span { display: none; } }
