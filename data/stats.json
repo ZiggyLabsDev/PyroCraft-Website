@@ -1,13 +1,20 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-31T18:51:23.957Z",
+  "updatedAt": "2026-10-31T21:57:10.509Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.3",
   "online": true,
   "players": {
-    "online": 0,
+    "online": 1,
     "max": 20,
-    "list": []
+    "list": [
+      {
+        "name": "Dirtblok1",
+        "initial": "D",
+        "color": "orange",
+        "location": "Online now"
+      }
+    ]
   },
   "uptime": {
     "percent": 100,
@@ -15,11 +22,6 @@
     "period": "Last 96 checks"
   },
   "history": [
-    {
-      "time": "2026-10-15T14:53:18.269Z",
-      "players": 0,
-      "online": true
-    },
     {
       "time": "2026-10-15T19:02:23.238Z",
       "players": 2,
@@ -493,6 +495,11 @@
     {
       "time": "2026-10-31T18:51:23.952Z",
       "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-31T21:57:10.504Z",
+      "players": 1,
       "online": true
     }
   ]
