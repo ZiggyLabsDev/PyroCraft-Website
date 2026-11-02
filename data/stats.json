@@ -1,26 +1,13 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-10-27T22:22:22.511Z",
+  "updatedAt": "2026-11-02T02:20:37.738Z",
   "serverAddress": "172.241.3.141:25573",
-  "version": "Paper 26.2",
+  "version": "Paper 26.3",
   "online": true,
   "players": {
-    "online": 2,
+    "online": 0,
     "max": 20,
-    "list": [
-      {
-        "name": "kawaiiagu",
-        "initial": "K",
-        "color": "orange",
-        "location": "Online now"
-      },
-      {
-        "name": "chika99",
-        "initial": "C",
-        "color": "orange",
-        "location": "Online now"
-      }
-    ]
+    "list": []
   },
   "uptime": {
     "percent": 100,
@@ -28,131 +15,6 @@
     "period": "Last 96 checks"
   },
   "history": [
-    {
-      "time": "2026-10-11T19:40:57.225Z",
-      "players": 6,
-      "online": true
-    },
-    {
-      "time": "2026-10-11T23:12:46.242Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-12T02:28:22.785Z",
-      "players": 2,
-      "online": true
-    },
-    {
-      "time": "2026-10-12T09:40:45.872Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-12T19:23:05.813Z",
-      "players": 2,
-      "online": true
-    },
-    {
-      "time": "2026-10-13T01:35:24.953Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-13T08:23:23.732Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-13T16:21:15.112Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-13T21:21:27.744Z",
-      "players": 2,
-      "online": true
-    },
-    {
-      "time": "2026-10-14T00:23:11.242Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-14T05:17:39.689Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-14T10:18:48.586Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-14T15:13:09.914Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-14T19:27:51.843Z",
-      "players": 1,
-      "online": true
-    },
-    {
-      "time": "2026-10-14T22:33:20.175Z",
-      "players": 1,
-      "online": true
-    },
-    {
-      "time": "2026-10-15T00:47:48.851Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-15T05:19:09.599Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-15T10:03:44.245Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-15T14:53:18.269Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-15T19:02:23.238Z",
-      "players": 2,
-      "online": true
-    },
-    {
-      "time": "2026-10-15T22:08:13.283Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-16T00:28:02.897Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-16T04:53:49.005Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-16T09:39:23.332Z",
-      "players": 0,
-      "online": true
-    },
-    {
-      "time": "2026-10-16T14:20:38.990Z",
-      "players": 1,
-      "online": true
-    },
     {
       "time": "2026-10-16T18:11:02.285Z",
       "players": 0,
@@ -506,6 +368,131 @@
     {
       "time": "2026-10-27T22:22:22.508Z",
       "players": 2,
+      "online": true
+    },
+    {
+      "time": "2026-10-28T01:36:56.598Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-28T07:21:43.992Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-28T14:08:53.753Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-28T19:38:18.659Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-28T23:38:25.107Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-29T02:55:36.760Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-29T09:47:52.299Z",
+      "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-29T16:25:53.240Z",
+      "players": 3,
+      "online": true
+    },
+    {
+      "time": "2026-10-29T21:21:52.083Z",
+      "players": 3,
+      "online": true
+    },
+    {
+      "time": "2026-10-30T01:09:48.756Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-30T07:15:21.835Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-30T14:17:34.907Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-30T19:27:53.867Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-30T23:08:08.343Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-31T02:28:54.364Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-31T08:46:43.678Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-31T14:49:12.591Z",
+      "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-10-31T18:51:23.952Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-10-31T21:57:10.504Z",
+      "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-11-01T00:58:31.607Z",
+      "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-11-01T07:22:54.229Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-11-01T14:28:04.736Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-11-01T19:07:30.413Z",
+      "players": 3,
+      "online": true
+    },
+    {
+      "time": "2026-11-01T22:53:37.603Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-11-02T02:20:37.671Z",
+      "players": 0,
       "online": true
     }
   ]
