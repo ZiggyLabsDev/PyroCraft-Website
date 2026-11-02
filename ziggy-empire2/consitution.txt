@@ -1,0 +1,163 @@
+The Constitution of the Ziggy Empire
+Revised Edition — Version 2.0
+Last updated: November 1, 2026
+Preamble
+The Ziggy Empire exists to give its citizens a safe, orderly and enjoyable place to build, trade and play together. This Constitution sets out who belongs to the Empire, what they may build and own, what is forbidden, and how disputes are settled. Where any provision is unclear, it shall be read in light of this purpose.
+Definitions
+In this Constitution:
+• The Crown means King Ziggy (Minecraft Username: TheGreatZiggy11). It also includes any Steward he has designated in writing, but only while that Steward is exercising the powers of the Crown under Article VIII. There is currently no designated Steward.
+• Citizen means a person who has completed the citizenship process in Article I and has not been expelled or resigned.
+• Royal Member means the King and any person to whom the King has granted the “Royal Status” role. Only the King grants Royal Status, unless he has expressly authorized a Steward to do so under Article VIII.
+• Nation-State means a group of lands recognized by the Crown under Article VIII.
+• Capital means the land containing the castle, the shops, the public storage room and the Empire’s other public amenities.
+• Chunk means a standard Minecraft chunk of 16 by 16 blocks horizontally.
+• Currency means the server’s established economy currency. All dollar amounts in this Constitution (“$”) are denominated in it, or in items of equivalent value as determined by the Crown.
+• Imperial Treasury means the Empire’s official treasury, including any designated account of it, such as the Royal Treasury referred to in Article VI.
+• Imperial Database means the official record of registered properties, housing agreements, Nation-States and the Royal Registry.
+• Public Imperial Infrastructure means infrastructure officially designated by the Crown for public or Imperial use and recorded in the public infrastructure registry within the Imperial Database.
+• Day means a real-world day, not an in-game day.
+Article I: Citizenship
+The Process
+Citizenship is gained in two steps:
+1. Request citizenship from King TheGreatZiggy11.
+2. Accept his invite.
+Alternatively, a person may request citizenship from any recognized Nation-State through a similar process. A Nation-State leader may grant citizenship within their Nation-State but must notify the King.
+Leaving the Empire
+A citizen may resign at any time by notifying the Crown. Within 14 days of resigning, the former citizen must remove their belongings from imperial property and settle any unpaid rent or fines. Housing that is not vacated after that period is treated as abandoned and returns to the Crown.
+Resignation does not cancel any outstanding rent, fines or other financial obligations. Inactivity alone does not end a citizen’s citizenship or forfeit their property, though rent under a housing agreement still applies. A citizen who is leaving the Empire for good must notify the Crown, which counts as resignation under this section.
+Article II: Housing and Property Rights
+Imperial Housing
+Citizens may occupy houses built within the Ziggy Empire, provided they keep up with their monthly payments under the applicable housing agreement.
+Housing Agreements
+Every citizen occupying an imperial residence must abide by the housing agreement for their plot. A housing agreement may set:
+• Monthly rent and payment deadlines.
+• Permitted construction and modifications.
+• Restrictions on excavation, basements and underground construction.
+• Any further conditions needed to protect neighboring properties or public infrastructure.
+The Crown may establish, modify and enforce these agreements. Changes to an existing agreement take effect only after the affected citizen has been notified, and must give at least 7 days’ notice unless the change is needed to stop active harm.
+Unpaid Rent and Eviction
+If rent is unpaid after its deadline, the Crown shall send the citizen a written notice. If the rent is still unpaid 3 days after that notice, the Crown may evict the citizen. Before evicting, the Crown shall give the citizen a reasonable chance to remove their belongings.
+Protection of Underground Public Facilities
+Some residential plots sit above or near public infrastructure such as parks, storage facilities and transportation systems. Where necessary, the Crown may prohibit basements, excavation or underground construction within such a plot. The restriction must be communicated to the resident and becomes part of that plot’s housing agreement.
+External Property
+Citizens may own private land outside the Empire, provided their total external land does not exceed 30 chunks, unless the Crown approves otherwise.
+Land Registration
+Any land a citizen buys or claims outside the Empire must be registered in the Imperial Database within 7 days of acquisition. A citizen found to own unregistered land shall receive a written warning and 7 days to register it. A citizen who fails to register within that time may be permanently expelled following review by the Crown.
+Royal Exemption
+The King is exempt from the restrictions of this Article. He may own land without limit, build anywhere, and operate without the registration requirements placed on citizens.
+Article III: Law and Order
+Prohibited Actions
+The following are strictly forbidden inside the Ziggy Empire:
+• Griefing: Destroying, defacing or altering another person’s or the Empire’s builds without permission.
+• Stealing: Taking items from another person, their containers or their property without permission. Taking items from designated public storage is not stealing; it is governed by Amendment II.
+• Logout traps: Any setup meant to harm or kill a player when they log out or back in.
+• General trapping: Any setup meant to harm, kill or confine a player who has not agreed to it.
+• Other interference: Any other conduct that interferes with another person’s property or ability to play, as determined by the Crown.
+• Causing Panic: Deliberately or recklessly causing widespread panic or serious disruption within the Empire, including through actions or communications directed at its citizens.
+Fighting is regulated by Amendment I.
+Standard Criminal Fines
+A person found responsible for violating imperial law shall pay:
+• $5,000 in compensation to the victim.
+• $1,000 to the Imperial Treasury.
+Where no identifiable victim exists, only the $1,000 payable to the Imperial Treasury applies. For griefing, trespassing and other interference, compensation to the victim is $5,000 or the actual cost of repair, whichever is higher. For stealing, the stolen items must also be returned or replaced. For causing panic, the fine is at least $1,000 to the Imperial Treasury, and the Crown may add more according to the scale of the disruption. Logout traps and general trapping carry the standard fine.
+The Royal Multiplier
+When an offense that carries a fine under this Article is committed against a Royal Member, every amount of the fine is multiplied by five, including compensation based on repair cost. For the standard fine, that means:
+• $25,000 in compensation to the victim.
+• $5,000 to the Imperial Treasury.
+The Royal Multiplier does not apply to conduct that is penalized under Article VI.
+Where one incident involves several distinct violations, each may be considered under its own Article, but no person receives duplicate penalties for the same underlying offense.
+Refusal or Inability to Pay
+If a citizen refuses or is unable to pay a fine within 48 hours of notification, the Crown may seize property belonging to that citizen within the Empire to recover the outstanding amount. The scope of the seizure must be proportionate to the unpaid obligation.
+If a person who is not a citizen fails to pay a fine within the same period, the Crown may bar that person from the Empire until the fine is paid.
+The 48-hour period in this section is paused from the moment an appeal is submitted until it is decided, as provided in Article IX.
+Article IV: Zoning and Infrastructure
+Vertical Limits
+No building or modification inside the Empire may extend above Y=120 or excavate below Y=50 without a Royal Permit. Unless a permit says otherwise, these limits apply to the highest and lowest blocks of the construction or excavation. These limits apply in the Overworld only. A person who breaks these limits without a Royal Permit may be fined between $1,000 and $10,000 to the Imperial Treasury, with the exact amount set by the Crown according to the circumstances in place of the standard fines in Article III, and the King may decide that they lose access to their home. These penalties are subject to the notice and appeal rules in Article IX.
+Basements and Tunneling
+Citizens may dig basements directly beneath their designated plots, within the vertical limits of this Article, unless their housing agreement says otherwise.
+Tunneling into a neighbor’s plot, or beneath public roads or facilities, without permission is trespassing and may be penalized under Article III.
+Article V: Foreign Policy and National Security
+Border Control
+Non-citizens are welcome to visit the Capital but must deposit all weapons in the designated border storage chest before entering the weapon-free zone. Visitors are trusted to comply in good faith. A visitor found carrying a weapon in the weapon-free zone will be removed from the Empire immediately.
+An ordinary Ender Chest is player-specific and must not be used as shared confiscation storage. Any physical deposit required by this provision must use the designated chest controlled for this purpose.
+State of War
+Upon a formal declaration of war by the King, citizens may voluntarily defend the Empire or supply resources, including food, armor and potions, to the Royal Military.
+The prohibition on fighting in Amendment I does not apply to combat against the declared enemy while the declaration is in force.
+Foreign Alliances
+No citizen may form an independent alliance or treaty with outside factions without the express written permission of the King.
+Article VI: Lèse-Majesté (Disrespect of the King and Steward)
+The Law
+The following are prohibited anywhere, including on Discord and other communication channels:
+• Deliberate impersonation of the King or a Steward.
+• Treason against the Empire.
+• Credible threats against the King or a Steward.
+• Serious acts of deliberate disrespect toward the King or a Steward. Examples include public harassment or mockery intended to degrade them, spreading knowingly false claims about them, and defacing royal property or monuments with insulting content.
+The Crown shall determine whether reported conduct violates this Article. Ordinary disagreement or respectful criticism does not, by itself, establish impersonation, treason or disrespect.
+First Offense
+For a first offense the offender must pay a $10,000 fine to the Royal Treasury, a designated account of the Imperial Treasury.
+Repeat Offenses
+Repeated violations may result in permanent banishment from the Empire. Upon banishment the Crown may seize the offender’s property within the Empire, subject to the Crown’s determination of what the seizure covers.
+Article VII: District Zoning Laws
+Magic Town Amethyst Rights
+Amethyst blocks, budding amethyst and sculk materials are reserved for the paths and aesthetics of Magic Town. Magic Town is the southern district of the Capital, in the forest, and is recognizable by its amethyst paths.
+These materials may not be used elsewhere in the Capital without a Royal Permit.
+No citizen may use these materials for personal housing within the district without a Royal Permit. This includes unauthorized removal or destruction of protected budding amethyst formations.
+Article VIII: Government and Nation-State Administration
+Imperial Structure
+The Ziggy Empire may consist of multiple recognized Nation-States under the sovereignty of King TheGreatZiggy11. Each Nation-State may maintain its own territory, settlements, administration and local regulations, subject to this Constitution and the authority of the Crown. The current Nation-States and their leaders are listed in the Imperial Database.
+Local Governance
+Recognized Nation-States may manage their internal affairs, including local construction, residential arrangements, infrastructure and community administration. Local regulations must not contradict this Constitution or undermine the sovereignty and security of the Empire.
+Imperial Citizenship
+Citizenship within a recognized Nation-State may grant membership in the wider Ziggy Empire, subject to the procedures in Article I.
+Royal Authority Over Nation-States
+The King retains ultimate authority over all Nation-States. The Crown may establish, recognize, reorganize or dissolve Nation-States and appoint or recognize their leaders. No Nation-State may independently declare independence, form foreign alliances or withdraw from the Empire without royal authorization.
+Stewardship
+The King may name a Steward in writing to assist in administering the Empire. Whenever the King is unavailable, even for an hour, the Steward steps in and acts for the Crown, including issuing fines, temporarily banning players, handling appeals, issuing Royal Permits and handling administrative matters. Being unavailable is not the same as being offline: the King may be active on Discord but unable to judge or handle an in-game matter, and the Steward may act in that case.
+The Steward exercises the powers of the Crown for as long as the King is unavailable, subject to the limitations below.
+The Steward may not dissolve a Nation-State, amend this Constitution or grant Royal Status unless the King has expressly authorized it. The Steward’s powers end when the King returns and resumes his duties. On his return, the King may overrule any ruling or decision the Steward made while acting for him.
+Article IX: Due Process and Appeals
+Reporting and Investigation
+Any person may report a suspected violation to the Crown. The Crown investigates and decides each case. Acceptable evidence includes unedited screenshots, video, chat logs, and witness statements.
+Notice and Response
+Before a penalty is imposed, the accused must be told what they are accused of and given at least 48 hours to respond. This requirement does not apply to emergency measures needed to stop ongoing harm, such as a temporary ban. Those measures must be reviewed once the emergency has ended.
+Appeals
+A person penalized under this Constitution—whether a citizen or non-citizen—may appeal to the Crown within 7 days of notification, or within 48 hours if the penalty is a fine.
+A Steward acting for the King may decide appeals. If a Steward made the original decision, the King decides the appeal personally when available. If the King is unavailable, the Steward may decide it. If the King made the original decision, he reconsiders it personally on appeal.
+Appeals must be decided within 48 hours of being submitted. If no decision has been made by then, the penalty stays paused until it is decided.
+From the moment an appeal is submitted until it is decided, any fine is paused. An appeal of a fine must be filed within the 48-hour payment period. Any other penalty, such as seizure or expulsion, is also paused unless the Crown judges that waiting would cause further harm.
+If the appeal fails, the 48-hour payment period in Article III resumes from notification of the decision, with the time that remained when the appeal was submitted.
+Article X: Rights and Protections
+Citizens of the Empire have the right to:
+1. Fair notice of any penalty, and a chance to respond before it is imposed (Article IX).
+2. Appeal decisions of the Crown (Article IX). Non-citizens may also appeal under that Article.
+3. Travel on public roads and use public storage under Amendments II and III.
+4. Occupy their housing so long as they follow their housing agreement.
+5. Express respectful disagreement and criticism without it being treated as a crime.
+6. Resign from the Empire under Article I.
+Article XI: General Provisions
+Amending the Constitution
+This Constitution may be amended by written decree of the King. Each amendment shall be announced publicly, dated, and added to the end of this document with a new version number.
+Precedence
+If a housing agreement, local regulation or Nation-State rule conflicts with this Constitution, this Constitution prevails. If an Amendment conflicts with an Article, the Amendment prevails to the extent of the conflict. If two Amendments conflict, the newer Amendment takes precedence.
+Non-Retroactivity
+No person shall be penalized for conduct that was lawful when it occurred. Amendments and new laws apply from the date they are announced and do not punish earlier conduct.
+Severability
+If any provision is found unenforceable or invalid, the rest of the Constitution remains in force.
+Versioning
+The copy of this Constitution marked with the latest version number and date is the official one.
+Amendments
+Amendment I: Prohibition of Fighting
+Prohibition of Combat. Fighting within the borders of the Ziggy Empire is strictly prohibited. All citizens, visitors and other individuals must refrain from combat against one another. This applies even if one or more parties have player-versus-player combat disabled.
+Exceptions. Combat is permitted during a State of War under Article V, and in any other situation the Crown has explicitly approved.
+Violations and Penalties. Anyone who starts prohibited fighting shall pay $1,000 to the Imperial Treasury, and anyone who takes part may face further penalties at the Crown’s discretion, according to the circumstances of the incident. Self-defense is not fined and may be considered when determining responsibility for any further penalty. Retaliation after the immediate threat has ended does not automatically qualify as self-defense.
+Amendment II: Public Storage Rights
+Designation of Public Storage. The public storage room across the street from the meat shop, located at [171, 87, 1378], is a public-use facility for all citizens.
+Shared Access. All citizens may take items from the room and contribute items at their own discretion, subject to the Reasonable Use rule below. No one may claim exclusive ownership of the shared contents or stop others from using the room while it serves its public purpose.
+Reasonable Use. Citizens must use public storage fairly and reasonably. Taking items is permitted, but what a person takes and contributes must stay reasonably proportionate. Draining public chests of valuable resources without contributing reasonably comparable value in return is prohibited. A citizen who has done so must return items of comparable value to the room and pay $1,000 to the Imperial Treasury. The Crown determines whether use is reasonable based on the circumstances.
+Preservation of the Shared Resource. No one may remove items to deny reasonable access to other users. The Crown may set reasonable usage limits if necessary to preserve the room’s shared purpose. If the room is moved or rebuilt, the designation transfers to the new location once the Crown announces it.
+Amendment III: Road Protection and Infrastructure Rights
+Protection of Public Imperial Infrastructure. All roads, highways, bridges, paths and other transportation infrastructure officially designated by the Crown and recorded in the public registry as Public Imperial Infrastructure are protected under imperial law, whether they lie inside the Empire, on claimed land or on unclaimed land.
+Prohibition of Interference. No one may destroy, grief, obstruct, alter or deliberately damage protected Public Imperial Infrastructure without the King’s express permission. This applies even where infrastructure crosses unclaimed or unowned land, or land outside the Empire’s borders.
+Infrastructure on Private Land. Where protected infrastructure crosses land registered to a citizen, the owner may build alongside it but may not build over, block or reroute it without the King’s permission. The King may grant such permission on conditions, such as requiring the owner to maintain an equivalent route.
+Public Access. Unless the King designates otherwise, protected roads remain open for public travel. Individuals may use them but may not claim ownership of, block, dismantle or deliberately interfere with them without authorization.
+Penalties for Violations. Anyone found responsible for deliberately damaging or obstructing protected infrastructure must repair the damage or compensate the Empire for the materials and labor reasonably needed to restore it. The person must also pay a fine of $1,000 to the Imperial Treasury. The penalties in this Amendment apply in place of the standard fines in Article III for the same infrastructure violation.

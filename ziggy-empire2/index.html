@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The revised Constitution of the Ziggy Empire, version 2.0.">
+    <meta name="theme-color" content="#050505">
+    <title>The Constitution of the Ziggy Empire — Version 2.0</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --black: #050505;
+            --panel: #111;
+            --gold: #d4af37;
+            --gold-light: #f1d675;
+            --gold-bright: #ffe8a0;
+            --gold-dark: #806515;
+            --red: #9e2929;
+            --white: #f2f0e9;
+            --text: #d7d4cb;
+            --muted: #aaa69b;
+            --border: rgba(212, 175, 55, .22);
+            --border-strong: rgba(212, 175, 55, .48);
+            --radius: 10px;
+            --shadow: 0 20px 50px rgba(0, 0, 0, .55), 0 4px 12px rgba(0, 0, 0, .35);
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+        body {
+            min-width: 320px;
+            min-height: 100vh;
+            margin: 0;
+            background: radial-gradient(ellipse at top, rgba(212, 175, 55, .055), transparent 45%), linear-gradient(135deg, #030303, #0a0a0a 50%, #050505);
+            color: var(--text);
+            font: 16px/1.75 Georgia, "Times New Roman", serif;
+            overflow-wrap: break-word;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 10;
+            pointer-events: none;
+            opacity: .018;
+            background: repeating-linear-gradient(0deg, #fff 0, #fff 1px, transparent 1px, transparent 4px);
+            mix-blend-mode: overlay;
+        }
+        ::selection { background: rgba(212, 175, 55, .3); color: #fff; }
+        a { color: var(--gold-light); text-underline-offset: 4px; }
+        a:hover { color: var(--gold-bright); }
+        a:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 5px; }
+        p { margin: 0 0 14px; }
+        p:last-child { margin-bottom: 0; }
+        strong { color: var(--gold-light); }
+        .imperial-line {
+            position: absolute; inset: 0 0 auto; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-dark) 15%, var(--gold-light) 50%, var(--gold-dark) 85%, transparent);
+            box-shadow: 0 0 12px rgba(212, 175, 55, .35);
+        }
+        .site-header {
+            position: relative; overflow: hidden; padding: 78px 20px 62px; text-align: center;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(rgba(15, 15, 15, .97), rgba(5, 5, 5, .99));
+        }
+        .site-header::before {
+            content: ""; position: absolute; top: -300px; left: 50%; width: min(700px, 120vw); height: 500px;
+            transform: translateX(-50%); pointer-events: none;
+            background: radial-gradient(ellipse, rgba(212, 175, 55, .1), transparent 65%);
+        }
+        .header-content { position: relative; max-width: 1100px; margin-inline: auto; }
+        .crown { margin-bottom: 22px; font-size: 4.2rem; line-height: 1; filter: drop-shadow(0 0 10px rgba(212, 175, 55, .35)); }
+        .eyebrow {
+            display: flex; justify-content: center; align-items: center; gap: 14px; margin: 0 0 16px;
+            color: var(--gold); font: 700 .72rem/1.4 "Trebuchet MS", Arial, sans-serif; letter-spacing: 4px; text-transform: uppercase;
+        }
+        .eyebrow::before, .eyebrow::after { content: ""; width: 38px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+        .eyebrow::after { background: linear-gradient(90deg, var(--gold), transparent); }
+        h1 {
+            max-width: 1050px; margin: 0 auto; color: var(--gold-light);
+            font-size: clamp(2.1rem, 5vw, 4.6rem); line-height: 1.12; letter-spacing: 2px; text-transform: uppercase;
+            text-shadow: 0 2px 0 #4a3a0e, 0 0 25px rgba(212, 175, 55, .12);
+        }
+        .subtitle { max-width: 680px; margin: 22px auto 0; color: var(--muted); font-size: 1.08rem; font-style: italic; }
+        .decree {
+            display: inline-flex; align-items: center; gap: 10px; max-width: 100%; margin-top: 28px; padding: 9px 20px;
+            color: var(--gold-light); background: linear-gradient(135deg, rgba(212, 175, 55, .09), rgba(212, 175, 55, .025));
+            border: 1px solid var(--border-strong); border-radius: 4px; font: .8rem/1.5 "Trebuchet MS", Arial, sans-serif;
+        }
+        .decree::before { content: "✦"; flex-shrink: 0; color: var(--gold); }
+        main { width: min(1050px, 92%); margin: 60px auto 90px; }
+        .contents, .preamble-box, .article, .definitions {
+            background: linear-gradient(145deg, #151515, #0b0b0b); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+        }
+        .contents { margin-bottom: 45px; padding: 28px 32px; }
+        .contents h2 { margin: 0 0 18px; padding-bottom: 14px; color: var(--gold-light); font-size: 1.45rem; border-bottom: 1px solid var(--border); }
+        .contents ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 28px; margin: 0; padding-left: 22px; color: var(--gold); }
+        .contents li { padding-left: 4px; }
+        .contents li::marker { color: var(--gold-dark); }
+        .contents a { color: var(--text); text-decoration-color: var(--gold-dark); text-decoration-thickness: 1px; }
+        .contents a:hover { color: var(--gold-light); }
+        .preamble-box { max-width: 850px; margin: 0 auto 55px; padding: 34px 38px; text-align: center; }
+        .preamble-box h2 { margin: 0 0 12px; color: var(--gold); font: 700 .7rem/1.4 "Trebuchet MS", Arial, sans-serif; letter-spacing: 3px; text-transform: uppercase; }
+        .preamble { font-size: 1.04rem; }
+        .definitions { position: relative; margin-bottom: 28px; padding: 34px 38px; scroll-margin-top: 20px; }
+        .article { position: relative; margin-bottom: 28px; padding: 34px 38px; scroll-margin-top: 20px; }
+        .article::before, .definitions::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: linear-gradient(to bottom, var(--gold-light), var(--gold-dark)); border-radius: var(--radius) 0 0 var(--radius); }
+        .article-header { display: flex; align-items: center; gap: 17px; margin-bottom: 25px; padding-bottom: 17px; border-bottom: 1px solid rgba(212, 175, 55, .15); }
+        .article-number {
+            display: grid; place-items: center; flex-shrink: 0; width: 47px; height: 47px; color: var(--gold);
+            background: linear-gradient(145deg, rgba(212, 175, 55, .13), rgba(212, 175, 55, .025));
+            border: 1px solid rgba(212, 175, 55, .3); border-radius: 5px;
+            font: 700 .8rem/1 "Trebuchet MS", Arial, sans-serif; letter-spacing: 1px;
+        }
+        .article h2, .definitions h2 { margin: 0; color: var(--gold-light); font-size: clamp(1.3rem, 3vw, 1.75rem); line-height: 1.3; }
+        .article h3 { margin: 24px 0 7px; color: var(--white); font: 700 .9rem/1.5 "Trebuchet MS", Arial, sans-serif; letter-spacing: .3px; }
+        .article h3::before { content: "◆"; margin-right: 9px; color: var(--gold); font-size: .48rem; vertical-align: 2px; }
+        .article h3:first-of-type { margin-top: 0; }
+        .article .constitution-list { margin: 0 0 14px; padding-left: 22px; list-style: none; }
+        .article .constitution-list li { padding: 2px 0 2px 4px; }
+        .article .constitution-list li::marker { color: var(--gold-dark); }
+        .definitions h2 { margin-bottom: 14px; }
+        .definitions p { margin-bottom: 10px; }
+        .definitions .constitution-list { margin: 0; padding-left: 22px; list-style: none; }
+        .definitions .constitution-list li { margin: 7px 0; }
+        .definitions .constitution-list li::marker { color: var(--gold-dark); }
+        .royal { background: linear-gradient(145deg, #1a1812, #12110d 48%, #0c0c0b); border-color: rgba(212, 175, 55, .32); }
+        .amendments-heading { margin: 58px 0 25px; padding-bottom: 14px; color: var(--gold-light); font-size: 1.8rem; border-bottom: 1px solid var(--border); scroll-margin-top: 20px; }
+        .site-footer { position: relative; padding: 48px 20px; text-align: center; border-top: 1px solid var(--border); background: linear-gradient(to bottom, #090909, #030303); }
+        .site-footer::before { content: ""; position: absolute; top: -1px; left: 50%; width: 170px; height: 1px; transform: translateX(-50%); background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+        .crown-small { margin-bottom: 10px; font-size: 1.7rem; }
+        .footer-title { display: block; color: var(--gold); font: 700 .88rem/1.5 "Trebuchet MS", Arial, sans-serif; letter-spacing: 2px; text-transform: uppercase; }
+        .footer-message { margin-top: 5px; color: var(--muted); font-size: .84rem; }
+        @media (hover: hover) and (pointer: fine) {
+            .article { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+            .article:hover { transform: translateY(-3px); border-color: var(--border-strong); box-shadow: 0 25px 60px rgba(0, 0, 0, .65), 0 0 25px rgba(212, 175, 55, .035); }
+        }
+        @media (max-width: 700px) {
+            .site-header { padding: 65px 18px 48px; }
+            .crown { font-size: 3.5rem; }
+            h1 { letter-spacing: 1px; }
+            .subtitle { font-size: .98rem; }
+            .decree { padding: 9px 13px; font-size: .74rem; }
+            main { width: 94%; margin-top: 42px; }
+            .contents { padding: 24px 22px; }
+            .contents ol { grid-template-columns: 1fr; gap: 6px; }
+            .preamble-box { margin-bottom: 42px; padding: 29px 23px; }
+            .definitions, .article { margin-bottom: 23px; padding: 27px 23px; }
+            .article-header { align-items: flex-start; gap: 13px; }
+            .article-number { width: 42px; height: 42px; font-size: .7rem; }
+            .article h2, .definitions h2 { font-size: 1.3rem; }
+        }
+        @media (max-width: 420px) {
+            .eyebrow { gap: 9px; font-size: .65rem; letter-spacing: 2px; }
+            .eyebrow::before, .eyebrow::after { width: 20px; }
+            .article, .definitions { padding: 23px 18px; }
+            .article-header { gap: 10px; }
+            .article-number { width: 36px; height: 36px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+        }
+        @media print {
+            :root { color-scheme: light; }
+            body { min-width: 0; background: #fff; color: #222; font-size: 11pt; }
+            body::before, .imperial-line, .site-header::before { display: none; }
+            .site-header, .site-footer { background: #fff; color: #222; }
+            .site-header { padding: 25px 0; }
+            h1, .article h2, .definitions h2, .article h3, strong, .footer-title { color: #222; text-shadow: none; }
+            main { width: 100%; margin: 20px 0; }
+            .contents, .preamble-box, .definitions, .article { background: #fff; color: #222; box-shadow: none; border: 1px solid #bbb; break-inside: avoid; }
+            .article { margin-bottom: 16px; padding: 20px; }
+            .contents a { color: #222; text-decoration: none; }
+            .site-footer { border-top: 1px solid #bbb; }
+            .footer-message, .subtitle { color: #444; }
+        }
+    </style>
+</head>
+<body>
+    <div class="imperial-line" aria-hidden="true"></div>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="crown" aria-hidden="true">👑</div>
+            <p class="eyebrow">Imperial Charter — Revised Edition</p>
+            <h1>The Constitution of the Ziggy Empire</h1>
+            <p class="subtitle">
+Revised Edition — Version 2.0
+</p>
+            <p class="decree">
+Last updated: November 1, 2026
+</p>
+        </div>
+    </header>
+    <main>
+        <nav class="contents" aria-labelledby="contents-heading">
+            <h2 id="contents-heading">Imperial Table of Contents</h2>
+            <ol>
+<li><a href="#preamble">Preamble</a></li>
+<li><a href="#definitions">Definitions</a></li>
+<li><a href="#article-i">Article I — Citizenship</a></li>
+<li><a href="#article-ii">Article II — Housing and Property Rights</a></li>
+<li><a href="#article-iii">Article III — Law and Order</a></li>
+<li><a href="#article-iv">Article IV — Zoning and Infrastructure</a></li>
+<li><a href="#article-v">Article V — Foreign Policy and National Security</a></li>
+<li><a href="#article-vi">Article VI — Lèse-Majesté (Disrespect of the King and Steward)</a></li>
+<li><a href="#article-vii">Article VII — District Zoning Laws</a></li>
+<li><a href="#article-viii">Article VIII — Government and Nation-State Administration</a></li>
+<li><a href="#article-ix">Article IX — Due Process and Appeals</a></li>
+<li><a href="#article-x">Article X — Rights and Protections</a></li>
+<li><a href="#article-xi">Article XI — General Provisions</a></li>
+<li><a href="#amendments">Amendments</a></li>
+<li><a href="#amendment-i">Amendment I — Prohibition of Fighting</a></li>
+<li><a href="#amendment-ii">Amendment II — Public Storage Rights</a></li>
+<li><a href="#amendment-iii">Amendment III — Road Protection and Infrastructure Rights</a></li>
+</ol>
+        </nav>
+        <section class="preamble-box" id="preamble" aria-labelledby="preamble-heading">
+            <h2 id="preamble-heading">Preamble</h2>
+            <p class="preamble">
+The Ziggy Empire exists to give its citizens a safe, orderly and enjoyable place to build, trade and play together. This Constitution sets out who belongs to the Empire, what they may build and own, what is forbidden, and how disputes are settled. Where any provision is unclear, it shall be read in light of this purpose.
+</p>
+        </section>
+        <section class="definitions" id="definitions" aria-labelledby="definitions-heading">
+            <h2 id="definitions-heading">Definitions</h2>
+            <p>In this Constitution:</p>
+            <ul class="constitution-list">
+<li>• The Crown means King Ziggy (Minecraft Username: TheGreatZiggy11). It also includes any Steward he has designated in writing, but only while that Steward is exercising the powers of the Crown under Article VIII. There is currently no designated Steward.</li>
+<li>• Citizen means a person who has completed the citizenship process in Article I and has not been expelled or resigned.</li>
+<li>• Royal Member means the King and any person to whom the King has granted the “Royal Status” role. Only the King grants Royal Status, unless he has expressly authorized a Steward to do so under Article VIII.</li>
+<li>• Nation-State means a group of lands recognized by the Crown under Article VIII.</li>
+<li>• Capital means the land containing the castle, the shops, the public storage room and the Empire’s other public amenities.</li>
+<li>• Chunk means a standard Minecraft chunk of 16 by 16 blocks horizontally.</li>
+<li>• Currency means the server’s established economy currency. All dollar amounts in this Constitution (“$”) are denominated in it, or in items of equivalent value as determined by the Crown.</li>
+<li>• Imperial Treasury means the Empire’s official treasury, including any designated account of it, such as the Royal Treasury referred to in Article VI.</li>
+<li>• Imperial Database means the official record of registered properties, housing agreements, Nation-States and the Royal Registry.</li>
+<li>• Public Imperial Infrastructure means infrastructure officially designated by the Crown for public or Imperial use and recorded in the public infrastructure registry within the Imperial Database.</li>
+<li>• Day means a real-world day, not an in-game day.</li>
+</ul>
+        </section>
+<section class="article" id="article-i" aria-labelledby="heading-article-i">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">I</div>
+                <h2 id="heading-article-i">Article I: Citizenship</h2>
+            </header>
+            <h3>The Process</h3>
+<p>Citizenship is gained in two steps:</p>
+<ol class="constitution-list">
+<li>1. Request citizenship from King TheGreatZiggy11.</li>
+<li>2. Accept his invite.</li>
+</ol>
+<p>Alternatively, a person may request citizenship from any recognized Nation-State through a similar process. A Nation-State leader may grant citizenship within their Nation-State but must notify the King.</p>
+<h3>Leaving the Empire</h3>
+<p>A citizen may resign at any time by notifying the Crown. Within 14 days of resigning, the former citizen must remove their belongings from imperial property and settle any unpaid rent or fines. Housing that is not vacated after that period is treated as abandoned and returns to the Crown.</p>
+<p>Resignation does not cancel any outstanding rent, fines or other financial obligations. Inactivity alone does not end a citizen’s citizenship or forfeit their property, though rent under a housing agreement still applies. A citizen who is leaving the Empire for good must notify the Crown, which counts as resignation under this section.</p>
+        </section>
+<section class="article royal" id="article-ii" aria-labelledby="heading-article-ii">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">II</div>
+                <h2 id="heading-article-ii">Article II: Housing and Property Rights</h2>
+            </header>
+            <h3>Imperial Housing</h3>
+<p>Citizens may occupy houses built within the Ziggy Empire, provided they keep up with their monthly payments under the applicable housing agreement.</p>
+<h3>Housing Agreements</h3>
+<p>Every citizen occupying an imperial residence must abide by the housing agreement for their plot. A housing agreement may set:</p>
+<ul class="constitution-list">
+<li>• Monthly rent and payment deadlines.</li>
+<li>• Permitted construction and modifications.</li>
+<li>• Restrictions on excavation, basements and underground construction.</li>
+<li>• Any further conditions needed to protect neighboring properties or public infrastructure.</li>
+</ul>
+<p>The Crown may establish, modify and enforce these agreements. Changes to an existing agreement take effect only after the affected citizen has been notified, and must give at least 7 days’ notice unless the change is needed to stop active harm.</p>
+<h3>Unpaid Rent and Eviction</h3>
+<p>If rent is unpaid after its deadline, the Crown shall send the citizen a written notice. If the rent is still unpaid 3 days after that notice, the Crown may evict the citizen. Before evicting, the Crown shall give the citizen a reasonable chance to remove their belongings.</p>
+<h3>Protection of Underground Public Facilities</h3>
+<p>Some residential plots sit above or near public infrastructure such as parks, storage facilities and transportation systems. Where necessary, the Crown may prohibit basements, excavation or underground construction within such a plot. The restriction must be communicated to the resident and becomes part of that plot’s housing agreement.</p>
+<h3>External Property</h3>
+<p>Citizens may own private land outside the Empire, provided their total external land does not exceed 30 chunks, unless the Crown approves otherwise.</p>
+<h3>Land Registration</h3>
+<p>Any land a citizen buys or claims outside the Empire must be registered in the Imperial Database within 7 days of acquisition. A citizen found to own unregistered land shall receive a written warning and 7 days to register it. A citizen who fails to register within that time may be permanently expelled following review by the Crown.</p>
+<h3>Royal Exemption</h3>
+<p>The King is exempt from the restrictions of this Article. He may own land without limit, build anywhere, and operate without the registration requirements placed on citizens.</p>
+        </section>
+<section class="article" id="article-iii" aria-labelledby="heading-article-iii">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">III</div>
+                <h2 id="heading-article-iii">Article III: Law and Order</h2>
+            </header>
+            <h3>Prohibited Actions</h3>
+<p>The following are strictly forbidden inside the Ziggy Empire:</p>
+<ul class="constitution-list">
+<li>• Griefing: Destroying, defacing or altering another person’s or the Empire’s builds without permission.</li>
+<li>• Stealing: Taking items from another person, their containers or their property without permission. Taking items from designated public storage is not stealing; it is governed by Amendment II.</li>
+<li>• Logout traps: Any setup meant to harm or kill a player when they log out or back in.</li>
+<li>• General trapping: Any setup meant to harm, kill or confine a player who has not agreed to it.</li>
+<li>• Other interference: Any other conduct that interferes with another person’s property or ability to play, as determined by the Crown.</li>
+<li>• Causing Panic: Deliberately or recklessly causing widespread panic or serious disruption within the Empire, including through actions or communications directed at its citizens.</li>
+</ul>
+<p>Fighting is regulated by Amendment I.</p>
+<h3>Standard Criminal Fines</h3>
+<p>A person found responsible for violating imperial law shall pay:</p>
+<ul class="constitution-list">
+<li>• $5,000 in compensation to the victim.</li>
+<li>• $1,000 to the Imperial Treasury.</li>
+</ul>
+<p>Where no identifiable victim exists, only the $1,000 payable to the Imperial Treasury applies. For griefing, trespassing and other interference, compensation to the victim is $5,000 or the actual cost of repair, whichever is higher. For stealing, the stolen items must also be returned or replaced. For causing panic, the fine is at least $1,000 to the Imperial Treasury, and the Crown may add more according to the scale of the disruption. Logout traps and general trapping carry the standard fine.</p>
+<h3>The Royal Multiplier</h3>
+<p>When an offense that carries a fine under this Article is committed against a Royal Member, every amount of the fine is multiplied by five, including compensation based on repair cost. For the standard fine, that means:</p>
+<ul class="constitution-list">
+<li>• $25,000 in compensation to the victim.</li>
+<li>• $5,000 to the Imperial Treasury.</li>
+</ul>
+<p>The Royal Multiplier does not apply to conduct that is penalized under Article VI.</p>
+<p>Where one incident involves several distinct violations, each may be considered under its own Article, but no person receives duplicate penalties for the same underlying offense.</p>
+<h3>Refusal or Inability to Pay</h3>
+<p>If a citizen refuses or is unable to pay a fine within 48 hours of notification, the Crown may seize property belonging to that citizen within the Empire to recover the outstanding amount. The scope of the seizure must be proportionate to the unpaid obligation.</p>
+<p>If a person who is not a citizen fails to pay a fine within the same period, the Crown may bar that person from the Empire until the fine is paid.</p>
+<p>The 48-hour period in this section is paused from the moment an appeal is submitted until it is decided, as provided in Article IX.</p>
+        </section>
+<section class="article" id="article-iv" aria-labelledby="heading-article-iv">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">IV</div>
+                <h2 id="heading-article-iv">Article IV: Zoning and Infrastructure</h2>
+            </header>
+            <h3>Vertical Limits</h3>
+<p>No building or modification inside the Empire may extend above Y=120 or excavate below Y=50 without a Royal Permit. Unless a permit says otherwise, these limits apply to the highest and lowest blocks of the construction or excavation. These limits apply in the Overworld only. A person who breaks these limits without a Royal Permit may be fined between $1,000 and $10,000 to the Imperial Treasury, with the exact amount set by the Crown according to the circumstances in place of the standard fines in Article III, and the King may decide that they lose access to their home. These penalties are subject to the notice and appeal rules in Article IX.</p>
+<h3>Basements and Tunneling</h3>
+<p>Citizens may dig basements directly beneath their designated plots, within the vertical limits of this Article, unless their housing agreement says otherwise.</p>
+<p>Tunneling into a neighbor’s plot, or beneath public roads or facilities, without permission is trespassing and may be penalized under Article III.</p>
+        </section>
+<section class="article" id="article-v" aria-labelledby="heading-article-v">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">V</div>
+                <h2 id="heading-article-v">Article V: Foreign Policy and National Security</h2>
+            </header>
+            <h3>Border Control</h3>
+<p>Non-citizens are welcome to visit the Capital but must deposit all weapons in the designated border storage chest before entering the weapon-free zone. Visitors are trusted to comply in good faith. A visitor found carrying a weapon in the weapon-free zone will be removed from the Empire immediately.</p>
+<p>An ordinary Ender Chest is player-specific and must not be used as shared confiscation storage. Any physical deposit required by this provision must use the designated chest controlled for this purpose.</p>
+<h3>State of War</h3>
+<p>Upon a formal declaration of war by the King, citizens may voluntarily defend the Empire or supply resources, including food, armor and potions, to the Royal Military.</p>
+<p>The prohibition on fighting in Amendment I does not apply to combat against the declared enemy while the declaration is in force.</p>
+<h3>Foreign Alliances</h3>
+<p>No citizen may form an independent alliance or treaty with outside factions without the express written permission of the King.</p>
+        </section>
+<section class="article royal" id="article-vi" aria-labelledby="heading-article-vi">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">VI</div>
+                <h2 id="heading-article-vi">Article VI: Lèse-Majesté (Disrespect of the King and Steward)</h2>
+            </header>
+            <h3>The Law</h3>
+<p>The following are prohibited anywhere, including on Discord and other communication channels:</p>
+<ul class="constitution-list">
+<li>• Deliberate impersonation of the King or a Steward.</li>
+<li>• Treason against the Empire.</li>
+<li>• Credible threats against the King or a Steward.</li>
+<li>• Serious acts of deliberate disrespect toward the King or a Steward. Examples include public harassment or mockery intended to degrade them, spreading knowingly false claims about them, and defacing royal property or monuments with insulting content.</li>
+</ul>
+<p>The Crown shall determine whether reported conduct violates this Article. Ordinary disagreement or respectful criticism does not, by itself, establish impersonation, treason or disrespect.</p>
+<h3>First Offense</h3>
+<p>For a first offense the offender must pay a $10,000 fine to the Royal Treasury, a designated account of the Imperial Treasury.</p>
+<h3>Repeat Offenses</h3>
+<p>Repeated violations may result in permanent banishment from the Empire. Upon banishment the Crown may seize the offender’s property within the Empire, subject to the Crown’s determination of what the seizure covers.</p>
+        </section>
+<section class="article" id="article-vii" aria-labelledby="heading-article-vii">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">VII</div>
+                <h2 id="heading-article-vii">Article VII: District Zoning Laws</h2>
+            </header>
+            <h3>Magic Town Amethyst Rights</h3>
+<p>Amethyst blocks, budding amethyst and sculk materials are reserved for the paths and aesthetics of Magic Town. Magic Town is the southern district of the Capital, in the forest, and is recognizable by its amethyst paths.</p>
+<p>These materials may not be used elsewhere in the Capital without a Royal Permit.</p>
+<p>No citizen may use these materials for personal housing within the district without a Royal Permit. This includes unauthorized removal or destruction of protected budding amethyst formations.</p>
+        </section>
+<section class="article royal" id="article-viii" aria-labelledby="heading-article-viii">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">VIII</div>
+                <h2 id="heading-article-viii">Article VIII: Government and Nation-State Administration</h2>
+            </header>
+            <h3>Imperial Structure</h3>
+<p>The Ziggy Empire may consist of multiple recognized Nation-States under the sovereignty of King TheGreatZiggy11. Each Nation-State may maintain its own territory, settlements, administration and local regulations, subject to this Constitution and the authority of the Crown. The current Nation-States and their leaders are listed in the Imperial Database.</p>
+<h3>Local Governance</h3>
+<p>Recognized Nation-States may manage their internal affairs, including local construction, residential arrangements, infrastructure and community administration. Local regulations must not contradict this Constitution or undermine the sovereignty and security of the Empire.</p>
+<h3>Imperial Citizenship</h3>
+<p>Citizenship within a recognized Nation-State may grant membership in the wider Ziggy Empire, subject to the procedures in Article I.</p>
+<h3>Royal Authority Over Nation-States</h3>
+<p>The King retains ultimate authority over all Nation-States. The Crown may establish, recognize, reorganize or dissolve Nation-States and appoint or recognize their leaders. No Nation-State may independently declare independence, form foreign alliances or withdraw from the Empire without royal authorization.</p>
+<h3>Stewardship</h3>
+<p>The King may name a Steward in writing to assist in administering the Empire. Whenever the King is unavailable, even for an hour, the Steward steps in and acts for the Crown, including issuing fines, temporarily banning players, handling appeals, issuing Royal Permits and handling administrative matters. Being unavailable is not the same as being offline: the King may be active on Discord but unable to judge or handle an in-game matter, and the Steward may act in that case.</p>
+<p>The Steward exercises the powers of the Crown for as long as the King is unavailable, subject to the limitations below.</p>
+<p>The Steward may not dissolve a Nation-State, amend this Constitution or grant Royal Status unless the King has expressly authorized it. The Steward’s powers end when the King returns and resumes his duties. On his return, the King may overrule any ruling or decision the Steward made while acting for him.</p>
+        </section>
+<section class="article" id="article-ix" aria-labelledby="heading-article-ix">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">IX</div>
+                <h2 id="heading-article-ix">Article IX: Due Process and Appeals</h2>
+            </header>
+            <h3>Reporting and Investigation</h3>
+<p>Any person may report a suspected violation to the Crown. The Crown investigates and decides each case. Acceptable evidence includes unedited screenshots, video, chat logs, and witness statements.</p>
+<h3>Notice and Response</h3>
+<p>Before a penalty is imposed, the accused must be told what they are accused of and given at least 48 hours to respond. This requirement does not apply to emergency measures needed to stop ongoing harm, such as a temporary ban. Those measures must be reviewed once the emergency has ended.</p>
+<h3>Appeals</h3>
+<p>A person penalized under this Constitution—whether a citizen or non-citizen—may appeal to the Crown within 7 days of notification, or within 48 hours if the penalty is a fine.</p>
+<p><strong>A Steward acting for the King may decide appeals.</strong> If a Steward made the original decision, the King decides the appeal personally when available. If the King is unavailable, the Steward may decide it. If the King made the original decision, he reconsiders it personally on appeal.</p>
+<p>Appeals must be decided within 48 hours of being submitted. If no decision has been made by then, the penalty stays paused until it is decided.</p>
+<p>From the moment an appeal is submitted until it is decided, any fine is paused. An appeal of a fine must be filed within the 48-hour payment period. Any other penalty, such as seizure or expulsion, is also paused unless the Crown judges that waiting would cause further harm.</p>
+<p>If the appeal fails, the 48-hour payment period in Article III resumes from notification of the decision, with the time that remained when the appeal was submitted.</p>
+        </section>
+<section class="article" id="article-x" aria-labelledby="heading-article-x">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">X</div>
+                <h2 id="heading-article-x">Article X: Rights and Protections</h2>
+            </header>
+            <p>Citizens of the Empire have the right to:</p>
+<ol class="constitution-list">
+<li>1. Fair notice of any penalty, and a chance to respond before it is imposed (Article IX).</li>
+<li>2. Appeal decisions of the Crown (Article IX). Non-citizens may also appeal under that Article.</li>
+<li>3. Travel on public roads and use public storage under Amendments II and III.</li>
+<li>4. Occupy their housing so long as they follow their housing agreement.</li>
+<li>5. Express respectful disagreement and criticism without it being treated as a crime.</li>
+<li>6. Resign from the Empire under Article I.</li>
+</ol>
+        </section>
+<section class="article" id="article-xi" aria-labelledby="heading-article-xi">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">XI</div>
+                <h2 id="heading-article-xi">Article XI: General Provisions</h2>
+            </header>
+            <h3>Amending the Constitution</h3>
+<p>This Constitution may be amended by written decree of the King. Each amendment shall be announced publicly, dated, and added to the end of this document with a new version number.</p>
+<h3>Precedence</h3>
+<p>If a housing agreement, local regulation or Nation-State rule conflicts with this Constitution, this Constitution prevails. If an Amendment conflicts with an Article, the Amendment prevails to the extent of the conflict. If two Amendments conflict, the newer Amendment takes precedence.</p>
+<h3>Non-Retroactivity</h3>
+<p>No person shall be penalized for conduct that was lawful when it occurred. Amendments and new laws apply from the date they are announced and do not punish earlier conduct.</p>
+<h3>Severability</h3>
+<p>If any provision is found unenforceable or invalid, the rest of the Constitution remains in force.</p>
+<h3>Versioning</h3>
+<p>The copy of this Constitution marked with the latest version number and date is the official one.</p>
+        </section>
+<h2 class="amendments-heading" id="amendments">Amendments</h2>
+<section class="article royal" id="amendment-i" aria-labelledby="heading-amendment-i">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">A-I</div>
+                <h2 id="heading-amendment-i">Amendment I: Prohibition of Fighting</h2>
+            </header>
+            <p><strong>Prohibition of Combat.</strong> Fighting within the borders of the Ziggy Empire is strictly prohibited. All citizens, visitors and other individuals must refrain from combat against one another. This applies even if one or more parties have player-versus-player combat disabled.</p>
+<p><strong>Exceptions.</strong> Combat is permitted during a State of War under Article V, and in any other situation the Crown has explicitly approved.</p>
+<p><strong>Violations and Penalties.</strong> Anyone who starts prohibited fighting shall pay $1,000 to the Imperial Treasury, and anyone who takes part may face further penalties at the Crown’s discretion, according to the circumstances of the incident. Self-defense is not fined and may be considered when determining responsibility for any further penalty. Retaliation after the immediate threat has ended does not automatically qualify as self-defense.</p>
+        </section>
+<section class="article royal" id="amendment-ii" aria-labelledby="heading-amendment-ii">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">A-II</div>
+                <h2 id="heading-amendment-ii">Amendment II: Public Storage Rights</h2>
+            </header>
+            <p><strong>Designation of Public Storage.</strong> The public storage room across the street from the meat shop, located at [171, 87, 1378], is a public-use facility for all citizens.</p>
+<p><strong>Shared Access.</strong> All citizens may take items from the room and contribute items at their own discretion, subject to the Reasonable Use rule below. No one may claim exclusive ownership of the shared contents or stop others from using the room while it serves its public purpose.</p>
+<p><strong>Reasonable Use.</strong> Citizens must use public storage fairly and reasonably. Taking items is permitted, but what a person takes and contributes must stay reasonably proportionate. Draining public chests of valuable resources without contributing reasonably comparable value in return is prohibited. A citizen who has done so must return items of comparable value to the room and pay $1,000 to the Imperial Treasury. The Crown determines whether use is reasonable based on the circumstances.</p>
+<p><strong>Preservation of the Shared Resource.</strong> No one may remove items to deny reasonable access to other users. The Crown may set reasonable usage limits if necessary to preserve the room’s shared purpose. If the room is moved or rebuilt, the designation transfers to the new location once the Crown announces it.</p>
+        </section>
+<section class="article royal" id="amendment-iii" aria-labelledby="heading-amendment-iii">
+            <header class="article-header">
+                <div class="article-number" aria-hidden="true">A-III</div>
+                <h2 id="heading-amendment-iii">Amendment III: Road Protection and Infrastructure Rights</h2>
+            </header>
+            <p><strong>Protection of Public Imperial Infrastructure.</strong> All roads, highways, bridges, paths and other transportation infrastructure officially designated by the Crown and recorded in the public registry as Public Imperial Infrastructure are protected under imperial law, whether they lie inside the Empire, on claimed land or on unclaimed land.</p>
+<p><strong>Prohibition of Interference.</strong> No one may destroy, grief, obstruct, alter or deliberately damage protected Public Imperial Infrastructure without the King’s express permission. This applies even where infrastructure crosses unclaimed or unowned land, or land outside the Empire’s borders.</p>
+<p><strong>Infrastructure on Private Land.</strong> Where protected infrastructure crosses land registered to a citizen, the owner may build alongside it but may not build over, block or reroute it without the King’s permission. The King may grant such permission on conditions, such as requiring the owner to maintain an equivalent route.</p>
+<p><strong>Public Access.</strong> Unless the King designates otherwise, protected roads remain open for public travel. Individuals may use them but may not claim ownership of, block, dismantle or deliberately interfere with them without authorization.</p>
+<p><strong>Penalties for Violations.</strong> Anyone found responsible for deliberately damaging or obstructing protected infrastructure must repair the damage or compensate the Empire for the materials and labor reasonably needed to restore it. The person must also pay a fine of $1,000 to the Imperial Treasury. The penalties in this Amendment apply in place of the standard fines in Article III for the same infrastructure violation.</p>
+        </section>
+
+    </main>
+    <footer class="site-footer">
+        <div class="crown-small" aria-hidden="true">👑</div>
+        <span class="footer-title">The Ziggy Empire</span>
+        <p class="footer-message">The official revised Constitution — Version 2.0</p>
+        <p class="footer-message"><a href="../ziggy-empire/">View the original constitution</a></p>
+    </footer>
+</body>
+</html>
