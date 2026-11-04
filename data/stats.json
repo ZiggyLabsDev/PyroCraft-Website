@@ -1,16 +1,22 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-11-04T02:27:47.697Z",
+  "updatedAt": "2026-11-04T17:35:17.481Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.3",
   "online": true,
   "players": {
-    "online": 1,
+    "online": 2,
     "max": 20,
     "list": [
       {
-        "name": "TheGreatZiggy11",
-        "initial": "T",
+        "name": "DarkSickness",
+        "initial": "D",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "LaPingas",
+        "initial": "L",
         "color": "orange",
         "location": "Online now"
       }
@@ -22,11 +28,6 @@
     "period": "Last 96 checks"
   },
   "history": [
-    {
-      "time": "2026-10-17T17:16:44.185Z",
-      "players": 4,
-      "online": true
-    },
     {
       "time": "2026-10-17T19:27:47.573Z",
       "players": 9,
@@ -500,6 +501,11 @@
     {
       "time": "2026-11-04T02:27:47.692Z",
       "players": 1,
+      "online": true
+    },
+    {
+      "time": "2026-11-04T17:35:17.477Z",
+      "players": 2,
       "online": true
     }
   ]
