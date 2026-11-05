@@ -1,13 +1,26 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-11-05T02:53:48.799Z",
+  "updatedAt": "2026-11-05T10:42:31.296Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.3",
   "online": true,
   "players": {
-    "online": 0,
+    "online": 2,
     "max": 20,
-    "list": []
+    "list": [
+      {
+        "name": "LaPingas",
+        "initial": "L",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "KevoPyro",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
+      }
+    ]
   },
   "uptime": {
     "percent": 100,
@@ -15,11 +28,6 @@
     "period": "Last 96 checks"
   },
   "history": [
-    {
-      "time": "2026-10-17T23:29:57.523Z",
-      "players": 1,
-      "online": true
-    },
     {
       "time": "2026-10-18T01:27:54.539Z",
       "players": 0,
@@ -493,6 +501,11 @@
     {
       "time": "2026-11-05T02:53:48.795Z",
       "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-11-05T10:42:31.291Z",
+      "players": 2,
       "online": true
     }
   ]
