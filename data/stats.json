@@ -1,13 +1,25 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-11-07T16:36:04.284Z",
+  "updatedAt": "2026-11-07T20:27:59.946Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.3",
   "online": true,
   "players": {
-    "online": 2,
+    "online": 4,
     "max": 20,
     "list": [
+      {
+        "name": "Jovink87",
+        "initial": "J",
+        "color": "orange",
+        "location": "Online now"
+      },
+      {
+        "name": "KevoPyro",
+        "initial": "K",
+        "color": "orange",
+        "location": "Online now"
+      },
       {
         "name": "Dirtblok1",
         "initial": "D",
@@ -15,8 +27,8 @@
         "location": "Online now"
       },
       {
-        "name": "Br00djeK1pc0rn",
-        "initial": "B",
+        "name": "Yappolina",
+        "initial": "Y",
         "color": "orange",
         "location": "Online now"
       }
@@ -28,11 +40,6 @@
     "period": "Last 96 checks"
   },
   "history": [
-    {
-      "time": "2026-10-19T10:52:47.336Z",
-      "players": 0,
-      "online": true
-    },
     {
       "time": "2026-10-19T17:25:32.732Z",
       "players": 0,
@@ -506,6 +513,11 @@
     {
       "time": "2026-11-07T16:36:04.278Z",
       "players": 2,
+      "online": true
+    },
+    {
+      "time": "2026-11-07T20:27:59.943Z",
+      "players": 4,
       "online": true
     }
   ]
