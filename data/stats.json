@@ -1,6 +1,6 @@
 {
   "dataState": "live",
-  "updatedAt": "2026-11-07T23:53:00.267Z",
+  "updatedAt": "2026-11-08T05:49:30.897Z",
   "serverAddress": "172.241.3.141:25573",
   "version": "Paper 26.3",
   "online": true,
@@ -15,11 +15,6 @@
     "period": "Last 96 checks"
   },
   "history": [
-    {
-      "time": "2026-10-19T21:42:57.707Z",
-      "players": 4,
-      "online": true
-    },
     {
       "time": "2026-10-20T00:43:24.264Z",
       "players": 0,
@@ -492,6 +487,11 @@
     },
     {
       "time": "2026-11-07T23:53:00.211Z",
+      "players": 0,
+      "online": true
+    },
+    {
+      "time": "2026-11-08T05:49:30.892Z",
       "players": 0,
       "online": true
     }
