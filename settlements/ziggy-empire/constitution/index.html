@@ -6,6 +6,7 @@
     <meta name="description" content="The revised Constitution of the Ziggy Empire, version 2.0.">
     <meta name="theme-color" content="#050505">
     <title>The Constitution of the Ziggy Empire — Version 2.0</title>
+    <script src="../../../theme.js"></script>
     <style>
         :root {
             color-scheme: dark;
@@ -48,6 +49,9 @@
         ::selection { background: rgba(212, 175, 55, .3); color: #fff; }
         a { color: var(--gold-light); text-underline-offset: 4px; }
         a:hover { color: var(--gold-bright); }
+        .imperial-back { display: inline-block; padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: 4px; text-decoration: none; }
+        .imperial-back:hover, .imperial-back:focus-visible { background: var(--panel); color: var(--gold-bright); }
+        .imperial-back:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
         a:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 5px; }
         p { margin: 0 0 14px; }
         p:last-child { margin-bottom: 0; }
@@ -175,13 +179,15 @@
             .footer-message, .subtitle { color: #444; }
         }
     </style>
+    <link rel="stylesheet" href="../../../imperial-theme.css?v=2">
 </head>
 <body>
+    <div class="imperial-toolbar"><a class="imperial-back" href="../">← Back to the Ziggy Empire</a></div>
     <div class="imperial-line" aria-hidden="true"></div>
     <header class="site-header">
         <div class="header-content">
             <div class="crown" aria-hidden="true">👑</div>
-            <p class="eyebrow">Imperial Charter — Revised Edition</p>
+            <p class="eyebrow">Imperial Charter</p>
             <h1>The Constitution of the Ziggy Empire</h1>
             <p class="subtitle">
 Revised Edition — Version 2.0
@@ -472,7 +478,7 @@ The Ziggy Empire exists to give its citizens a safe, orderly and enjoyable place
         <div class="crown-small" aria-hidden="true">👑</div>
         <span class="footer-title">The Ziggy Empire</span>
         <p class="footer-message">The official revised Constitution — Version 2.0</p>
-        <p class="footer-message"><a href="../ziggy-empire/">View the original constitution</a></p>
+        <p class="footer-message"><a href="../">Explore the Ziggy Empire</a></p>
     </footer>
 </body>
 </html>

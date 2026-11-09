@@ -1,0 +1,31 @@
+.command-directory { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.command-tools { display: grid; grid-template-columns: minmax(220px, .7fr) 1.3fr; align-items: center; gap: 10px 20px; margin: 24px 0 12px; }
+.command-tools > label { grid-column: 1; grid-row: 1; color: var(--text); font-size: 13px; font-weight: 700; }
+.command-tools > input { grid-column: 1; grid-row: 2; width: 100%; padding: 12px 14px; border: 1px solid var(--outline); border-radius: 8px; background: var(--surface); color: var(--text); font: inherit; }
+.command-tools > input::placeholder { color: var(--subtle); }
+.command-tools > input:focus-visible, .command-filters button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.command-filters { grid-column: 2; grid-row: 1 / span 2; display: flex; flex-wrap: wrap; gap: 8px; }
+.command-filters button { padding: 8px 12px; border: 1px solid var(--outline); border-radius: 999px; background: var(--surface); color: var(--subtle); font: 600 12px "DM Sans", sans-serif; cursor: pointer; }
+.command-filters button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent); color: var(--surface); }
+.command-help, .command-status { color: var(--subtle); font-size: 12px; line-height: 1.6; }
+.command-help { margin: 10px 0; }
+.command-help code { color: var(--accent); }
+.command-status { min-height: 1.6em; margin: 18px 0 12px; }
+.command-directory .detail-card h3 { margin: 8px 0 20px; }
+.command-directory .command-list { gap: 12px; }
+.command-directory .command-list > .command-entry { gap: 8px; padding-top: 12px; border-color: var(--outline); }
+.command-directory .command-list .command-syntax code { color: var(--blue-accent); font-size: 13px; }
+.command-entry-details { color: var(--subtle); font-size: 12px; line-height: 1.5; }
+.command-entry-details summary { width: fit-content; color: var(--text); font-size: 11px; font-weight: 600; cursor: pointer; }
+.command-entry-details summary:hover { text-decoration: underline; }
+.command-entry-details summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.command-entry-details > p { margin: 8px 0 0; }
+.command-entry-details .command-example { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin-top: 7px; color: var(--subtle); font-size: 11px; }
+.command-example span { font-weight: 700; }
+.command-example code { color: var(--text); font-size: 11px; overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+	.command-directory { grid-template-columns: 1fr; }
+	.command-tools { grid-template-columns: 1fr; gap: 8px; }
+	.command-tools > label, .command-tools > input, .command-filters { grid-column: 1; grid-row: auto; }
+	.command-filters { margin-top: 5px; }
+}

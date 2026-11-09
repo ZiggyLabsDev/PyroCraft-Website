@@ -1,0 +1,176 @@
+[
+	{
+		"syntax": "/spawn",
+		"category": "explore",
+		"group": "Getting around",
+		"description": "Return to spawn.",
+		"cooldownSeconds": 0,
+		"quickStart": true
+	},
+	{
+		"syntax": "/home <name>",
+		"category": "explore",
+		"group": "Getting around",
+		"description": "Teleport to your home.",
+		"cooldownSeconds": 60,
+		"example": "/home cabin",
+		"quickStart": true
+	},
+	{
+		"syntax": "/sethome <name>",
+		"category": "explore",
+		"group": "Getting around",
+		"description": "Set a named home at your current location.",
+		"example": "/sethome cabin",
+		"quickStart": true
+	},
+	{
+		"syntax": "/delhome <name>",
+		"category": "explore",
+		"group": "Getting around",
+		"description": "Delete a named home.",
+		"example": "/delhome cabin"
+	},
+	{
+		"syntax": "/back",
+		"category": "explore",
+		"group": "Getting around",
+		"description": "Return to your previous location.",
+		"cooldownSeconds": 0,
+		"quickStart": true
+	},
+	{
+		"syntax": "/rtp",
+		"category": "explore",
+		"group": "Getting around",
+		"description": "Teleport to a random location.",
+		"cooldownSeconds": 60,
+		"quickStart": true
+	},
+	{
+		"syntax": "/tpa <player>",
+		"category": "players",
+		"group": "Players",
+		"description": "Request to teleport to a player.",
+		"cooldownSeconds": 60,
+		"example": "/tpa Alex",
+		"quickStart": true
+	},
+	{
+		"syntax": "/tpahere <player>",
+		"category": "players",
+		"group": "Players",
+		"description": "Ask a player to teleport to you.",
+		"cooldownSeconds": 60,
+		"example": "/tpahere Alex",
+		"quickStart": true
+	},
+	{
+		"syntax": "/tpaccept",
+		"category": "players",
+		"group": "Players",
+		"description": "Accept a teleport request.",
+		"quickStart": true
+	},
+	{
+		"syntax": "/tpdeny",
+		"category": "players",
+		"group": "Players",
+		"description": "Deny a teleport request."
+	},
+	{
+		"syntax": "/msg <player> <message>",
+		"category": "players",
+		"group": "Players",
+		"description": "Send a private message.",
+		"example": "/msg Alex Hello there!",
+		"quickStart": true
+	},
+	{
+		"syntax": "[item]",
+		"category": "players",
+		"group": "Players",
+		"description": "Type [item] anywhere in a chat message to show everyone on the server the item in your main hand.",
+		"example": "Check out my sword: [item]"
+	},
+	{
+		"syntax": "/pvptoggle",
+		"category": "players",
+		"group": "Players",
+		"description": "Toggle your PvP setting. PvP is off by default.",
+		"quickStart": true
+	},
+	{
+		"syntax": "/lands create <name>",
+		"category": "claims",
+		"group": "World & claims",
+		"description": "Create a land claim.",
+		"example": "/lands create meadow",
+		"quickStart": true
+	},
+	{
+		"syntax": "/lands trust <player>",
+		"category": "claims",
+		"group": "World & claims",
+		"description": "Give a player access to your claim.",
+		"example": "/lands trust Alex",
+		"quickStart": true
+	},
+	{
+		"syntax": "/lands untrust <player>",
+		"category": "claims",
+		"group": "World & claims",
+		"description": "Remove a player's access to your claims.",
+		"example": "/lands untrust Alex",
+		"quickStart": true
+	},
+	{
+		"syntax": "/lands map",
+		"category": "claims",
+		"group": "World & claims",
+		"description": "View the land map and manage claims.",
+		"quickStart": true
+	},
+	{
+		"syntax": "/lands spawn <name>",
+		"category": "claims",
+		"group": "World & claims",
+		"description": "Teleport to a named land.",
+		"example": "/lands spawn meadow",
+		"quickStart": true
+	},
+	{
+		"syntax": "/jobs browse",
+		"category": "participate",
+		"group": "Jobs & voting",
+		"description": "Browse available jobs, and leave and join jobs in a graphical menu.",
+		"quickStart": false
+	},
+	{
+		"syntax": "/jobs info <job name>",
+		"category": "participate",
+		"group": "Jobs & voting",
+		"description": "See info on the the selected job",
+		"quickStart": false
+	},
+	{
+		"syntax": "/jobs join <job name>",
+		"category": "participate",
+		"group": "Jobs & voting",
+		"description": "Join the specified job - Limit is 3 jobs per player",
+		"quickStart": false
+	},
+	{
+		"syntax": "/jobs leave <job name>",
+		"category": "participate",
+		"group": "Jobs & voting",
+		"description": "Leave the specified job",
+		"quickStart": false
+	},
+	{
+		"syntax": "/vote all",
+		"category": "participate",
+		"group": "Jobs & voting",
+		"description": "Find links to vote for the server."
+	}
+]

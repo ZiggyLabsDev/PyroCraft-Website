@@ -9,14 +9,20 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+		<script src="../theme.js"></script>
+		<script src="../animations.js" defer></script>
+		<script src="../external-links.js" defer></script>
 		<link rel="stylesheet" href="../style.css" />
+		<link rel="stylesheet" href="../redesign.css?v=9" />
+		<link rel="stylesheet" href="../theme-switch.css" />
 	</head>
 	<body>
 		<div class="app-shell">
 			<main class="main-content" id="top">
 				<header class="topbar">
 					<a class="brand" id="brand-logo" href="../" aria-label="Pyrocraft home"><img class="brand-mark" src="../assets/logo.png" alt="" /><span>PyroCraft</span></a>
-					<nav class="site-nav" aria-label="Main"><a href="../">Home</a><a href="../faq/" aria-current="page">FAQ</a><a href="../vote/">Vote</a></nav>
+					<nav class="site-nav" aria-label="Main"><a href="../">Home</a><a href="../settlements/">Settlements</a><a href="../community/">Community</a><a href="../commands/">Commands</a><a href="../rules/">Rules</a><a href="../faq/" aria-current="page">FAQ</a><a href="../vote/">Vote</a></nav>
+					<div class="topbar-actions"><fieldset class="theme-switch"><legend>Theme</legend><div class="theme-options"><label><input type="radio" name="theme" value="system" checked /><span>System</span></label><label><input type="radio" name="theme" value="dark" /><span>Dark</span></label><label><input type="radio" name="theme" value="light" /><span>Light</span></label></div></fieldset></div>
 				</header>
 
 				<div class="page-content" id="overview">
@@ -49,7 +55,7 @@
                                         </p>
                                         <div class="server-address" id="connect">
                                             <span>Server address</span>
-                                            <strong id="server-address">pyrocraft.kinetichosting.gg</strong>
+                                            <strong id="server-address">play.pyrocraft.world</strong>
                                             <button id="copy-address" aria-label="Copy server address">
                                                 Copy link
                                             </button>
@@ -364,7 +370,7 @@
                                 <span style="color: #a0afb5; font-size: 11px; line-height: 1.5; display: block; margin-bottom: 6px;">
                                     Ask our community on Discord and we'll be happy to help.
                                 </span>
-                                <a href="https://discord.gg/pyrocraft" target="_blank" rel="noopener noreferrer" style="justify-content: center;">
+                                <a data-external-link="discord" href="https://dc.gg/pyrocraft" target="_blank" rel="noopener noreferrer" style="justify-content: center;">
                                     <span class="community-icon discord-icon">◌</span>
                                     Ask on Discord
                                 </a>
@@ -384,7 +390,7 @@
                                     <span class="update-arrow" aria-hidden="true">→</span>
                                 </a>
                                 <a class="update-preview" href="../">
-                                    <div><strong>Server home</strong><span>Status, details, and community updates</span></div>
+                                    <div><strong>Server home</strong><span>Server status and details</span></div>
                                     <span class="update-arrow" aria-hidden="true">→</span>
                                 </a>
                             </div>
@@ -406,9 +412,9 @@
 					<div class="footer-links">
 						<h2>Links:</h2>
 						<ul>
-							<li><a href="/vote">Vote For Pyrocraft!</a></li>
-							<li><a href="https://discord.gg/pyrocraft" target="_blank" rel="noopener">Discord</a></li>
-							<li><a href="https://youtube.com/@kevopyro" target="_blank" rel="noopener">Youtube</a></li>
+							<li><a href="../vote/">Vote For Pyrocraft!</a></li>
+							<li><a data-external-link="discord" href="https://dc.gg/pyrocraft" target="_blank" rel="noopener">Discord</a></li>
+							<li><a data-external-link="youtube" href="https://youtube.com/@kevopyro" target="_blank" rel="noopener">Youtube</a></li>
 						</ul>
 					</div>
 				</footer>

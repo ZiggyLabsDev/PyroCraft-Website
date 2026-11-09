@@ -1,22 +1,12 @@
-const copyAddressButton = document.querySelector("#copy-address");
-const openInfoButton = document.querySelector("#open-info");
+const copyAddressButtons = document.querySelectorAll(".copy-address");
+const openInfoButtons = document.querySelectorAll(".open-info");
 const closeInfoButton = document.querySelector("#close-info");
 const infoModal = document.querySelector("#info-modal");
 const brandLogo = document.querySelector("#brand-logo");
 const easterEgg = document.querySelector("#easter-egg");
-const statsUrl = "data/stats.json";
-
-const updatesUrl = "data/updates.json";
-
-const updatesElements = {
-	card: document.querySelector("#latest-updates"),
-	list: document.querySelector("#updates-list"),
-	openButton: document.querySelector("#view-updates"),
-	closeButton: document.querySelector("#close-updates"),
-	modal: document.querySelector("#updates-modal"),
-};
-
-
+const siteRoot = new URL(".", document.currentScript.src);
+const statsUrl = new URL("data/stats.json", siteRoot);
+const workerStatsUrl = "https://pyrocraft-stats-worker.ziggylabsdev.workers.dev/stats";
 function renderRestartTime() {
 		const restartTime = document.querySelector("#restart-time");
 		if (!restartTime) return;
@@ -43,6 +33,8 @@ const elements = {
 	serverStatus: document.querySelector("#server-status"),
 	serverStatusDot: document.querySelector("#server-status-dot"),
 	serverVersion: document.querySelector("#server-version"),
+	statsFreshness: document.querySelector("#stats-freshness"),
+	playersLabel: document.querySelector("#players-label"),
 	onlineCount: document.querySelector("#online-count"),
 	uptimeValue: document.querySelector("#uptime-value"),
 	uptimeDetail: document.querySelector("#uptime-detail"),
@@ -57,6 +49,7 @@ const elements = {
 	chartLabels: document.querySelector("#chart-labels"),
 	chartStats: document.querySelector("#chart-stats"),
 	chartEmpty: document.querySelector("#chart-empty"),
+	historyFreshness: document.querySelector("#history-freshness"),
 };
 
 function formatChartTime(timestamp) {
@@ -128,9 +121,13 @@ function setupChartHover() {
 }
 
 function renderChart(history) {
+	const now = Date.now();
 	const pointsData = Array.isArray(history)
 		? history
-			.filter((point) => Number.isFinite(Number(point.players)) && Number.isFinite(Date.parse(point.time)))
+			.filter((point) => {
+				const time = Date.parse(point.time);
+				return typeof point.players === "number" && Number.isFinite(point.players) && Number.isFinite(time) && time >= now - 96 * 60 * 60 * 1000 && time <= now;
+			})
 			.sort((first, second) => Date.parse(first.time) - Date.parse(second.time))
 		: [];
 	if (!pointsData.length || !elements.chartLine) {
@@ -142,7 +139,10 @@ function renderChart(history) {
 		if (elements.chartLatest) elements.chartLatest.textContent = "-- online";
 		if (elements.chartLabels) elements.chartLabels.replaceChildren();
 		if (elements.chartStats) elements.chartStats.replaceChildren();
-		if (elements.chartEmpty) elements.chartEmpty.hidden = false;
+		if (elements.chartEmpty) {
+			elements.chartEmpty.textContent = "No activity data from the last 96 hours";
+			elements.chartEmpty.hidden = false;
+		}
 		return;
 	}
 	elements.chartEmpty.hidden = true;
@@ -175,6 +175,7 @@ function renderChart(history) {
 		ys: coords.map(([, y]) => y),
 	};
 	elements.chartLine.setAttribute("d", line);
+	elements.chartLine.classList.add("chart-draw");
 	elements.chartArea?.setAttribute("d", `${line} L${width} ${baseline} L0 ${baseline} Z`);
 	if (elements.chartPoints) {
 		elements.chartPoints.replaceChildren(...points.map((point, index) => {
@@ -189,7 +190,7 @@ function renderChart(history) {
 	}
 	if (elements.chartLatest) {
 		const latestPlayers = Number(pointsData.at(-1).players);
-		elements.chartLatest.textContent = `${latestPlayers} online now`;
+		elements.chartLatest.textContent = `${latestPlayers} at last sample`;
 	}
 	if (elements.chartLabels) {
 		const includeDay = timeRange >= 24 * 60 * 60 * 1000 || new Date(firstTimestamp).toDateString() !== new Date(lastTimestamp).toDateString();
@@ -207,13 +208,15 @@ function renderChart(history) {
 	}
 }
 
-function renderPlayers(players = []) {
+function renderPlayers(players = [], onlineCount = null) {
 	if (!elements.playerList || !Array.isArray(players) || !players.length) {
 		if (elements.playerList) {
-			elements.playerList.innerHTML = '<div class="empty-state">Player data unavailable</div>';
+			elements.playerList.textContent = onlineCount === 0 ? "No players online at the last check. Your adventure awaits!" : "Player names unavailable.";
+			elements.playerList.className = "activity-list empty-state";
 		}
 		return;
 	}
+	elements.playerList.className = "activity-list";
 
 	const visiblePlayers = players.slice(0, 5);
 	const remainingPlayers = Math.max(players.length - 5, 0);
@@ -222,8 +225,8 @@ function renderPlayers(players = []) {
 		${visiblePlayers.map((player) => `
 			<div class="activity-item player-row">
 				<p>
-					<strong>${player.name}</strong>
-					<span>${player.location || "Exploring the world"}</span>
+					<strong>${escapeHtml(player.name)}</strong>
+					<span>${escapeHtml(player.location || "Exploring the world")}</span>
 				</p>
 				<i class="online-dot"></i>
 			</div>
@@ -237,90 +240,6 @@ function renderPlayers(players = []) {
 	`;
 }
 
-function parseMarkdown(markdown) {
-	return markdown
-		.replace(/^### (.*)$/gm, "<h4>$1</h4>")
-		.replace(/^## (.*)$/gm, "<h3>$1</h3>")
-		.replace(/^# (.*)$/gm, "<h2>$1</h2>")
-		.replace(/^\- (.*)$/gm, "<li>$1</li>")
-		.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-		.replace(/\*(.*?)\*/g, "<em>$1</em>")
-		.replace(/\n\n/g, "</p><p>");
-}
-
-async function loadUpdates() {
-	try {
-		const response = await fetch(updatesUrl, { cache: "no-store" });
-
-		if (!response.ok) {
-			throw new Error("Updates index unavailable");
-		}
-
-		const updates = await response.json();
-
-		if (!Array.isArray(updates) || !updates.length) {
-			showNoUpdates();
-			return;
-		}
-
-		const latest = updates.slice(0, 3);
-
-		if (updatesElements.card) {
-			updatesElements.card.innerHTML = latest.map((update) => `
-				<button
-					class="update-preview"
-					type="button"
-					data-update-file="${escapeHtml(update.file)}"
-				>
-					<div>
-						<strong>${escapeHtml(update.title)}</strong>
-						<span>${escapeHtml(update.date)}</span>
-					</div>
-					<span class="update-arrow">→</span>
-				</button>
-			`).join("");
-		}
-
-		if (updatesElements.list) {
-			updatesElements.list.innerHTML = updates.map((update) => `
-				<button
-					class="update-preview"
-					type="button"
-					data-update-file="${escapeHtml(update.file)}"
-				>
-					<div>
-						<strong>${escapeHtml(update.title)}</strong>
-						<span>${escapeHtml(update.date)}</span>
-					</div>
-					<span class="update-arrow">→</span>
-				</button>
-			`).join("");
-		}
-
-		document.querySelectorAll("[data-update-file]").forEach((button) => {
-			button.addEventListener("click", () => {
-				openUpdate(button.dataset.updateFile);
-			});
-		});
-
-	} catch (error) {
-		console.warn("Could not load updates.", error);
-		showNoUpdates();
-	}
-}
-
-function showNoUpdates() {
-	const html = '<div class="empty-state">No updates yet.</div>';
-
-	if (updatesElements.card) {
-		updatesElements.card.innerHTML = html;
-	}
-
-	if (updatesElements.list) {
-		updatesElements.list.innerHTML = html;
-	}
-}
-
 function escapeHtml(value) {
 	return String(value)
 		.replaceAll("&", "&amp;")
@@ -329,70 +248,6 @@ function escapeHtml(value) {
 		.replaceAll('"', "&quot;")
 		.replaceAll("'", "&#039;");
 }
-
-async function openUpdate(filename) {
-	try {
-		const response = await fetch(`data/updates/${encodeURIComponent(filename)}`, {
-			cache: "no-store"
-		});
-
-		if (!response.ok) {
-			throw new Error("Update unavailable");
-		}
-
-		const markdown = await response.text();
-
-		const content = markdown.replace(/^---[\s\S]*?---/, "").trim();
-
-		const updateContent = document.querySelector("#updates-list");
-
-		updateContent.innerHTML = `
-			<article class="update-article">
-				${parseMarkdown(content)}
-			</article>
-		`;
-
-		setUpdatesModal(true);
-
-	} catch (error) {
-		console.warn("Could not open update.", error);
-	}
-}
-
-function setUpdatesModal(open) {
-	if (!updatesElements.modal) return;
-
-	updatesElements.modal.hidden = !open;
-	document.body.classList.toggle("modal-open", open);
-
-	if (open) {
-		updatesElements.closeButton?.focus();
-	} else {
-		updatesElements.openButton?.focus();
-	}
-}
-
-updatesElements.openButton?.addEventListener("click", () => {
-	loadUpdates();
-	setUpdatesModal(true);
-});
-
-updatesElements.closeButton?.addEventListener("click", () => {
-	setUpdatesModal(false);
-});
-
-updatesElements.modal?.addEventListener("click", (event) => {
-	if (
-		event.target instanceof HTMLElement &&
-		event.target.hasAttribute("data-close-updates")
-	) {
-		setUpdatesModal(false);
-	}
-});
-
-loadUpdates();
-
-
 
 function calculateUptime(history) {
 	const checks = history || [];
@@ -404,15 +259,29 @@ function calculateUptime(history) {
 	};
 }
 
+async function fetchJsonWithTimeout(url, label) {
+	const controller = new AbortController();
+	const timeout = setTimeout(() => controller.abort(), 8000);
+	try {
+		const response = await fetch(url, { cache: "no-store", signal: controller.signal });
+		if (!response.ok) throw new Error(`${label} returned ${response.status}`);
+		return await response.json();
+	} finally {
+		clearTimeout(timeout);
+	}
+}
+
 async function fetchLiveStatus(address) {
-	const response = await fetch(`https://api.mcstatus.io/v2/status/java/${encodeURIComponent(address)}`);
-	if (!response.ok) throw new Error("Live status unavailable");
-	const s = await response.json();
+	const s = await fetchJsonWithTimeout(
+		`https://api.mcstatus.io/v2/status/java/${encodeURIComponent(address)}`,
+		"Live status"
+	);
+	if (typeof s.online !== "boolean") throw new Error("Invalid live status response");
 	return {
-		online: s.online !== false,
+		online: s.online,
 		version: s.version?.name_clean || s.version?.name || null,
 		players: {
-			online: s.players?.online ?? 0,
+			online: s.online ? (Number.isFinite(s.players?.online) ? s.players.online : null) : 0,
 			max: s.players?.max ?? null,
 			list: (s.players?.list || []).map((player) => ({
 				name: player.name_clean || player.name_raw || player.name,
@@ -424,43 +293,90 @@ async function fetchLiveStatus(address) {
 	};
 }
 
+async function fetchWorkerStats() {
+	const stats = await fetchJsonWithTimeout(workerStatsUrl, "Stats Worker");
+	if (stats?.dataState !== "live" || !Array.isArray(stats.history) ||
+		!Number.isFinite(Date.parse(stats.updatedAt)) ||
+		typeof stats.serverAddress !== "string" || typeof stats.online !== "boolean" ||
+		!stats.players || typeof stats.players !== "object") {
+		throw new Error("Stats Worker returned invalid data");
+	}
+	return stats;
+}
+
 async function loadStats() {
 	try {
-		const response = await fetch(statsUrl, { cache: "no-store" });
-		if (!response.ok) throw new Error("Stats file unavailable");
-		let stats = await response.json();
+		let stats;
+		let usingSnapshot = false;
+		try {
+			stats = await fetchWorkerStats();
+		} catch (error) {
+			console.warn("Stats Worker unavailable; using saved stats snapshot.", error);
+			usingSnapshot = true;
+			const response = await fetch(statsUrl, { cache: "no-store" });
+			if (!response.ok) throw new Error("Saved stats snapshot unavailable");
+			stats = await response.json();
+			if (!stats || !Array.isArray(stats.history)) throw new Error("Invalid saved stats snapshot");
+		}
+		if (elements.historyFreshness) {
+			const updatedAt = new Date(stats.updatedAt);
+			const timestamp = Number.isFinite(updatedAt.getTime()) ? updatedAt.toLocaleString() : "time unavailable";
+			elements.historyFreshness.textContent = `${usingSnapshot ? "Saved activity snapshot" : "Activity history updated"}: ${timestamp}.`;
+		}
+		let checkedAt = stats.updatedAt;
+		let isLive = false;
 		if (stats.serverAddress) {
 			try {
 				const live = await fetchLiveStatus(stats.serverAddress);
-				const history = [...(stats.history || []), { time: new Date().toISOString(), players: live.players.online, online: live.online }];
-				stats = { ...stats, ...live, history };
+				const history = [...(stats.history || [])];
+				if (Number.isFinite(live.players.online)) history.push({ time: new Date().toISOString(), players: live.players.online, online: live.online });
+				stats = { ...stats, ...live, version: live.version || stats.version, history };
+				checkedAt = new Date().toISOString();
+				isLive = true;
 			} catch (error) {
-				console.warn("Live status failed, using stats.json.", error);
+				console.warn("Live status failed; using the last saved check.", error);
 			}
 		}
 		const statusClass = stats.online === true ? "status-online" : stats.online === false ? "status-offline" : "status-unknown";
-		elements.serverStatus.textContent = stats.online === true ? "Server online" : stats.online === false ? "Server offline" : "Status unavailable";
-		elements.serverStatusDot.className = statusClass;
-		elements.serverVersion.textContent = stats.version || "JAVA EDITION";
+		if (elements.serverStatus) elements.serverStatus.textContent = stats.online === true ? (isLive ? "Server online" : "Last check: online") : stats.online === false ? (isLive ? "Server offline" : "Last check: offline") : "Status unavailable";
+		if (elements.serverStatusDot) elements.serverStatusDot.className = statusClass;
+		if (elements.playersLabel) elements.playersLabel.textContent = isLive ? "Online now" : "Players at last check";
+		if (elements.serverVersion) elements.serverVersion.textContent = stats.version ? `JAVA EDITION · ${stats.version}` : "JAVA EDITION";
+		const versionNumber = stats.version?.match(/\d+(?:\.\d+)+/)?.[0];
+		if (versionNumber) document.querySelectorAll(".join-version").forEach((element) => {
+			element.textContent = `Use Java Edition ${versionNumber} to play.`;
+		});
+		if (elements.statsFreshness) {
+			const checkedDate = new Date(checkedAt);
+			elements.statsFreshness.textContent = (Number.isFinite(checkedDate.getTime())
+				? `Last checked ${checkedDate.toLocaleString()}. Player names may be unavailable.`
+				: "Last check time unavailable.") + (usingSnapshot ? " Activity history is from a saved snapshot." : "");
+		}
 		const online = Number.isFinite(stats.players?.online) ? stats.players.online : null;
 		const max = Number.isFinite(stats.players?.max) ? stats.players.max : null;
-		elements.onlineCount.textContent = online === null ? "Unavailable" : max === null ? `${online}` : `${online} / ${max}`;
+		if (elements.onlineCount) elements.onlineCount.textContent = online === null ? "Unavailable" : max === null ? `${online}` : `${online} / ${max}`;
 		const uptime = stats.uptime || calculateUptime(stats.history);
-		if (Number.isFinite(uptime?.percent)) {
+		if (elements.uptimeValue && elements.uptimeDetail && elements.uptimeProgress && elements.uptimePeriod && Number.isFinite(uptime?.percent)) {
 			elements.uptimeValue.innerHTML = `${uptime.percent}<span class="stat-unit">%</span>`;
 			elements.uptimeDetail.textContent = uptime.detail || "Calculated from history";
 			elements.uptimeProgress.style.width = `${Math.min(uptime.percent, 100)}%`;
 			elements.uptimePeriod.textContent = uptime.period || "--";
-		} else {
+		} else if (elements.uptimeValue && elements.uptimeDetail && elements.uptimeProgress && elements.uptimePeriod) {
 			elements.uptimeValue.textContent = "Collecting data";
 			elements.uptimeDetail.textContent = "Waiting for history";
 			elements.uptimeProgress.style.width = "0%";
 			elements.uptimePeriod.textContent = "--";
 		}
-		renderPlayers(stats.players?.list);
+		renderPlayers(stats.players?.list, online);
 		renderChart(stats.history);
 	} catch (error) {
-		console.warn("Using the sample server stats.", error);
+		console.warn("Could not load server stats.", error);
+		if (elements.serverStatus) elements.serverStatus.textContent = "Status unavailable";
+		if (elements.serverStatusDot) elements.serverStatusDot.className = "status-unknown";
+		if (elements.statsFreshness) elements.statsFreshness.textContent = "Server data unavailable. Please try again later.";
+		if (elements.playerList) elements.playerList.textContent = "Player data unavailable.";
+		if (elements.chartEmpty) elements.chartEmpty.textContent = "Activity data unavailable.";
+		if (elements.historyFreshness) elements.historyFreshness.textContent = "Activity history unavailable.";
 	}
 }
 
@@ -468,27 +384,39 @@ loadStats();
 setupChartHover();
 renderRestartTime();
 
-copyAddressButton?.addEventListener("click", async () => {
-	const address = elements.serverAddress?.textContent;
+copyAddressButtons.forEach((button) => button.addEventListener("click", async () => {
+	const joinSection = button.closest(".join-section");
+	const address = joinSection?.querySelector(".server-address strong")?.textContent;
 	if (!address || address === "Loading address" || address === "Address unavailable") return;
-	await navigator.clipboard.writeText(address);
-	copyAddressButton.textContent = "Link copied";
-	copyAddressButton.setAttribute("aria-label", "Server address copied");
+	const feedback = joinSection.querySelector(".copy-feedback");
+	try {
+		await navigator.clipboard.writeText(address);
+		button.textContent = "Address copied";
+		button.setAttribute("aria-label", "Server address copied");
+		if (feedback) feedback.textContent = "Address copied. See you in game!";
+	} catch (error) {
+		console.warn("Could not copy server address.", error);
+		if (feedback) feedback.textContent = "Could not copy automatically. Select and copy the address above.";
+	}
 	window.setTimeout(() => {
-		copyAddressButton.textContent = "Copy link";
-		copyAddressButton.setAttribute("aria-label", "Copy server address");
+		button.textContent = "Copy address ↗";
+		button.setAttribute("aria-label", "Copy server address");
 	}, 1600);
-});
+}));
 
+let activeInfoButton = null;
 function setInfoModal(open) {
 	if (!infoModal) return;
 	infoModal.hidden = !open;
 	document.body.classList.toggle("modal-open", open);
 	if (open) closeInfoButton?.focus();
-	else openInfoButton?.focus();
+	else activeInfoButton?.focus();
 }
 
-openInfoButton?.addEventListener("click", () => setInfoModal(true));
+openInfoButtons.forEach((button) => button.addEventListener("click", () => {
+	activeInfoButton = button;
+	setInfoModal(true);
+}));
 closeInfoButton?.addEventListener("click", () => setInfoModal(false));
 infoModal?.addEventListener("click", (event) => {
 	if (event.target instanceof HTMLElement && event.target.hasAttribute("data-close-info")) setInfoModal(false);

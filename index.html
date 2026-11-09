@@ -1,334 +1,103 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="theme-color" content="#0b1118" />
-		<link rel="icon" type="image/png" href="assets/logo.png" />
-		<title>PyroCraft | Minecraft Server</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<div class="app-shell">
-			<main class="main-content" id="top">
-				<header class="topbar">
-					<a class="brand" id="brand-logo" href="/" aria-label="Pyrocraft home"><img class="brand-mark" src="assets/logo.png" alt="" /><span>PyroCraft</span></a>
-					<nav class="site-nav" aria-label="Main"><a href="./" aria-current="page">Home</a><a href="faq/">FAQ</a><a href="vote/">Vote</a></nav>
-					<div class="topbar-actions">
-						<span class="server-pill"><i id="server-status-dot"></i> <span id="server-status">Checking status</span></span>
-					</div>
-				</header>
-
-				<div class="page-content" id="overview">
-
-					<div class="main-column">
-
-						<section class="welcome-row" id="about">
-							<div>
-								<p class="eyebrow">
-									PYROCRAFT<span>•</span>
-									<span id="server-version">JAVA EDITION 26.3</span>
-								</p>
-
-								<h1>A world worth <em>coming back to.</em></h1>
-
-								<p class="welcome-copy">
-									A friendly Vanilla+ server for Minecraft players of all kinds.
-									PyroCraft offers a welcoming community, classic survival gameplay,
-									and a few carefully chosen features that add to the experience
-									without taking away from the vanilla feel. Whether you're here
-									to build, explore, create, or simply hang out with friends,
-									there's a place for you in PyroCraft.
-								</p>
-							</div>
-
-							<div class="server-address" id="connect">
-								<span>Server address</span>
-								<strong id="server-address">pyrocraft.kinetichosting.gg</strong>
-								<button id="copy-address" aria-label="Copy server address">
-									Copy link
-								</button>
-							</div>
-							<button class="useful-commands" id="open-info" type="button" aria-haspopup="dialog" aria-controls="info-modal">
-								<strong>New to the server? Take a look at our quick-start commands guide here! <span> →</span></strong>
-							</button>
-							<a class="useful-commands" href="/faq/">
-								<strong>Frequently asked questions <span>→</span></strong>
-							</a>
-						</section>
-
-						<article class="panel chart-panel" id="activity">
-							<div class="panel-heading">
-								<div>
-									<h2>Server activity</h2>
-									<p>Players online over the last 24 hours.</p>
-								</div>
-
-								<div class="chart-heading-meta">
-									<span class="chart-legend">
-										<i></i> Players
-									</span>
-
-									<strong id="chart-latest">-- online</strong>
-								</div>
-							</div>
-
-							<div class="chart-wrap">
-								<svg
-									viewBox="0 0 720 220"
-									role="img"
-									aria-label="A line graph showing server activity over the last 24 hours"
-								>
-									<defs>
-										<linearGradient
-											id="chart-fill"
-											x1="0"
-											x2="0"
-											y1="0"
-											y2="1"
-										>
-											<stop
-												offset="0"
-												stop-color="#9C91D1"
-												stop-opacity=".34"
-											/>
-											<stop
-												offset="1"
-												stop-color="#9C91D1"
-												stop-opacity="0"
-											/>
-										</linearGradient>
-									</defs>
-
-									<g class="chart-grid">
-										<line x1="0" y1="20" x2="720" y2="20"/>
-										<line x1="0" y1="74" x2="720" y2="74"/>
-										<line x1="0" y1="128" x2="720" y2="128"/>
-										<line x1="0" y1="182" x2="720" y2="182"/>
-									</g>
-
-									<g id="chart-y-labels" class="chart-y-labels" aria-hidden="true"/>
-									<path id="chart-area" class="chart-area"/>
-									<path id="chart-line" class="chart-line"/>
-									<g id="chart-points" class="chart-points"/>
-								</svg>
-
-								<div id="chart-empty" class="chart-empty">
-									Collecting activity data
-								</div>
-
-								<div id="chart-labels" class="chart-labels"></div>
-							</div>
-
-							<div id="chart-stats" class="chart-stats"></div>
-						</article>
-
-						<article id="updates">
-
-							<section class="updates-card panel" id="updates">
-								<div class="panel-heading">
-									<div>
-										<h2>Latest updates</h2>
-										<p>What's happening on PyroCraft.</p>
-									</div>
-									<button class="text-link" id="view-updates" type="button">
-										View all <span>→</span>
-									</button>
-								</div>
-
-								<div id="latest-updates" class="latest-updates">
-									<div class="empty-state">Loading updates...</div>
-								</div>
-							</section>
-
-
-
-						</article>
-
-					</div>
-
-
-					<aside class="side-column">
-
-						<article class="panel activity-panel" id="players">
-							<div class="panel-heading">
-								<div>
-									<h2>
-										Online now
-										<span id="online-count" class="count-badge">
-											Unavailable
-										</span>
-									</h2>
-
-									<p>Players currently exploring.</p>
-
-									<p class="stats-note">
-										Online user stats may not be 100% up to date.
-									</p>
-								</div>
-
-							</div>
-
-							<div class="activity-list" id="player-list">
-								<div class="empty-state">
-									Player data unavailable
-								</div>
-							</div>
-							<div class="plus-more" id="plus-more"></div>
-
-						</article>
-
-
-						<article class="community-card">
-							<p>Stay in the loop</p>
-
-							<div>
-								<a
-									href="https://dc.gg/pyrocraft"
-									target="_blank"
-									rel="noreferrer"
-								>
-									<span class="community-icon discord-icon">◌</span>
-									Discord
-								</a>
-
-								<a
-									href="https://youtube.com/@kevopyro"
-									target="_blank"
-									rel="noreferrer"
-								>
-									<span class="community-icon youtube-icon">▶</span>
-									YouTube
-								</a>
-							</div>
-						</article>
-
-
-						<section class="stats-grid" aria-label="Server summary">
-
-							<article class="stat-card">
-								<div class="stat-header">
-									<span>Server uptime</span>
-									<span class="stat-icon green">◷</span>
-								</div>
-
-								<strong class="stat-value">
-									<span id="uptime-value">Collecting data</span>
-								</strong>
-
-								<p class="stat-change">
-									<span id="uptime-detail">Waiting for history</span>
-								</p>
-
-								<div class="progress-track">
-									<span id="uptime-progress" style="width: 0%"></span>
-								</div>
-
-								<p class="progress-label">
-									<span>Uptime history</span>
-									<b id="uptime-period">--</b>
-								</p>
-							</article>
-
-
-							<article class="stat-card location-card">
-								<div class="stat-header">
-									<span>Server location</span>
-									<span class="stat-icon blue">⌖</span>
-								</div>
-
-								<strong class="location-name">Amsterdam</strong>
-
-								<p class="location-detail">
-									Netherlands
-								</p>
-
-								<p class="restart-detail">
-									<span>Daily restart</span>
-									<strong id="restart-time">9:00 PM MT</strong>
-								</p>
-							</article>
-							<article class="community-card">
-								<h3>Vote for Pyrocraft!</h3>
-								<p>Vote for our server to receive awesome in-game rewards!</p>
-								<a href="/vote" rel="noopener noreferrer" class="useful-commands">
-									<strong>Vote Now!</strong>
-								</a>
-							</article>
-
-						</section>
-
-					</aside>
-
-				</div>
-				<footer class="main-footer">
-					<div class="footer-brand">
-						<div class="footer-name">
-							<img src="assets/logo.png" class="footer-logo">
-							<div>
-								<h1>Pyrocraft</h1>
-								<small>© 2026 KevoPyro. All rights reserved.</small>
-							</div>
-						</div>
-					</div>
-					<span class="spacer"></span>
-					<div class="footer-links">
-						<h2>Links:</h2>
-						<ul>
-							<li><a href="/vote">Vote For Pyrocraft!</a></li>
-							<li><a href="/faq/">Frequently Asked Questions</a></li>
-							<li><a href="https://discord.gg/pyrocraft" target="_blank" rel="noopener">Discord</a></li>
-							<li><a href="https://youtube.com/@kevopyro" target="_blank" rel="noopener">Youtube</a></li>
-						</ul>
-					</div>
-				</footer>
-
-			</main>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#11111f" />
+	<meta name="description" content="Explore, build, and make your mark on PyroCraft, a friendly Vanilla+ Minecraft Java server." />
+	<link rel="icon" type="image/png" href="assets/logo.png" />
+	<title>PyroCraft | Your world, your story</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+	<script src="theme.js"></script>
+	<script src="animations.js" defer></script>
+	<script src="external-links.js" defer></script>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="redesign.css?v=10" />
+	<link rel="stylesheet" href="theme-switch.css" />
+</head>
+<body class="home-page">
+	<a class="skip-link" href="#main">Skip to content</a>
+	<header class="topbar">
+		<a class="brand" id="brand-logo" href="./" aria-label="PyroCraft home"><img class="brand-mark" src="assets/logo.png" alt="" /><span>PyroCraft<span class="brand-dot">.</span></span></a>
+		<nav class="site-nav" aria-label="Main navigation">
+			<a href="/" aria-current="page">Home</a><a href="settlements/">Settlements</a><a href="community/">Community</a><a href="commands/">Commands</a><a href="rules/">Rules</a><a href="faq/">FAQ</a><a href="vote/">Vote</a>
+		</nav>
+		<div class="topbar-actions">
+			<fieldset class="theme-switch"><legend>Theme</legend><div class="theme-options"><label><input type="radio" name="theme" value="system" checked /><span>System</span></label><label><input type="radio" name="theme" value="dark" /><span>Dark</span></label><label><input type="radio" name="theme" value="light" /><span>Light</span></label></div></fieldset>
 		</div>
-		<div class="easter-egg" id="easter-egg" role="status" aria-live="polite" hidden></div>
-
-		<section class="info-modal" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title" hidden>
-			<div class="info-modal-backdrop" data-close-info></div>
-			<div class="info-modal-panel">
-				<header class="info-modal-header">
-					<div><p class="eyebrow">PYROCRAFT<span>•</span> SERVER GUIDE</p><h2 id="info-title">Commands &amp; server info</h2><p>Some basic commands to help you get around</p></div>
-					<button class="modal-close" id="close-info" type="button" aria-label="Close server information">×</button>
-				</header>
-				<div class="command-layout">
-					<section class="command-group"><div class="command-group-heading"><span class="command-index">01</span><div><h3>Getting around</h3><p>Move quickly and find your way home.</p></div></div><div class="command-list"><div><code>/spawn</code><span>Return to spawn.</span></div><div><code>/home &lt;name&gt;</code><span>Teleport to your home.</span></div><div><code>/sethome &lt;name&gt;</code><span>Set your home at your current location.</span></div><div><code>/back</code><span>Return to your previous location.</span></div><div><code>/rtp</code><span>Teleport to a random location.</span></div></div></section>
-					<section class="command-group"><div class="command-group-heading"><span class="command-index">02</span><div><h3>Players</h3><p>Connect and communicate with the community.</p></div></div><div class="command-list"><div><code>/tpa &lt;player&gt;</code><span>Request to teleport to a player.</span></div><div><code>/tpahere &lt;player&gt;</code><span>Request a player to teleport to your location</span></div><div><code>/tpaccept</code><span>Accept an incoming teleport request.</span></div><div><code>/msg &lt;player&gt; &lt;message&gt;</code><span>Send a private message.</span></div></div></section>
-					<section class="command-group"><div class="command-group-heading"><span class="command-index">03</span><div><h3>World &amp; claims</h3><p>Protect builds and manage your space.</p></div></div><div class="command-list"><div><code>/lands create &lt;name&gt;</code><span>Start or manage a land claim.</span></div><div><code>/lands trust &lt;player&gt;</code><span>Give a player access to your claim.</span></div><div><code>/lands untrust &lt;player&gt;</code><span>Remove a player's access to your land claims.</span></div><div><code>/lands map</code><span>Opens a menu to veiw and buy your land claims</span></div><div><code>/lands spawn &lt;name&gt;</code><span>Teleport to your land.</span></div></div></section>
-				</div>
-				<footer class="info-modal-footer"><a href="https://dc.gg/pyrocraft" target="_blank" rel="noreferrer">Don't see a command? Ask us in our Discord! <span aria-hidden="true">↗</span></a></footer>
+	</header>
+	<main id="main">
+		<section class="hero section-wrap" aria-labelledby="hero-title">
+			<div class="hero-copy">
+				<p class="eyebrow"><span class="eyebrow-dot"></span> A MINECRAFT JAVA COMMUNITY</p>
+				<h1 id="hero-title">A little more <em>adventure</em>.<br />A lot more <em>you</em>.</h1>
+				<p class="hero-description">Find your place in a friendly Vanilla+ world. Build something brilliant, explore custom terrain, and make stories worth coming back for.</p>
+				<div class="hero-actions"><a class="button button-primary" href="#join">Start your adventure <span aria-hidden="true">↗</span></a><a class="button button-quiet" href="#discover">Explore PyroCraft <span aria-hidden="true">↓</span></a></div>
+				<div class="hero-status"><span class="server-pill"><i id="server-status-dot" class="status-unknown"></i><span id="server-status">Checking status</span></span><span class="status-divider"></span><span id="server-version">JAVA EDITION 26.3</span></div>
 			</div>
-		</section>
-		<section class="updates-modal" id="updates-modal" role="dialog" aria-modal="true" aria-labelledby="updates-title" hidden>
-			<div class="updates-modal-backdrop" data-close-updates></div>
-
-			<div class="updates-modal-panel">
-				<header class="updates-modal-header">
-					<div>
-						<p class="eyebrow">PYROCRAFT <span>•</span> UPDATES</p>
-						<h2 id="updates-title">Server updates</h2>
-						<p>News, changes, and announcements from PyroCraft.</p>
-						<a class="text-link" id="join-discord-updates" href="https://discord.gg/pyrocraft" target="_blank" rel="noopener noreferrer">Find more updates on our Discord!</a>
-					</div>
-
-					<button class="modal-close" id="close-updates" type="button" aria-label="Close updates">
-						×
-					</button>
-				</header>
-
-				<div id="updates-list" class="updates-list">
-					<div class="empty-state">Loading updates...</div>
-				</div>
-				
+			<div class="hero-art">
+				<img src="assets/spawn.png" alt="The PyroCraft spawn area, with buildings and colorful banners" />
+				<div class="art-caption"><span>YOUR NEXT ADVENTURE AWAITS</span><strong>Made for exploring<span> ✦</span></strong><small>PyroCraft spawn</small></div>
+				<span class="art-number" aria-hidden="true">PC / 01</span>
 			</div>
 		</section>
 
-		<script src="script.js"></script>
-	</body>
+		<section class="section-wrap discover-section" id="discover">
+			<div class="section-intro"><div><p class="eyebrow">THE PYROCRAFT EXPERIENCE <span>✦</span></p><h2>Familiar game.<br /><em>Fresh possibilities.</em></h2></div><p>All the survival you love, with thoughtful extras that make this world your own.</p></div>
+			<div class="feature-grid">
+				<article class="feature-card"><span class="feature-icon" aria-hidden="true">✦</span><span class="card-index">01 / EXPLORE</span><h3>Go beyond the familiar.</h3><p>Discover custom terrain and find a new favorite place to call home.</p></article>
+				<article class="feature-card"><span class="feature-icon" aria-hidden="true">⌂</span><span class="card-index">02 / BUILD</span><h3>Claim your corner.</h3><p>Protect your builds, team up with friends, and create a town or kingdom with Lands.</p></article>
+				<article class="feature-card"><span class="feature-icon" aria-hidden="true">◇</span><span class="card-index">03 / PLAY YOUR WAY</span><h3>Make your own path.</h3><p>Earn with jobs, meet other players, and opt into PvP when you're ready.</p></article>
+			</div>
+		</section>
+
+		<section class="section-wrap story-section" aria-label="What makes PyroCraft different">
+			<div class="story-copy">
+				<p class="story-intro">Pyrocraft. A small survival Minecraft server. But what makes it special? What sets it apart from other Minecraft servers?</p>
+				<p>To be honest, PyroCraft isn't "special." Not special in the way most would call special, and certainly not in ways you can see. It's special in a different way.</p>
+				<p>Many could look at PyroCraft and say, "Oh, custom terrain great for building and exploring? Rewards that you get for doing certain things and participating in certain events? A small player base? Yeah, sounds like the typical small Minecraft server."</p>
+				<p>But, none of those features is what makes PyroCraft special. What sets it apart from other servers is the goal the owner, Kevo, had in mind while creating PyroCraft:</p>
+				<blockquote class="story-quote">"Create a friendly, non-toxic place for people to make friends, without competition."</blockquote>
+				<p>Kevo wanted to make a server <b>where the goal wasn't to be the richest, be the biggest, be the strongest, or anything like that.</b> All he wanted was a place for people from all around the world to come and play together, as friends but strangers. A place without competition. A place where it isn't about winning or losing. Kevo wanted a place where you can just have fun and make friends.</p>
+				<p>And that place is PyroCraft.</p>
+			</div>
+		</section>
+
+		<section class="section-wrap kingdoms-section" id="kingdoms">
+			<div class="section-intro"><div><p class="eyebrow">BUILT BY THE COMMUNITY <span>✦</span></p><h2>Every settlement has<br /><em>a story.</em></h2></div><p>Big plans, shared adventures, and places made by players. <a class="inline-link" href="settlements/">Explore all settlements ↗</a></p></div>
+			<div class="kingdom-grid">
+				<article class="kingdom-card kingdom-featured"><img class="settlement-image" src="assets/ziggy_empire.png" alt="A view of the Ziggy Empire settlement" /><span class="card-index">FEATURED SETTLEMENT / 01</span><h3>The Ziggy Empire</h3><p>A player-created empire with a constitution and a community of its own.</p><a href="settlements/ziggy-empire/">Explore the empire <span aria-hidden="true">↗</span></a></article>
+				<article class="kingdom-card"><img class="settlement-image" src="assets/shire.png" alt="A view of the Shire settlement" /><span class="card-index">SETTLEMENT / 02</span><h3>Shire</h3><p>A player-created settlement on PyroCraft. More details coming soon.</p></article>
+				<article class="kingdom-card"><img class="settlement-image" src="assets/yappy.png" alt="A view of the Yappy settlement" /><span class="card-index">SETTLEMENT / 03</span><h3>Yappy</h3><p>The server owner's settlement on PyroCraft. More details coming soon.</p></article>
+			</div>
+		</section>
+
+		<section class="section-wrap community-section" id="community">
+			<div class="section-intro"><div><p class="eyebrow">YOUR COMMUNITY HUB <span>✦</span></p><h2>Stay in the <em>loop.</em></h2></div><p>Check the server or find your people. <a class="inline-link" href="community/">Visit the community page ↗</a></p></div>
+			<div class="hub-toolbar"><span>YOUR SERVER AT A GLANCE</span></div>
+			<div class="hub-grid" id="dashboard">
+				<article class="panel activity-panel"><div class="panel-heading"><div><p class="card-index">SAY HELLO</p><h2><span id="players-label">Online now</span> <span id="online-count" class="count-badge">Unavailable</span></h2><p id="stats-freshness">Checking server data…</p></div></div><div class="activity-list" id="player-list"><div class="empty-state">Checking player data</div></div></article>
+				<article class="panel hub-links"><p class="card-index">GOOD TO HAVE YOU HERE</p><h2>Better together.</h2><p>Find friends, get help, and support the server.</p><div class="hub-link-list"><a data-external-link="discord" href="https://dc.gg/pyrocraft" target="_blank" rel="noopener noreferrer">Join our Discord <span>↗</span></a><a data-external-link="youtube" href="https://youtube.com/@kevopyro" target="_blank" rel="noopener noreferrer">Watch on YouTube <span>↗</span></a><a href="vote/">Vote &amp; earn rewards <span>↗</span></a><a href="faq/">Browse the FAQ <span>↗</span></a></div></article>
+				<article class="stat-card"><div class="stat-header"><span>Server uptime</span><span class="stat-icon green">◷</span></div><strong class="stat-value"><span id="uptime-value">Collecting data</span></strong><p class="stat-change"><span id="uptime-detail">Waiting for history</span></p><div class="progress-track"><span id="uptime-progress" style="width: 0%"></span></div><p class="progress-label"><span>Uptime history</span><b id="uptime-period">--</b></p></article>
+				<article class="stat-card location-card"><div class="stat-header"><span>Server location</span><span class="stat-icon blue">⌖</span></div><strong class="location-name">Amsterdam</strong><p class="location-detail">Netherlands</p><p class="restart-detail"><span>Daily restart</span><strong id="restart-time">9:00 PM MT</strong></p></article>
+			</div>
+		</section>
+		<section class="section-wrap join-section bottom-join-section" id="join" aria-label="Join PyroCraft">
+			<div class="join-heading"><p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE <span>✦</span></p><h2>Come on in.<br /><em>We'll save you a spot.</em></h2><p>Getting started only takes a moment. Bring your curiosity; the rest is up to you.</p>
+				<div class="server-address" id="connect-bottom"><span>MINECRAFT JAVA SERVER ADDRESS</span><strong id="server-address-bottom">play.pyrocraft.world</strong><button class="copy-address" id="copy-address-bottom" type="button" aria-label="Copy server address">Copy address ↗</button></div><p class="copy-feedback" id="copy-feedback-bottom" role="status"></p>
+			</div>
+			<div class="join-steps"><div><span>01</span><p><strong>Open Minecraft Java</strong><small class="join-version" id="join-version-bottom">Use Java Edition 26.3 to play.</small></p></div><div><span>02</span><p><strong>Add the server</strong><small>Choose Multiplayer, then Add Server, and paste the address.</small></p></div><div><span>03</span><p><strong>Join the world</strong><small>Select PyroCraft, hop in, and start exploring.</small></p></div>
+				<button class="guide-link open-info" id="open-info-bottom" type="button" aria-haspopup="dialog" aria-controls="info-modal">Explore the quick-start commands <span>↗</span></button>
+			</div>
+		</section>
+	</main>
+	<footer class="main-footer"><div class="footer-brand"><div class="footer-name"><img src="assets/logo.png" class="footer-logo" alt="" /><div><strong>PyroCraft<span class="brand-dot">.</span></strong><small>A world worth coming back to.</small></div></div><p>© 2026 KevoPyro. All rights reserved.</p></div><div class="footer-links"><h2>EXPLORE</h2><ul><li><a href="#join">Join the server</a></li><li><a href="faq/">FAQ</a></li><li><a href="vote/">Vote</a></li></ul></div><div class="footer-links"><h2>COMMUNITY</h2><ul><li><a data-external-link="discord" href="https://dc.gg/pyrocraft" target="_blank" rel="noopener noreferrer">Discord ↗</a></li><li><a data-external-link="youtube" href="https://youtube.com/@kevopyro" target="_blank" rel="noopener noreferrer">YouTube ↗</a></li><li><a href="settlements/">Settlements</a></li><li><a href="community/">Community</a></li></ul></div></footer>
+	<div class="easter-egg" id="easter-egg" role="status" aria-live="polite" hidden></div>
+	<section class="info-modal" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title" hidden><div class="info-modal-backdrop" data-close-info></div><div class="info-modal-panel"><header class="info-modal-header"><div><p class="eyebrow">PYROCRAFT <span>•</span> SERVER GUIDE</p><h2 id="info-title">Your first steps.</h2><p>Copy a command and replace placeholders such as &lt;player&gt; before sending.</p></div><button class="modal-close" id="close-info" type="button" aria-label="Close server information">×</button></header>
+		<div class="command-layout" id="quick-start-commands"></div><footer class="info-modal-footer"><span>Be kind. Griefing is not allowed.</span><a href="commands/">View all listed commands ↗</a><a href="faq/">Read the FAQ ↗</a><a data-external-link="discord" href="https://dc.gg/pyrocraft" target="_blank" rel="noopener noreferrer">Ask on Discord ↗</a></footer></div></section>
+	<script src="commands/commands.js"></script>
+	<script src="script.js?v=10"></script>
+</body>
 </html>

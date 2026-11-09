@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Browse useful commands for exploring, playing, and building on PyroCraft." />
+	<title>Commands | PyroCraft</title>
+	<link rel="icon" href="../assets/logo.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+	<script src="../theme.js"></script>
+	<script src="../animations.js" defer></script>
+	<script src="../external-links.js" defer></script>
+	<link rel="stylesheet" href="../style.css" />
+	<link rel="stylesheet" href="../redesign.css?v=9" />
+	<link rel="stylesheet" href="../theme-switch.css" />
+	<link rel="stylesheet" href="commands.css" />
+</head>
+<body>
+	<a class="skip-link" href="#main">Skip to content</a>
+	<header class="topbar">
+		<a class="brand" href="../"><img class="brand-mark" src="../assets/logo.png" alt="" /><span>PyroCraft<span class="brand-dot">.</span></span></a>
+		<nav class="site-nav" aria-label="Main navigation"><a href="../">Home</a><a href="../settlements/">Settlements</a><a href="../community/">Community</a><a href="./" aria-current="page">Commands</a><a href="../rules/">Rules</a><a href="../faq/">FAQ</a><a href="../vote/">Vote</a></nav>
+		<div class="topbar-actions"><fieldset class="theme-switch"><legend>Theme</legend><div class="theme-options"><label><input type="radio" name="theme" value="system" checked /><span>System</span></label><label><input type="radio" name="theme" value="dark" /><span>Dark</span></label><label><input type="radio" name="theme" value="light" /><span>Light</span></label></div></fieldset></div>
+	</header>
+	<main id="main">
+		<section class="section-wrap subpage-hero">
+			<p class="eyebrow">YOUR SERVER GUIDE <span>✦</span></p>
+			<h1>Commands for your <em>adventure</em>.</h1>
+			<p>Search the directory, copy a command, and replace anything in angle brackets with your own details before sending it in chat.</p>
+		</section>
+		<section class="section-wrap subpage-section">
+			<div class="section-intro"><div><p class="eyebrow">COMMAND DIRECTORY</p><h2>Find your next move.</h2></div><p>Need help with a command? <a data-external-link="discord" href="https://dc.gg/pyrocraft" target="_blank" rel="noopener noreferrer">Ask the community on Discord ↗</a></p></div>
+			<div class="command-tools">
+				<label for="command-search">Search commands</label>
+				<input id="command-search" type="search" placeholder="Try /home, claims, or teleport" autocomplete="off" />
+				<div class="command-filters" role="group" aria-label="Filter commands by category">
+					<button type="button" data-command-filter="all" aria-pressed="true">All</button>
+					<button type="button" data-command-filter="explore" aria-pressed="false">Getting around</button>
+					<button type="button" data-command-filter="players" aria-pressed="false">Players</button>
+					<button type="button" data-command-filter="claims" aria-pressed="false">World &amp; claims</button>
+					<button type="button" data-command-filter="participate" aria-pressed="false">Jobs &amp; voting</button>
+				</div>
+			</div>
+			<p class="command-help">Examples are illustrative. Copying keeps placeholders such as <code>&lt;player&gt;</code> intact; replace them with real names and values before sending.</p>
+			<p class="command-help">Cooldowns are shown where confirmed. Permissions and limits have not been verified against the live server configuration.</p>
+			<p id="command-status" class="command-status" role="status" aria-live="polite">Loading commands...</p>
+			<div class="detail-grid command-directory" id="command-directory" aria-live="polite"></div>
+		</section>
+	</main>
+	<footer class="main-footer"><div class="footer-brand"><div class="footer-name"><img src="../assets/logo.png" class="footer-logo" alt="" /><div><strong>PyroCraft<span class="brand-dot">.</span></strong><small>A world worth coming back to.</small></div></div></div><div class="footer-links"><h2>EXPLORE</h2><ul><li><a href="../#join">Join the server</a></li><li><a href="../faq/">FAQ</a></li><li><a href="../community/">Community</a></li></ul></div></footer>
+	<script src="commands.js"></script>
+</body>
+</html>

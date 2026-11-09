@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Find PyroCraft server status and ways to get involved with the community." />
+	<title>Community | PyroCraft</title>
+	<link rel="icon" href="../assets/logo.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+	<script src="../theme.js"></script>
+	<script src="../animations.js" defer></script>
+	<script src="../external-links.js" defer></script>
+	<link rel="stylesheet" href="../style.css" /><link rel="stylesheet" href="../redesign.css?v=10" /><link rel="stylesheet" href="../theme-switch.css" />
+</head>
+<body>
+	<a class="skip-link" href="#main">Skip to content</a>
+	<header class="topbar">
+		<a class="brand" href="../"><img class="brand-mark" src="../assets/logo.png" alt="" /><span>PyroCraft<span class="brand-dot">.</span></span></a>
+		<nav class="site-nav" aria-label="Main navigation"><a href="../">Home</a><a href="../settlements/">Settlements</a><a href="./" aria-current="page">Community</a><a href="../commands/">Commands</a><a href="../rules/">Rules</a><a href="../faq/">FAQ</a><a href="../vote/">Vote</a></nav>
+		<div class="topbar-actions"><fieldset class="theme-switch"><legend>Theme</legend><div class="theme-options"><label><input type="radio" name="theme" value="system" checked /><span>System</span></label><label><input type="radio" name="theme" value="dark" /><span>Dark</span></label><label><input type="radio" name="theme" value="light" /><span>Light</span></label></div></fieldset></div>
+	</header>
+	<main id="main">
+		<section class="section-wrap subpage-hero"><p class="eyebrow">THE PEOPLE BEHIND THE BUILDS <span>✦</span></p><h1>Better <em>together</em>.</h1><p>Get to know the community, check the server, and find a little help for your next adventure.</p></section>
+		<section class="section-wrap subpage-section"><div class="section-intro"><div><p class="eyebrow">PYROCRAFT RIGHT NOW</p><h2>What's happening?</h2></div><p>Player data is checked live when available; the last saved check is shown if it isn't.</p></div>
+			<div class="detail-grid">
+			<article class="detail-card panel chart-panel community-chart-card"><div class="panel-heading"><div><p class="card-index">THE WORLD RIGHT NOW</p><h3>Server activity</h3><p>Players online over the last 96 hours.</p><p id="history-freshness">Loading activity history...</p></div><strong id="chart-latest">-- online</strong></div>
+				<div class="chart-wrap"><svg viewBox="0 0 720 220" role="img" aria-label="A line graph showing server activity over the last 96 hours"><defs><linearGradient id="chart-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#9C91D1" stop-opacity=".34"/><stop offset="1" stop-color="#9C91D1" stop-opacity="0"/></linearGradient></defs><g class="chart-grid"><line x1="0" y1="20" x2="720" y2="20"/><line x1="0" y1="74" x2="720" y2="74"/><line x1="0" y1="128" x2="720" y2="128"/><line x1="0" y1="182" x2="720" y2="182"/></g><g id="chart-y-labels" class="chart-y-labels" aria-hidden="true"></g><path id="chart-area" class="chart-area"/><path id="chart-line" class="chart-line" pathLength="1"/><g id="chart-points" class="chart-points"></g></svg><div id="chart-empty" class="chart-empty">Collecting activity data</div><div id="chart-labels" class="chart-labels"></div></div><div id="chart-stats" class="chart-stats"></div>
+			</article>
+				<article class="detail-card community-status-card">
+					<span class="card-index">PLAYERS</span>
+					<div class="community-players">
+						<h3 class="community-players-heading"><span id="players-label">Online now</span><span id="online-count" class="count-badge">Unavailable</span></h3>
+						<div id="player-list" class="activity-list"><div class="empty-state">Checking player data</div></div>
+					</div>
+					<p class="community-status-freshness" id="stats-freshness">Checking server data…</p>
+				</article>
+				<article class="detail-card"><span class="card-index">SERVER RELIABILITY</span><h3>Uptime</h3><strong class="stat-value"><span id="uptime-value">Collecting data</span></strong><p id="uptime-detail">Waiting for history</p><div class="progress-track"><span id="uptime-progress" style="width: 0%"></span></div><p id="uptime-period">--</p></article>
+				<article class="detail-card"><span class="card-index">COMING UP</span><h3>Events &amp; gatherings</h3><p>No event schedule is published here yet. Check Discord for community announcements.</p><a data-external-link="discord" href="https://dc.gg/pyrocraft" target="_blank" rel="noopener noreferrer">Visit Discord ↗</a></article>
+			</div>
+		</section>
+		<section class="section-wrap subpage-section"><p class="eyebrow">GET INVOLVED</p><h2>There's room for you here.</h2><div class="detail-grid">
+			<article class="detail-card"><h3>Meet the community</h3><p>Ask questions, suggest features, and reach staff through Discord.</p><a data-external-link="discord" href="https://dc.gg/pyrocraft" target="_blank" rel="noopener noreferrer">Join Discord ↗</a></article>
+			<article class="detail-card"><h3>Support the server</h3><p>Vote on server lists for a key, server balance, and experience.</p><a href="../vote/">See voting and rewards ↗</a></article>
+			<article class="detail-card"><h3>Explore settlements</h3><p>See player-created places and learn how to start a claim of your own.</p><a href="../settlements/">Visit settlements ↗</a></article>
+		</div></section>
+	</main>
+	<footer class="main-footer"><div class="footer-brand"><div class="footer-name"><img src="../assets/logo.png" class="footer-logo" alt="" /><div><strong>PyroCraft<span class="brand-dot">.</span></strong><small>A world worth coming back to.</small></div></div></div><div class="footer-links"><h2>EXPLORE</h2><ul><li><a href="../#join">Join the server</a></li><li><a href="../settlements/">Settlements</a></li><li><a href="../faq/">FAQ</a></li></ul></div></footer>
+	<script src="../script.js?v=10"></script>
+</body>
+</html>

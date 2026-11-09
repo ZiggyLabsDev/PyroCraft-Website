@@ -1,7 +1,12 @@
 {
   "dataState": "live",
+<<<<<<< Updated upstream
   "updatedAt": "2026-11-08T21:56:38.825Z",
   "serverAddress": "172.241.3.141:25573",
+=======
+  "updatedAt": "2026-11-07T23:53:00.267Z",
+  "serverAddress": "play.pyrocraft.world",
+>>>>>>> Stashed changes
   "version": "Paper 26.3",
   "online": true,
   "players": {

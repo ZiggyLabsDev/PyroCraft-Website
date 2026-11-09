@@ -1,0 +1,9 @@
+.empire-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 48px; }
+.empire-hero-copy > p:not(.eyebrow) { max-width: 580px; color: var(--subtle); line-height: 1.7; }
+.empire-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.empire-feature-image { overflow: hidden; margin: 0; border: 1px solid var(--outline); border-radius: 16px; background: var(--surface); }
+.empire-feature-image img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.empire-feature-image figcaption { padding: 12px 16px; color: var(--subtle); font-size: 12px; }
+@media (max-width: 760px) {
+	.empire-hero { grid-template-columns: 1fr; gap: 24px; }
+}

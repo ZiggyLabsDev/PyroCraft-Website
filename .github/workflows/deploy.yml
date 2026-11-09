@@ -23,6 +23,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Sync external links
+        run: node scripts/sync-external-links.js
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
