@@ -40,8 +40,10 @@ and stats.
   placeholder; server status uses the same sources as the homepage.
 - The site reads activity and uptime from the
   Cloudflare Worker configured in `script.js`, and attempts a separate live
-  status check. The chart shows samples from the last 96 hours; actual retention
-  and check frequency are controlled by the Worker. If the Worker cannot be
+  status check. The chart shows samples from the last 96 hours, initially
+  displaying the latest 48 hours on desktop or 24 hours on mobile; scroll left
+  to see earlier samples. Actual retention and check frequency are controlled
+  by the Worker. If the Worker cannot be
   reached, the site labels and uses the saved `data/stats.json` snapshot.
   Run `node scripts/fetch-stats.js` from the repository root to refresh that
   snapshot manually, then commit it for deployment if desired. If the Worker

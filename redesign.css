@@ -159,7 +159,7 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 .chart-grid line { stroke: var(--outline); }
 .chart-line { stroke: var(--blue-accent); }
 .chart-point { fill: var(--blue-accent); stroke: var(--surface); }
-.chart-labels, .chart-y-labels text, .chart-stats, .chart-empty, .empty-state, .stat-header, .stat-change, .progress-label, .location-detail, .restart-detail, .player-row p { color: var(--subtle); fill: var(--subtle); }
+.chart-labels text, .chart-y-labels text, .chart-stats, .chart-empty, .empty-state, .stat-header, .stat-change, .progress-label, .location-detail, .restart-detail, .player-row p { color: var(--subtle); fill: var(--subtle); }
 .chart-stats strong, .stat-value, .location-name, .player-row strong { color: var(--text); }
 .update-preview { border-color: var(--outline); background: var(--surface-soft); }
 .update-preview strong { color: var(--text); font-size: 12px; }

@@ -288,8 +288,11 @@ h1 em { color: var(--orange); font-style: normal; }
 .chart-latest { color: #e9f3ef; font: 600 11px "Space Grotesk", sans-serif; }
 #chart-latest { color: var(--orange-secondary); }
 
-.chart-wrap { position: relative; padding-top: 5px; }
-.chart-wrap svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart-wrap { position: relative; display: flex; padding-top: 5px; }
+.chart-axis { display: block; flex: 0 0 36px; width: 36px; height: 220px; }
+.chart-scroll { min-width: 0; flex: 1; overflow-x: auto; overflow-y: hidden; }
+.chart-scroll-content { width: 200%; }
+.chart-scroll svg { display: block; width: 100%; height: 220px; }
 .chart-grid line { stroke: #354752; stroke-width: 1; stroke-dasharray: 3 5; }
 .chart-area { fill: url(#chart-fill); }
 .chart-line { fill: none; stroke: var(--orange); stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; }
@@ -323,13 +326,13 @@ h1 em { color: var(--orange); font-style: normal; }
 .chart-tooltip span { color: #91a2a8; font-size: 10px; }
 
 .chart-y-labels text { fill: #91a2a8; font: 10px "DM Sans", sans-serif; }
-.chart-labels { display: flex; justify-content: space-between; padding-top: 10px; color: #91a2a8; font-size: 9px; }
-.chart-labels span { min-width: 0; text-align: center; }
-.chart-labels span:first-child { text-align: left; }
-.chart-labels span:last-child { text-align: right; }
+.chart-labels text { fill: #91a2a8; font: 10px "DM Sans", sans-serif; }
 .chart-stats { display: flex; gap: 18px; padding-top: 12px; color: #91a2a8; font-size: 11px; }
 .chart-stats strong { color: #fff; margin-left: 4px; }
 .chart-empty { position: absolute; top: 48%; left: 0; width: 100%; color: #a0afb5; font-size: 11px; text-align: center; }
+@media (max-width: 760px) {
+	.chart-scroll-content { width: 400%; }
+}
 
 /* Dashboard Widgets & User Displays */
 .count-badge {

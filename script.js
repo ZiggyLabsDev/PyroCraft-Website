@@ -45,6 +45,8 @@ const elements = {
 	chartArea: document.querySelector("#chart-area"),
 	chartPoints: document.querySelector("#chart-points"),
 	chartYLabels: document.querySelector("#chart-y-labels"),
+	chartScroll: document.querySelector("#chart-scroll"),
+	chartSvg: document.querySelector("#chart-svg"),
 	chartLatest: document.querySelector("#chart-latest"),
 	chartLabels: document.querySelector("#chart-labels"),
 	chartStats: document.querySelector("#chart-stats"),
@@ -59,7 +61,7 @@ function formatChartTime(timestamp) {
 function formatChartTick(timestamp, includeDay) {
 	const date = new Date(timestamp);
 	if (!includeDay) return formatChartTime(date);
-	return `${date.toLocaleDateString([], { weekday: "short" })} ${date.toLocaleTimeString([], { hour: "numeric" })}`;
+	return `${date.toLocaleDateString([], { weekday: "short" })} ${formatChartTime(date)}`;
 }
 
 // Control points share each endpoint's y, so the curve never overshoots the data.
@@ -77,7 +79,7 @@ let chartState = null;
 
 function setupChartHover() {
 	const svg = elements.chartLine?.ownerSVGElement;
-	const wrap = svg?.parentElement;
+	const wrap = svg?.closest(".chart-wrap");
 	if (!svg || !wrap) return;
 	const guide = document.createElementNS("http://www.w3.org/2000/svg", "line");
 	guide.setAttribute("class", "chart-guide");
@@ -98,7 +100,7 @@ function setupChartHover() {
 		if (!chartState) return hide();
 		const rect = svg.getBoundingClientRect();
 		const wrapRect = wrap.getBoundingClientRect();
-		const pointerX = ((event.clientX - rect.left) / rect.width) * 720;
+		const pointerX = ((event.clientX - rect.left) / rect.width) * chartState.width;
 		let nearest = 0;
 		chartState.xs.forEach((x, index) => {
 			if (Math.abs(x - pointerX) < Math.abs(chartState.xs[nearest] - pointerX)) nearest = index;
@@ -113,20 +115,30 @@ function setupChartHover() {
 		const date = new Date(point.time);
 		tip.innerHTML = `<strong>${players} player${players === 1 ? "" : "s"}</strong><span>${date.toLocaleDateString([], { weekday: "short", month: "short", day: "numeric" })} · ${formatChartTime(point.time)}</span>${point.online === false ? "<span>Server offline</span>" : ""}`;
 		tip.hidden = false;
-		const left = rect.left - wrapRect.left + (x / 720) * rect.width;
+		const left = rect.left - wrapRect.left + (x / chartState.width) * rect.width;
 		tip.style.left = `${Math.min(Math.max(left, tip.offsetWidth / 2), wrapRect.width - tip.offsetWidth / 2)}px`;
 		tip.style.top = `${rect.top - wrapRect.top + (y / 220) * rect.height}px`;
 	});
 	svg.addEventListener("pointerleave", hide);
+	elements.chartScroll?.addEventListener("scroll", () => {
+		hide();
+		const scroll = elements.chartScroll;
+		if (chartState && Math.abs(scroll.scrollWidth - chartState.width) < 1) {
+			chartState.rightOffset = (scroll.scrollWidth - scroll.clientWidth - scroll.scrollLeft) / scroll.scrollWidth;
+		}
+	});
 }
 
-function renderChart(history) {
-	const now = Date.now();
+function renderChart(history, now = Date.now(), preserveScroll = false) {
+	const scroll = elements.chartScroll;
+	const rightOffset = preserveScroll && chartState ? chartState.rightOffset : 0;
+	const duration = 96 * 60 * 60 * 1000;
+	const startTime = now - duration;
 	const pointsData = Array.isArray(history)
 		? history
 			.filter((point) => {
 				const time = Date.parse(point.time);
-				return typeof point.players === "number" && Number.isFinite(point.players) && Number.isFinite(time) && time >= now - 96 * 60 * 60 * 1000 && time <= now;
+				return typeof point.players === "number" && Number.isFinite(point.players) && Number.isFinite(time) && time >= startTime && time <= now;
 			})
 			.sort((first, second) => Date.parse(first.time) - Date.parse(second.time))
 		: [];
@@ -146,37 +158,42 @@ function renderChart(history) {
 		return;
 	}
 	elements.chartEmpty.hidden = true;
-	const width = 720;
+	const width = elements.chartSvg.getBoundingClientRect().width;
+	if (!width) return;
+	elements.chartSvg.setAttribute("viewBox", `0 0 ${width} 220`);
+	const chartTop = 30;
 	const baseline = 200;
-	const firstTimestamp = Date.parse(pointsData[0].time);
-	const lastTimestamp = Date.parse(pointsData.at(-1).time);
-	const timeRange = Math.max(lastTimestamp - firstTimestamp, 1);
+	const chartHeight = baseline - chartTop;
 	const peakPlayers = Math.max(...pointsData.map((point) => Number(point.players)), 1);
 	const maxPlayers = peakPlayers + (peakPlayers % 2);
 	if (elements.chartYLabels) {
-		elements.chartYLabels.replaceChildren(...[maxPlayers, maxPlayers / 2, 0].map((value, index) => {
+		elements.chartYLabels.replaceChildren(...[maxPlayers, maxPlayers / 2, 0].map((value) => {
 			const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
 			label.setAttribute("x", "8");
-			label.setAttribute("y", String([25, 79, 187][index]));
+			const y = baseline - (value / maxPlayers) * chartHeight;
+			label.setAttribute("y", String(y + 4));
 			label.textContent = Number.isInteger(value) ? String(value) : value.toFixed(1);
 			return label;
 		}));
 	}
 	const coords = pointsData.map((point) => {
-		const x = pointsData.length === 1 ? width / 2 : ((Date.parse(point.time) - firstTimestamp) / timeRange) * width;
-		const y = baseline - (Number(point.players) / maxPlayers) * 170;
+		const x = ((Date.parse(point.time) - startTime) / duration) * width;
+		const y = baseline - (Number(point.players) / maxPlayers) * chartHeight;
 		return [Number(x.toFixed(1)), Number(y.toFixed(1))];
 	});
 	const points = coords.map(([x, y]) => `${x} ${y}`);
 	const line = smoothPath(coords);
 	chartState = {
 		pointsData,
+		endTime: now,
+		width,
+		rightOffset,
 		xs: coords.map(([x]) => x),
 		ys: coords.map(([, y]) => y),
 	};
 	elements.chartLine.setAttribute("d", line);
 	elements.chartLine.classList.add("chart-draw");
-	elements.chartArea?.setAttribute("d", `${line} L${width} ${baseline} L0 ${baseline} Z`);
+	elements.chartArea?.setAttribute("d", `${line} L${coords.at(-1)[0]} ${baseline} L${coords[0][0]} ${baseline} Z`);
 	if (elements.chartPoints) {
 		elements.chartPoints.replaceChildren(...points.map((point, index) => {
 			const [cx, cy] = point.split(" ");
@@ -193,12 +210,13 @@ function renderChart(history) {
 		elements.chartLatest.textContent = `${latestPlayers} at last sample`;
 	}
 	if (elements.chartLabels) {
-		const includeDay = timeRange >= 24 * 60 * 60 * 1000 || new Date(firstTimestamp).toDateString() !== new Date(lastTimestamp).toDateString();
-		const tickCount = pointsData.length === 1 ? 1 : 5;
-		elements.chartLabels.replaceChildren(...Array.from({ length: tickCount }, (_, index) => {
-			const span = document.createElement("span");
-			span.textContent = formatChartTick(firstTimestamp + (timeRange * index) / Math.max(tickCount - 1, 1), includeDay);
-			return span;
+		elements.chartLabels.replaceChildren(...Array.from({ length: 9 }, (_, index) => {
+			const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+			label.setAttribute("x", String((width * index) / 8));
+			label.setAttribute("y", "217");
+			label.setAttribute("text-anchor", index === 0 ? "start" : index === 8 ? "end" : "middle");
+			label.textContent = formatChartTick(startTime + (duration * index) / 8, true);
+			return label;
 		}));
 	}
 	if (elements.chartStats) {
@@ -206,6 +224,7 @@ function renderChart(history) {
 		const average = counts.reduce((sum, value) => sum + value, 0) / counts.length;
 		elements.chartStats.innerHTML = `<span>Peak <strong>${Math.max(...counts)}</strong></span><span>Average <strong>${average.toFixed(1)}</strong></span><span>Low <strong>${Math.min(...counts)}</strong></span>`;
 	}
+	scroll.scrollLeft = scroll.scrollWidth - scroll.clientWidth - rightOffset * width;
 }
 
 function renderPlayers(players = [], onlineCount = null) {
@@ -382,6 +401,11 @@ async function loadStats() {
 
 loadStats();
 setupChartHover();
+if (elements.chartScroll && typeof ResizeObserver !== "undefined") {
+	new ResizeObserver(() => {
+		if (chartState) renderChart(chartState.pointsData, chartState.endTime, true);
+	}).observe(elements.chartScroll);
+}
 renderRestartTime();
 
 copyAddressButtons.forEach((button) => button.addEventListener("click", async () => {
