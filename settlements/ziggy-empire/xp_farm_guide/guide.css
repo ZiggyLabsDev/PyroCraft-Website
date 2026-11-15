@@ -1,0 +1,41 @@
+.farm-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 48px; }
+.farm-hero-copy > p:not(.eyebrow) { max-width: 580px; color: var(--subtle); line-height: 1.7; }
+.farm-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.farm-location { display: grid; gap: 5px; width: fit-content; margin-top: 30px; padding: 14px 17px; border: 1px solid var(--outline); border-radius: 10px; background: var(--surface); }
+.location-label { color: var(--subtle); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
+.farm-location strong { font-size: 14px; }
+.farm-location code { color: var(--accent); font-size: 12px; }
+.farm-feature-image, .step-card figure { overflow: hidden; margin: 0; border: 1px solid var(--outline); border-radius: 12px; background: var(--surface); }
+.farm-feature-image img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.farm-feature-image figcaption, .step-card figcaption { padding: 11px 15px; color: var(--subtle); font-size: 12px; }
+.farm-overview { padding-top: 25px; }
+.farm-facts .detail-card { min-width: 0; }
+.farm-steps { padding-top: 30px; }
+.step-list { display: grid; gap: 18px; margin: 0; padding: 0; list-style: none; }
+.step-card { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: center; gap: 30px; padding: 24px; border: 1px solid var(--outline); border-radius: 12px; background: var(--surface); }
+.step-copy { display: flex; align-items: flex-start; gap: 18px; }
+.step-number { display: grid; flex: 0 0 38px; width: 38px; height: 38px; place-items: center; border: 1px solid var(--outline); border-radius: 50%; color: var(--blue-accent); font: 700 12px "Space Grotesk", sans-serif; }
+.step-copy h3 { margin: 2px 0 10px; font: 600 21px "Space Grotesk", sans-serif; letter-spacing: -.025em; }
+.step-copy p { margin: 0; color: var(--subtle); font-size: 14px; line-height: 1.75; }
+.step-copy .step-note { margin-top: 12px; color: var(--text); }
+.step-card figure img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.step-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.shutdown-panel { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 45px; padding: clamp(24px, 5vw, 55px); border: 1px solid var(--outline); border-radius: 16px; background: var(--surface-soft); }
+.shutdown-copy h2 { margin: 15px 0; font: 600 clamp(28px, 3.2vw, 40px)/1.1 "Space Grotesk", sans-serif; letter-spacing: -.04em; }
+.shutdown-copy > p:last-child { color: var(--subtle); font-size: 14px; line-height: 1.75; }
+.shutdown-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.shutdown-list li { display: flex; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--outline); }
+.shutdown-list li:first-child { padding-top: 0; }
+.shutdown-list li:last-child { padding-bottom: 0; border-bottom: 0; }
+.shutdown-list span { color: var(--blue-accent); font-size: 11px; font-weight: 700; }
+.shutdown-list p { margin: 0; color: var(--subtle); font-size: 14px; line-height: 1.7; }
+.farm-video { padding-bottom: 85px; }
+.video-placeholder { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--outline); border-radius: 12px; background: var(--surface); }
+@media (max-width: 760px) {
+	.farm-hero, .shutdown-panel { grid-template-columns: 1fr; gap: 24px; }
+	.step-card { grid-template-columns: 1fr; gap: 20px; padding: 18px; }
+}
+@media (max-width: 520px) {
+	.step-gallery { grid-template-columns: 1fr; }
+	.farm-actions .button { width: 100%; }
+}

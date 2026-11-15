@@ -1,0 +1,55 @@
+Here is the experiance farm for the ziggy empire, located north west of the castle, at (176, 104, 1276)
+
+[xp_1.png]
+
+In this guide, i will teach you how to use it! 
+
+First, Find the barrel located in the lower area of the building. 
+
+[xp_2.png]
+
+Open that barrel, and find the  Flint and steel located inside that barrel. Take it, close the barrel GUI, turn left, and open the door. There is a door on 
+both sides of the lower area. Open it, but do not go in. 
+
+[xp_3.png]
+
+Then, use the Flint and steel from the barrel and use it to light the campfire inside. BE SURE TO CLOSE THE DOOR!
+
+[xp_4.png]
+
+Once you have lit the campfire, go up the ladder to the higher part of the room. Find the barrel labeled "Potions". It should have splash potions of 
+Infestation inside. 
+
+[xp_5.png]
+
+Take the potion out of the barrel, hold it in your hand, press shift, and right-click the trapdoor with the splash potion. This will give the armidillos the 
+infestation effect. Infesation potions have a chance to spawn silverfish every time the player or mob with the effect takes damage. NOTE: It is okay if you  
+also have the effect!
+
+[xp_6.png]
+
+Once the Armidillos have the effect, they will begin to spawn silverfish. Go back down the ladder, and soon you will see silverfish appearing in the stair at 
+the bottom of the ladder. Go ahead and use your sword to kill them, and they will grant you experiance to
+
+- Repair your tools and armor (If they have mending)
+- Gain experiance levels for enchanting
+- Gain money from the servers economy (If you have the hunter job!)
+
+[xp_7.png]
+
+This farm can usually get about 2 tools repaired, or get you from level 0 to 35 per potion. Rates may vary. 
+
+WHEN YOU ARE DONE:
+
+When you have finished the farm, please be sure to turn off the campfire! 
+
+To turn off the campfire, ensure that all of the silverfish are gone and that the potion effect duration has finished for the armidillos (We reccomend that 
+you try to splash it on yourself as well, so that if you ever wonder how much time is remaining, you can open your inventory to check the duration left, as 
+it should be close to the armidillos duration. Alternatly, you can look up and see if there are still silverfish appearing on top of the campfire.) 
+
+Open the door you opened before, and use a shovel to put out the campfire (Right click the campfire with a shovel) If you do not have one, there should be
+one in the barrel with the flint and steel. Then, be sure to put the flint and steel and, if you borrowed it, the shovel back.
+
+If you found this confusing in any way, watch this video to know more about how to use this farm: 
+
+(NOTE: The video has not been posted yet. Add an iframe, and once i make the video, i will then put in the real youtube video URL)
