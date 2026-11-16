@@ -7,26 +7,152 @@ const easterEgg = document.querySelector("#easter-egg");
 const siteRoot = new URL(".", document.currentScript.src);
 const statsUrl = new URL("data/stats.json", siteRoot);
 const workerStatsUrl = "https://pyrocraft-stats-worker.ziggylabsdev.workers.dev/stats";
-function renderRestartTime() {
-		const restartTime = document.querySelector("#restart-time");
-		if (!restartTime) return;
 
-		const mountainFormatter = new Intl.DateTimeFormat("en-US", {
-			timeZone: "America/Denver",
-			year: "numeric",
-			month: "2-digit",
-			day: "2-digit",
-		});
-		const dateParts = Object.fromEntries(mountainFormatter.formatToParts(new Date()).map((part) => [part.type, part.value]));
-		const candidate = Date.UTC(Number(dateParts.year), Number(dateParts.month) - 1, Number(dateParts.day), 21);
-		const offsetParts = new Intl.DateTimeFormat("en-US", { timeZone: "America/Denver", timeZoneName: "shortOffset" }).formatToParts(new Date(candidate));
-		const offset = offsetParts.find((part) => part.type === "timeZoneName")?.value.match(/GMT([+-]\d+(?::\d+)?)?/i)?.[1] || "-7";
-		const [hours, minutes = "0"] = offset.split(":");
-		const offsetMinutes = Number(hours) * 60 + Number(minutes) * Math.sign(Number(hours));
-		const restartInstant = new Date(candidate - offsetMinutes * 60 * 1000);
-		const localTime = new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(restartInstant);
-		restartTime.textContent = `${localTime} local (9:00 PM MT)`;
+function renderRestartTime() {
+    const restartTime = document.querySelector("#restart-time");
+    const countdown = document.querySelector("#restart-countdown");
+
+    if (!restartTime && !countdown) return;
+
+    const TIME_ZONE = "America/Denver";
+    const RESTART_HOUR = 20; // 8 PM Mountain Time
+
+    const mountainDateFormatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: TIME_ZONE,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+    });
+
+    const mountainDateTimeFormatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: TIME_ZONE,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hourCycle: "h23",
+    });
+
+    const localTimeFormatter = new Intl.DateTimeFormat(undefined, {
+        hour: "numeric",
+        minute: "2-digit",
+        timeZoneName: "short",
+    });
+
+    // Get date/time components in a specified time zone.
+    function getParts(formatter, date) {
+        return Object.fromEntries(
+            formatter.formatToParts(date).map(
+                ({ type, value }) => [type, Number(value)]
+            )
+        );
+    }
+
+    // Convert a Mountain Time calendar date and hour
+    // into an actual UTC timestamp.
+    function mountainTimeToUTC(year, month, day, hour) {
+        const wallClockUTC = Date.UTC(
+            year, month - 1, day, hour
+        );
+
+        const parts = getParts(
+            mountainDateTimeFormatter,
+            new Date(wallClockUTC)
+        );
+
+        const mountainAsUTC = Date.UTC(
+            parts.year,
+            parts.month - 1,
+            parts.day,
+            parts.hour,
+            parts.minute,
+            parts.second
+        );
+
+        const offset = mountainAsUTC - wallClockUTC;
+
+        return new Date(wallClockUTC - offset);
+    }
+
+    // Find the next upcoming daily restart.
+    function getNextRestart(now) {
+        const today = getParts(mountainDateFormatter, now);
+
+        let restart = mountainTimeToUTC(
+            today.year,
+            today.month,
+            today.day,
+            RESTART_HOUR
+        );
+
+        // If today's restart has passed, use tomorrow's.
+        if (restart <= now) {
+            const tomorrow = new Date(Date.UTC(
+                today.year,
+                today.month - 1,
+                today.day + 1
+            ));
+
+            restart = mountainTimeToUTC(
+                tomorrow.getUTCFullYear(),
+                tomorrow.getUTCMonth() + 1,
+                tomorrow.getUTCDate(),
+                RESTART_HOUR
+            );
+        }
+
+        return restart;
+    }
+
+    let nextRestart = getNextRestart(new Date());
+
+    // Display the restart time in the visitor's time zone.
+    function updateDisplay() {
+        const now = new Date();
+
+        // Recalculate after a restart passes.
+        if (now >= nextRestart) {
+            nextRestart = getNextRestart(now);
+        }
+
+        if (restartTime) {
+            restartTime.textContent =
+                `${localTimeFormatter.format(nextRestart)} local`;
+        }
+
+        if (countdown) {
+            const remaining = Math.max(
+                0,
+                nextRestart.getTime() - now.getTime()
+            );
+
+            const hours = Math.floor(remaining / 3_600_000);
+            const minutes = Math.floor(
+                (remaining % 3_600_000) / 60_000
+            );
+            const seconds = Math.floor(
+                (remaining % 60_000) / 1_000
+            );
+
+            countdown.textContent =
+                `${hours}h ${minutes}m`;
+        }
+    }
+
+    // Update immediately.
+    updateDisplay();
+
+    // Prevent duplicate intervals if called again.
+    clearInterval(renderRestartTime.timer);
+
+    renderRestartTime.timer = setInterval(
+        updateDisplay,
+        1000
+    );
 }
+
 
 const elements = {
 	serverAddress: document.querySelector("#server-address"),
