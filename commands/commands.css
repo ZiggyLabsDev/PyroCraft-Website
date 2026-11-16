@@ -29,3 +29,6 @@
 	.command-tools > label, .command-tools > input, .command-filters { grid-column: 1; grid-row: auto; }
 	.command-filters { margin-top: 5px; }
 }
+.command-cooldown{margin: 0}
+.command-description{margin: 0}
+.command-example{margin: 0}

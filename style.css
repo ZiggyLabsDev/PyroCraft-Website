@@ -551,7 +551,9 @@ a[data-external-link][aria-disabled="true"] { cursor: not-allowed; }
 .info-modal-header h2 { font-size: 28px; }
 .info-modal-footer { align-items: flex-start; flex-direction: column; gap: 7px; }
 }
-
+.command-cooldown{margin: 0}
+.command-description{margin: 0}
+.command-example{margin: 0}
 /* Player Display Elements */
 .player-row { 
 	display: flex;
